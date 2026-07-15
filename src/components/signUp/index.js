@@ -532,17 +532,6 @@ class SignUp extends PureComponent {
             content="width=device-width, initial-scale=1.0"
           />
         </Helmet>
-        {/* Top-Banner-Start */}
-        <div class="top-banner">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                Having trouble signing up or logging in? Text +1 (855) 601-4451
-                to connect with customer support.{' '}
-              </div>
-            </div>
-          </div>
-        </div>
         {/* Top-Banner-End */}
         <div className="anime-content">
           <div className="anime-item one">
