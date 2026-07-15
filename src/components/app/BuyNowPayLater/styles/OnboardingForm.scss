@@ -1,0 +1,140 @@
+.terms-conditions-bnpl {
+  // background-color: #f8f9fa;
+  // border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  ul {
+    margin: 0 0 15px 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.collapsible-terms-widget {
+  margin: 15px 0;
+
+  .py-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    
+    .terms-text {
+      margin-left: 10px;
+      font-size: 14px;
+      
+      .terms-link {
+        color: #007bff;
+        cursor: pointer;
+        text-decoration: underline;
+        
+        &:hover {
+          color: #0056b3;
+        }
+      }
+    }
+  }
+
+  .terms-content {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+}
+
+.onboarding-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .py-box--xlarge {
+    // background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .terms-conditions-bnpl {
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    p, ul, ol {
+      margin-bottom: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    h3 {
+      color: #444;
+      margin: 1.5rem 0 1rem;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .form-actions {
+    margin-top: 2rem;
+    text-align: center;
+
+    .btn-primary {
+      min-width: 200px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      // border-radius: 4px;
+      font-size: 16px;
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

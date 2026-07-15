@@ -1,0 +1,688 @@
+{
+  "AE": {
+    "name": "United Arab Emirates",
+    "type": "manual",
+    "note": "",
+    "bankKeys": [
+      {
+        "name": "iban",
+        "placeholder": "IBAN",
+        "maxLength": 17,
+        "minLength": 17,
+        "type": "text"
+      }
+    ]
+   },
+ "AU": {
+  "name": "Australia",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "bsb",
+    "placeholder": "BSB",
+    "maxLength": 6,
+    "minLength": 6,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 9,
+    "minLength": 5,
+    "type": "number"
+   }
+  ]
+ },
+ "AT": {
+  "name": "Austria",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 20,
+    "minLength": 20,
+    "type": "text"
+   }
+  ]
+ },
+ "BE": {
+  "name": "Belgium",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 17,
+    "minLength": 17,
+    "type": "text"
+   }
+  ]
+ },
+ "BR": {
+  "name": "Brazil",
+  "type": "manual",
+  "note": "combine the bank code and branch code to create a full routing number",
+  "bankKeys": [
+   {
+    "name": "routingNumber",
+    "placeholder": "Routing",
+    "maxLength": 7,
+    "minLength": 3,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account",
+    "maxLength": 7,
+    "minLength": 4,
+    "type": "number"
+   }
+  ]
+ },
+ "BG": {
+  "name": "Bulgaria",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 22,
+    "minLength": 22,
+    "type": "text"
+   }
+  ]
+ },
+ "CA": {
+  "name": "Canada",
+  "type": "manual",
+  "note": "combine the transit and institution numbers to create a full routing number",
+  "bankKeys": [
+   {
+    "name": "transitNumber",
+    "placeholder": "Transit Number",
+    "maxLength": 5,
+    "minLength": 5,
+    "type": "number"
+   },
+   {
+    "name": "institutionNumber",
+    "placeholder": "Institution Number",
+    "maxLength": 3,
+    "minLength": 3,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 50,
+    "minLength": 1,
+    "type": "text"
+   }
+  ]
+ },
+ "CY": {
+  "name": "Cyprus",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 28,
+    "minLength": 28,
+    "type": "text"
+   }
+  ]
+ },
+ "CZ": {
+  "name": "Czech Republic",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 24,
+    "minLength": 24,
+    "type": "text"
+   }
+  ]
+ },
+ "DK": {
+  "name": "Denmark",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 20,
+    "minLength": 18,
+    "type": "text"
+   }
+  ]
+ },
+ "EE": {
+  "name": "Estonia",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 20,
+    "minLength": 20,
+    "type": "text"
+   }
+  ]
+ },
+ "FI": {
+  "name": "Finland",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 20,
+    "minLength": 18,
+    "type": "text"
+   }
+  ]
+ },
+ "FR": {
+  "name": "France",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 27,
+    "minLength": 27,
+    "type": "text"
+   }
+  ]
+ },
+ "DE": {
+  "name": "Germany",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 22,
+    "minLength": 22,
+    "type": "text"
+   }
+  ]
+ },
+ "GR": {
+  "name": "Greece",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 27,
+    "minLength": 27,
+    "type": "text"
+   }
+  ]
+ },
+ "HK": {
+  "name": "Hong Kong",
+  "type": "manual",
+  "note": "combine the bank code and branch code to create a full routing number",
+  "bankKeys": [
+   {
+    "name": "clearingCode",
+    "placeholder": "Clearing Code",
+    "maxLength": 3,
+    "minLength": 3,
+    "type": "number"
+   },
+   {
+    "name": "branchCode",
+    "placeholder": "Branch Code",
+    "maxLength": 3,
+    "minLength": 3,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 9,
+    "minLength": 6,
+    "type": "number"
+   }
+  ]
+ },
+ "IN": {
+  "name": "India",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "ifscCode",
+    "placeholder": "IFSC Code",
+    "maxLength": 11,
+    "minLength": 11,
+    "type": "text"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 50,
+    "minLength": 1,
+    "type": "number"
+   }
+  ]
+ },
+ "IE": {
+  "name": "Ireland",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 22,
+    "minLength": 22,
+    "type": "text"
+   }
+  ]
+ },
+ "IT": {
+  "name": "Italy",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 27,
+    "minLength": 27,
+    "type": "text"
+   }
+  ]
+ },
+ "JP": {
+  "name": "Japan",
+  "type": "manual",
+  "note": "combine the bank code and branch code to create a full routing number (e.g., 0123456). We also explicitly require the name of the person or business that owns the bank account",
+  "bankKeys": [
+   {
+    "name": "bankName",
+    "placeholder": "Bank Name",
+    "maxLength": 100,
+    "minLength": 1,
+    "type": "text"
+   },
+   {
+    "name": "branchName",
+    "placeholder": "Branch Name",
+    "maxLength": 100,
+    "minLength": 1,
+    "type": "text"
+   },
+   {
+    "name": "bankCode",
+    "placeholder": "Bank Code",
+    "maxLength": 4,
+    "minLength": 4,
+    "type": "number"
+   },
+   {
+    "name": "branchCode",
+    "placeholder": "Branch Code",
+    "maxLength": 3,
+    "minLength": 3,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 8,
+    "minLength": 7,
+    "type": "number"
+   },
+   {
+    "name": "accountOwnerName",
+    "placeholder": "Account Owner Name",
+    "maxLength": 100,
+    "minLength": 1,
+    "type": "text"
+   }
+  ]
+ },
+ "LV": {
+  "name": "Latvia",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 21,
+    "minLength": 21,
+    "type": "text"
+   }
+  ]
+ },
+ "LT": {
+  "name": "Lithuania",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 20,
+    "minLength": 20,
+    "type": "text"
+   }
+  ]
+ },
+ "LU": {
+  "name": "Luxembourg",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 20,
+    "minLength": 20,
+    "type": "text"
+   }
+  ]
+ },
+ "MY": {
+  "name": "Malaysia",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 17,
+    "minLength": 5,
+    "type": "text"
+   }
+  ]
+ },
+ "MT": {
+  "name": "Malta",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 31,
+    "minLength": 31,
+    "type": "text"
+   }
+  ]
+ },
+ "MX": {
+  "name": "Mexico",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "clabe",
+    "placeholder": "CLABE",
+    "maxLength": 18,
+    "minLength": 18,
+    "type": "text"
+   }
+  ]
+ },
+ "NL": {
+  "name": "Netherlands",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 18,
+    "minLength": 18,
+    "type": "text"
+   }
+  ]
+ },
+ "NZ": {
+  "name": "New Zealand",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 16,
+    "minLength": 15,
+    "type": "text"
+   }
+  ]
+ },
+ "NO": {
+  "name": "Norway",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 15,
+    "minLength": 15,
+    "type": "text"
+   }
+  ]
+ },
+ "PL": {
+  "name": "Poland",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 28,
+    "minLength": 28,
+    "type": "text"
+   }
+  ]
+ },
+ "PT": {
+  "name": "Portugal",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 25,
+    "minLength": 25,
+    "type": "text"
+   }
+  ]
+ },
+ "RO": {
+  "name": "Romania",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 24,
+    "minLength": 24,
+    "type": "text"
+   }
+  ]
+ },
+ "SG": {
+  "name": "Singapore",
+  "type": "manual",
+  "note": "combine the bank code and branch code with a hyphen to create a full routing number (e.g., 1234-567)",
+  "bankKeys": [
+   {
+    "name": "bankCode",
+    "placeholder": "Bank Code",
+    "maxLength": 4,
+    "minLength": 4,
+    "type": "number"
+   },
+   {
+    "name": "branchCode",
+    "placeholder": "Branch Code",
+    "maxLength": 3,
+    "minLength": 3,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 12,
+    "minLength": 6,
+    "type": "number"
+   }
+  ]
+ },
+ "SK": {
+  "name": "Slovakia",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 24,
+    "minLength": 24,
+    "type": "text"
+   }
+  ]
+ },
+ "SI": {
+  "name": "Slovenia",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 19,
+    "minLength": 19,
+    "type": "text"
+   }
+  ]
+ },
+ "ES": {
+  "name": "Spain",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 24,
+    "minLength": 24,
+    "type": "text"
+   }
+  ]
+ },
+ "SE": {
+  "name": "Sweden",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 24,
+    "minLength": 24,
+    "type": "text"
+   }
+  ]
+ },
+ "CH": {
+  "name": "Switzerland",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "iban",
+    "placeholder": "IBAN",
+    "maxLength": 21,
+    "minLength": 21,
+    "type": "text"
+   }
+  ]
+ },
+ "GB": {
+  "name": "United Kingdom",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "sortCode",
+    "placeholder": "Sort Code",
+    "maxLength": 8,
+    "minLength": 6,
+    "type": "text"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 50,
+    "minLength": 6,
+    "type": "text"
+   }
+  ]
+ },
+ "US": {
+  "name": "United States",
+  "type": "manual",
+  "note": "",
+  "bankKeys": [
+   {
+    "name": "routingNumber",
+    "placeholder": "Routing Number",
+    "maxLength": 9,
+    "minLength": 9,
+    "type": "number"
+   },
+   {
+    "name": "accountNumber",
+    "placeholder": "Account Number",
+    "maxLength": 50,
+    "minLength": 1,
+    "type": "text"
+   }
+  ]
+ },
+  "HU": {
+   "name": "Hungary",
+   "type": "manual",
+   "note": "",
+   "bankKeys": [
+    {
+     "name": "iban",
+     "placeholder": "IBAN",
+     "maxLength": 28,
+     "minLength": 28,
+     "type": "text"
+    }
+   ]
+  }
+}

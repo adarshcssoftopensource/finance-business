@@ -1,0 +1,176 @@
+.reward-points-box {
+    .reward-single-box {
+        text-align: center;
+    }
+
+    .reward-single-box .box-title {
+        font-size: 16px;
+        margin-bottom: 16px;
+        font-weight: 400;
+    }
+
+    .reward-single-box .box-number sup {
+        font-size: 40%;
+        line-height: 0;
+        display: inline-block;
+        position: absolute;
+        left: 105%;
+        top: 10px;
+    }
+
+    .reward-single-box .box-number {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    .reward-column {
+        border: 1px solid #ededed;
+        box-shadow: 0 -10px 0 0 #114f5f;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reward-column .reward-title {
+        text-align: center;
+        font-size: 24px;
+        padding: 16px;
+        border-bottom: 1px solid #ededed;
+        margin: 0;
+    }
+
+    .reward-column .reward-single-box {
+        padding: 30px 24px;
+        margin: 0 30px;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .reward-column .reward-single-box:last-child {
+        border-bottom: none;
+    }
+
+    .point-icon-list {
+        margin: 0 30px;
+        padding: 30px 0;
+        list-style: none;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .point-icon-list li {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 70px;
+    }
+
+    .point-icon-list li .icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 100px;
+        padding: 10px;
+        background-color: #136acd;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .point-icon-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    .point-icon-list li .box-amount {
+        float: right;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .point-icon-list li .title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .point-icon-list:last-child {
+        border-bottom: none;
+    }
+
+    .reward-activity-box .box-title {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
+
+    .reward-activity-box {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .reward-activity-box .active-circle {
+        width: 150px;
+        height: 150px;
+        border: 6px dashed #14713f;
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 2000px;
+
+        sup {
+            font-size: 50%;
+        }
+    }
+
+    .reward-activity-box .active-circle .amount {
+        font-weight: 700;
+    }
+
+    .activity-detials {
+        text-align: center;
+        border-top: 1px solid #ededed;
+        margin: 0 30px;
+        padding: 30px 0;
+    }
+
+    .activity-detials .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .activity-detials .list li {
+        margin-bottom: 10px;
+    }
+
+    .activity-detials .title {
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
+
+.reward-history-list-table {
+    td {
+        vertical-align: middle;
+    }
+
+    td:nth-last-child(1),
+    td:nth-last-child(2),
+    th:nth-last-child(1),
+    th:nth-last-child(2) {
+        text-align: right;
+        min-width: 100px;
+    }
+
+    .py-table__row .py-table__cell .badge {
+        min-width: 100px;
+    }
+}
+

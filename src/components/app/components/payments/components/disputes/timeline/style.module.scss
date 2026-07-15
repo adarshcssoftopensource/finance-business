@@ -1,0 +1,154 @@
+/* eslint-disable */
+.invoiceTimelineBlock {
+  display: flex;
+  padding-bottom: 10px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    width: 1px;
+    height: 100%;
+    background-color: #e5ecf7;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+
+    &:before {
+      height: calc(100% - 4px);
+    }
+  }
+
+  .marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #136acd;
+    margin-top: 28px;
+    z-index: 3;
+    position: relative;
+
+    .wavesBlock {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.6;
+
+      .waves {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #136acd;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        border-radius: 320px;
+        background-clip: padding-box;
+        -webkit-animation: waves 4s ease-in-out infinite;
+        animation: waves 4s ease-in-out infinite;
+        -webkit-box-shadow: 0 0 5px 0 #136acd;
+        box-shadow: 0 0 5px 0 #136acd;
+      }
+
+      .wave1 {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+
+      .wave2 {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+      }
+
+      .wave3 {
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+      }
+    }
+
+    @-webkit-keyframes waves {
+      0% {
+        -webkit-transform: scale(0.2, 0.2);
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+      }
+
+      50% {
+        opacity: 0.5;
+        -ms-filter: 'alpha(opacity=90)';
+      }
+
+      100% {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+      }
+    }
+
+    @keyframes waves {
+      0% {
+        -webkit-transform: scale(0.2, 0.2);
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+      }
+
+      50% {
+        opacity: 0.5;
+        -ms-filter: 'alpha(opacity=90)';
+      }
+
+      100% {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+      }
+    }
+  }
+
+  .timelineContent {
+    padding: 12px 15px;
+    color: #666;
+    border-radius: 10px;
+    border: 1px solid #e5ecf7;
+    margin-left: 20px;
+    position: relative;
+    background-color: #fff;
+
+    &:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      display: block;
+      position: absolute;
+      border-left: 1px solid #e5ecf7;
+      border-bottom: 1px solid #e5ecf7;
+      left: -8px;
+      transform: rotate(45deg);
+      border-radius: 0 0 0 2px;
+      background: #fff;
+      top: 26px;
+    }
+
+    .timelineTitle {
+      font-weight: 700;
+      font-size: 16px;
+      color: #1c252c;
+    }
+
+    .timelineDesc {
+      font-size: 12px;
+      color: #4d6575;
+    }
+  }
+}

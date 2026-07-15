@@ -1,0 +1,12 @@
+.banking-import-field {
+	.DateRange__dateInput {
+		color: #1c252c;		
+	    border: 1px solid #C2C3C7;
+	    border-top: none;
+	    border-radius: 0px;
+	    margin: -1px 18px 0px;
+	}
+	select#date:focus ~ .react-datepicker-wrapper .react-datepicker__input-container .DateRange__dateInput {
+		border-color: $primary !important;
+	}
+}

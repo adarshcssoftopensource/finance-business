@@ -1,0 +1,703 @@
+.checkoutWrapper {
+
+    .py-header--page {
+        margin-bottom: 20px;
+    }
+
+    .tooltip-btn span,
+    .online-status,
+    .offline-status {
+        color: #fff !important;
+        text-decoration: none !important;
+        padding: 2px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-group {
+        .dropdown-toggle {
+            padding: 10px 10px 10px 2px;
+            line-height: 1em;
+        }
+    }
+
+    .tooltip-btn .online-status,
+    .online-status {
+        background: #5cb85c !important;
+    }
+
+    .tooltip-btn .offline-status,
+    .offline-status {
+        background: #718fa2 !important;
+    }
+
+    .tooltip-btn .archived-status,
+    .archived-status {
+        background: #ef9b25 !important;
+    }
+
+    .share-txt {
+        top: 5px;
+        right: 5px;
+        position: relative;
+        color: #136acd !important;
+        // float: left;
+        cursor: pointer;
+        text-align: right;
+        font-weight: $font-weight-bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .width100 .dropdown {
+        width: 100px !important;
+    }
+
+    .custom-hr {
+        width: 101%;
+        margin-left: -5px;
+    }
+
+    .powered-by-div {
+
+        img,
+        span,
+        i {
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .no-checkouts {
+        .text-secondry {
+            color: $gray-800;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    .business-logo {
+        max-width: 100%;
+        max-height: 200px;
+        width: auto;
+    }
+
+    .checkout-preview-footer {
+        position: relative;
+        width: 100%;
+        margin-top: 200px;
+    }
+
+    .StripeElement {
+        width: 100%;
+        position: relative;
+        border: 1px solid #b2c2cd;
+    }
+
+    .StripeElement--invalid {
+        border: 1px solid #dc3545;
+    }
+
+    .customStripeElement {
+        top: -18px;
+        height: 43px;
+        color: black;
+        padding: 0px !important;
+        border-radius: 4px;
+
+        input {
+            border: none;
+        }
+    }
+
+
+    .StripeElement Input {
+        display: block;
+    }
+
+    .check-preview-card {
+        max-width: 580px;
+        margin: auto;
+        padding: 16px;
+
+        .name {
+            font-size: 23px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 54px;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .checkouts-preview__browser-header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        background: #f4f5f6;
+    }
+
+    .checkouts-preview .circle-container {
+        position: absolute;
+        display: flex;
+        left: 0;
+        margin-left: 10px;
+    }
+
+    .checkouts-preview .circle-container .circle__red {
+        background: #ff6058;
+        margin-right: 8px;
+    }
+
+    .checkouts-preview .circle-container .circle__yellow {
+        background: #ffbd2e;
+        margin-right: 8px;
+    }
+
+    .checkouts-preview .circle-container .circle__green {
+        background: #28ca41;
+    }
+
+    .checkouts-preview .circle-container .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .checkouts-preview__browser-address-input {
+        padding: 4px;
+        border: 1px solid rgba(0, 0, 0, .14);
+        border-radius: 5px;
+        background-color: hsla(0, 0%, 100%, .68);
+        color: #14c577;
+        font-family: sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        width: 430px;
+        max-width: 100%;
+        text-align: center;
+
+        .fa-lock {
+            width: 14px;
+            height: 14px;
+            margin-right: 4px;
+            position: relative;
+        }
+    }
+
+    .ml--1 {
+        margin-left: -1px !important;
+    }
+
+}
+
+.accent-bar {
+    border-top: 16px solid rgb(102, 56, 42) !important;
+}
+
+.message-textarea {
+    resize: none;
+    min-height: 85px;
+}
+
+.checkout {
+    .header {
+        h4 {
+            font-size: 33px;
+            line-height: 40px;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+.stripe-has-error .errors .StripeElement--invalid,
+.has-error,
+.stripe-has-error .StripeElement--empty {
+    border: 1px solid #dc3545 !important;
+    position: relative;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+}
+
+.stripe-has-error .errors {
+    margin-bottom: 0px !important;
+    margin-top: 0px;
+}
+
+.stripe-has-error .errors.bottom {
+    margin-top: -22px;
+}
+
+.stripe-error {
+    color: #dc3545;
+    font-size: 13px;
+    z-index: 1;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+
+
+.checkouts-add {
+    .py-table--form {
+        border: 1px solid #d4dde3;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .less-price {
+        border-color: #a94442 !important;
+    }
+
+
+    .py-table__header {
+        background: $gray-100;
+
+        .py-table__cell,
+        .py-table__cell-amount {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+
+    .memo-error {
+        .text-danger {
+            transform: translateY(0px);
+            text-transform: none !important;
+        }
+    }
+
+    .wdt-28 {
+        width: 28% !important;
+    }
+
+    .py-table__row,
+    .py-table__row--total {
+        display: flex;
+        align-items: center;
+        border: 0;
+        margin: 0;
+    }
+
+    .py-table__cell,
+    .py-table__cell-amount {
+        // width: inherit;
+        padding: 1rem;
+
+        input[name="maxQuantity"] {
+            width: 85px;
+        }
+
+        input[name="memoLabel"] {
+            width: 300px;
+        }
+    }
+
+    .py-table__row--total {
+        border-top: 1px solid #d4dde3;
+        border-bottom: 1px solid #d4dde3;
+
+        .py-table__cell-amount {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+    }
+
+    .product-price-details-row {
+        border-bottom: 1px solid #d4dde3;
+        padding-bottom: 12px;
+
+    }
+
+    .request-address-and-phone-row {
+        flex-flow: wrap;
+        border-bottom: 1px solid #d4dde3;
+
+        .py-switch {
+            .py-toggle__label {
+                margin-left: 0;
+            }
+        }
+
+        .py-table__cell {
+            flex: unset;
+            width: auto;
+        }
+    }
+
+    .py-table__row--taxes {
+        .Select-value {
+            display: inline-flex;
+            flex-flow: row wrap;
+
+            .Select-value-label {
+                white-space: nowrap;
+            }
+        }
+
+        .checkout-item-row-tax-section__tax__add {
+            width: 100%;
+        }
+
+        .Select {
+            width: 100%;
+        }
+
+        .py-text {
+            min-width: 100px;
+            width: 100%;
+            text-align: right;
+            display: block;
+            word-break: break-word;
+
+            @media (max-width: 768px) {
+                min-width: inherit;
+            }
+        }
+    }
+
+    .checkout-item-row-tax-section__desc__add__field {
+        min-height: 170px;
+    }
+
+    .invoice-item-row-tax-section__tax__add {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .Select-menu-outer {
+            min-width: 210px;
+        }
+    }
+
+    .checkout-item-row-tax-section__tax__amount {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-right: 5px;
+
+        .py-text {
+            margin: 0px;
+        }
+    }
+}
+
+.checkout-item-row-tax-section__taxes {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+}
+
+.checkout-list-table {
+    height: 100vh;
+    table {
+        .badge-success {
+            >* {
+                // color: darken($success, 50%) !important;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        th {
+            &:first-child {
+                width: 130px;
+            }
+
+            &:nth-last-child(2) {
+                text-align: right;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+
+        .py-table__cell-amount {
+            text-align: right !important;
+        }
+
+        .py-table__cell {
+            width: auto;
+        }
+
+        .py-text--link {
+            color: inherit;
+        }
+
+
+        .checkouts-action-row {
+            .py-text--link {
+                font-weight: $font-weight-bold;
+                color: $primary;
+            }
+
+            .text-right {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.checkout-list-table {
+    .py-table--condensed {
+        .py-table__row {
+            .title-col {
+                max-width: 400px;
+                width: 400px;
+            }
+
+            .date-col,
+            .amount-col {
+                width: 150px;
+            }
+
+            .checkouts-action-row {
+                width: 240px;
+            }
+        }
+    }
+
+    @media (max-width: 980px) {
+        .react-bootstrap-table {
+            max-width: 100%;
+        }
+    }
+
+
+}
+
+
+// checkout share
+
+.checkouts-share__header {
+    margin-top: 4px;
+    margin-bottom: 30px;
+
+    .py-header--page {
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .py-header--title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .badge {
+            margin-left: .5rem;
+            height: auto;
+        }
+    }
+
+    .btn+.btn {
+        margin-left: .5rem;
+    }
+}
+
+
+.checkouts-share__body {
+    display: flex;
+    flex-direction: column;
+
+    .py-box--card {
+        border: none;
+
+        .py-box__header {
+            display: block;
+            padding: 0px;
+            border-bottom: none;
+
+            .h4 {
+                font-size: 18px;
+            }
+        }
+
+        .py-text--link-share {
+            border: none;
+            padding: 0px;
+            font-size: 15px;
+        }
+    }
+
+    .py-box--content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid #b2c2cd;
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 15px;
+
+
+        .py-text--link-share {
+            flex: 1;
+            margin-right: 2rem;
+        }
+
+        .py-divider {
+            flex-basis: 100%;
+            margin: 10px auto;
+        }
+    }
+
+    .checkouts-share__helpful-links {
+        flex: 1;
+        margin-top: 25px;
+
+        .py-heading--section-title {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        .py-text {
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .checkouts-share__help-article-container {
+        display: flex;
+        margin: 24px 0;
+    }
+
+    .checkouts-share__help-article {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+}
+
+.py-text--link-share {
+    font-size: 15px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.checkouts-add__body {
+
+    .py-table__row {
+
+        .py-table__cell,
+        .py-table__cell-amount {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            word-break: break-all;
+        }
+    }
+}
+
+.badge.badge-off {
+    background-color: #d1d7d8;
+    color: #485153;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.checkout-not-availale {
+    .error-text {
+        color: #FC1E4F;
+        font-size: 24px;
+    }
+}
+
+.content-wrapper__main {
+    &.checkoutWrapper.false {
+        .no-checkouts {
+            margin-top: -30px;
+        }
+    }
+}
+
+.content-wrapper__main__fixed {
+    .no-checkouts {
+        margin-top: -30px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .public-checkout__footer {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .ms-auto {
+            margin-left: 0 !important;
+        }
+    }
+
+}
+
+.public-checkout__inner-container {
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.fit-card-field {
+
+    .form-control {
+        margin: 0px;
+
+        &:focus {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
+.tab-2 {
+    width: 100%;
+    border: 1px solid #136ACD;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .nav-item {
+        width: 50%;
+
+        .nav-link {
+            justify-content: center;
+            height: 42px;
+            font-weight: 700;
+            color: #136ACD;
+            border-radius: 0;
+
+            &.active {
+                color: #ffffff;
+            }
+
+            &:not(.active):hover {
+                color: #136ACD;
+            }
+        }
+    }
+}

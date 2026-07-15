@@ -1,0 +1,282 @@
+.closeUser-wrp {
+  padding-top: 50px;
+
+  .content {
+    text-align: center;
+  }
+
+  .py-logo {
+    width: 250px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    text-indent: 20%;
+    background: url('../../assets/logo/finance-logo.png') left top no-repeat;
+    background-size: auto 32px;
+    background-size: auto 100%;
+    user-select: text !important;
+    font-size: 25px;
+    line-height: 2;
+    font-weight: 800;
+  }
+
+  .peyTitle {
+    font-size: 33px;
+    line-height: 40px;
+    font-weight: $font-weight-bold;
+    margin-top: 30px;
+  }
+
+  .ta-l {
+    text-align: left;
+  }
+
+  .content-wrp {
+    margin-top: 20px;
+    padding: 50px;
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+}
+
+// start:: Alex
+.py-frame__settings {
+  .py-page__inner {
+    max-width: 1108px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2rem 1.5rem;
+    display: block;
+  }
+
+  .col-form-label {
+    padding: 0;
+    padding: 0.75rem 0.9rem 0.75rem 0;
+  }
+}
+// end:: Alex
+
+.py-page__content {
+  width: 100%;
+  @media (min-width: 1070px) {
+    //min-height: 100vh;
+    height: 100%;
+    overflow: auto;
+
+    .py-page__content {
+      overflow: inherit !important;
+      height: auto !important;
+    }
+  }
+}
+
+.has-sidebar {
+  .py-page__inner {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+
+    @media (min-width: 1700px) {
+      &.users_contents {
+        max-width: 1108px;
+        min-width: inherit;
+      }
+    }
+  }
+  .invite-sec {
+    .invite_form_field {
+      .py-form-field__element {
+        width: 100%;
+      }
+      .py-select--native {
+        max-width: 100%;
+      }
+    }
+    .py-page__inner-content {
+      padding-left: 0;
+      padding-right: 0;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
+      overflow-y: scroll;
+      box-shadow: 0 8px 32px rgba(77, 101, 117, 0.35);
+      border-radius: 12px;
+      overflow: inherit;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .invite-form-footer {
+      margin-top: 30px;
+    }
+  }
+}
+
+.users_contents {
+  .py-header--page {
+    display: block;
+    margin-top: 0px;
+  }
+}
+
+.table-business-list {
+  .py-text--link-primary {
+    &:hover {
+      text-decoration: underline;
+      color: $blue-light;
+    }
+  }
+}
+
+.py-page__content {
+  &.connected_accounts {
+    .py-table {
+      .py-table__cell,
+      .py-table__cell__action,
+      .py-table__cell-amount {
+        padding: 12px;
+      }
+    }
+
+    .py-table__cell__action {
+      text-align: right;
+    }
+
+    .accounts-list {
+      .google {
+        font-size: 0px;
+        line-height: 0;
+        position: relative;
+        width: 80px;
+        height: 20px;
+        display: block;
+
+        &:before {
+          content: url('https://storage.googleapis.com/finance_storage_bucket/static/web-assets/logo-google.png');
+        }
+      }
+    }
+
+    .py-table__cell {
+      .badge {
+        min-width: 100px;
+      }
+    }
+
+    .py-table__cell__action {
+      width: 220px;
+
+      .py-text--link {
+        font-size: 13px;
+      }
+    }
+    .py-heading--section-title {
+      margin-bottom: 20px;
+    }
+    .py-text {
+      margin-bottom: 20px;
+    }
+    .py-btn-container {
+      .py-text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .login-table {
+      .py-table__cell__action {
+        text-align: center;
+        width: 160px;
+
+        .fa-check {
+          font-size: 20px;
+          color: #26b569;
+        }
+      }
+    }
+  }
+}
+
+.py-page__inner {
+  &.personal_information {
+    .py-text {
+      margin-bottom: 20px;
+    }
+    .py-heading--section-title {
+      margin-top: 12px;
+    }
+  }
+}
+
+.productServicesWrapper {
+  .py-header--page {
+    .py-text {
+      margin-bottom: 0px;
+      margin-top: 17px;
+    }
+  }
+}
+
+.card-table-row-title-section .badge {
+  min-width: 90px;
+}
+
+.table-business-list {
+  tr {
+    td {
+      vertical-align: middle !important;
+    }
+  }
+}
+.card-table-row-title-section {
+  max-width: 100%;
+}
+
+.edit-profile-form-fields,
+.editprofile {
+  .form-control,
+  [contenteditable='true'],
+  body
+    .py-datepicker--range
+    .react-datepicker-wrapper
+    .react-DateRange__dateInput-container,
+  .DateRange__container {
+    margin: 0px;
+  }
+}
+
+.edit-profile-form-fields {
+  .py-form__element__small,
+  .py-form__element__medium {
+    max-width: 100% !important;
+  }
+}
+
+.btn-social--google {
+  border: 1px solid rgb(236, 244, 255);
+  padding: 9px 20px 8px 12px;
+  background-color: rgb(236, 244, 255);
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px rgb(236, 244, 255);
+  display: inline-flex;
+  align-items: center;
+
+  &:before {
+    content: url("data:image/svg+xml,%0A%3Csvg id='brands-and-logotypes' xmlns='http://www.w3.org/2000/svg' width='24.032' height='24.032' viewBox='0 0 24.032 24.032'%3E%3Cpath id='Path_789' data-name='Path 789' d='M5.744,107.433a6.112,6.112,0,0,1,.916-3.219v-4H2.529a11.568,11.568,0,0,0,0,14.437H6.66v-4A6.112,6.112,0,0,1,5.744,107.433Z' transform='translate(0 -95.418)' fill='%23fbbd00'/%3E%3Cpath id='Path_790' data-name='Path 790' d='M198.872,373.872,196,376.745l2.872,2.872a12.162,12.162,0,0,0,7.457-2.529v-4.127H202.2A6.509,6.509,0,0,1,198.872,373.872Z' transform='translate(-186.934 -355.585)' fill='%230f9d58'/%3E%3Cpath id='Path_791' data-name='Path 791' d='M56.955,325.477l-4.132,4.132a12.453,12.453,0,0,0,1.061,1.208,12.175,12.175,0,0,0,8.665,3.589v-5.744A6.513,6.513,0,0,1,56.955,325.477Z' transform='translate(-50.294 -310.374)' fill='%2331aa52'/%3E%3Cpath id='Path_792' data-name='Path 792' d='M268.255,200.133a12.361,12.361,0,0,0-.2-2.22l-.108-.589H256v5.744h5.814a6.481,6.481,0,0,1-2.484,2.663l4.127,4.127a12.444,12.444,0,0,0,1.208-1.061A12.175,12.175,0,0,0,268.255,200.133Z' transform='translate(-244.223 -188.356)' fill='%233c79e6'/%3E%3Cpath id='Path_793' data-name='Path 793' d='M203.476,7.651l.508.508L208.045,4.1l-.508-.508A12.175,12.175,0,0,0,198.872,0L196,2.872l2.872,2.872A6.468,6.468,0,0,1,203.476,7.651Z' transform='translate(-187.095 0)' fill='%23cf2d48'/%3E%3Cpath id='Path_794' data-name='Path 794' d='M62.548,5.744V0a12.175,12.175,0,0,0-8.665,3.589A12.438,12.438,0,0,0,52.822,4.8l4.132,4.132a6.513,6.513,0,0,1,5.595-3.184Z' transform='translate(-50.293 0)' fill='%23eb4132'/%3E%3C/svg%3E%0A");
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    box-shadow: rgba(19, 106, 205, 0.2) 0px 0px 0px 3px !important;
+  }
+}
+
+.onboarding-page-wrapper .py-page__content {
+  overflow: hidden;
+}

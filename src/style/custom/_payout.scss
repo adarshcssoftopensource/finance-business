@@ -1,0 +1,213 @@
+.payout-list {
+
+    td.reset-expansion-style:hover {
+        background: #fff;
+    }
+
+    .py-table__cell-amount {
+        color: #0ea90e;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    thead th:last-child,
+    .payout-transactions thead th:nth-last-child(2),
+    .payout-transactions thead th:nth-last-child(3),
+    .py-table__cell-action {
+        text-align: right !important;
+    }
+
+    .py-table__row {
+        height: 45px;
+    }
+
+    .status {
+        padding: 4px 12px 4px 14px;
+        display: inline-block;
+        font-size: 12px;
+        max-width: 130px;
+        text-align: center;
+        font-weight: 500;
+        border-radius: 40px 12px 12px 40px;
+        text-transform: uppercase;
+    }
+}
+
+.status-success {
+    color: #14713f;
+    background-color: #adf0cc !important;
+}
+
+.status-processing,
+.status-created {
+    color: #395260;
+    background: #C7D3DC 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.status-failed {
+    color: #686307;
+    background-color: #eee991 !important;
+}
+
+.details-bg-success {
+    background-color: #beffdc;
+}
+
+.details-bg-processing,
+.details-bg-created {
+    background-color: #c7d3dca6;
+}
+
+.details-bg-failed {
+    background-color: #fefcc9;
+}
+
+.details-wrapper {
+    background: #fff;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 10px;
+    box-shadow: lightgrey 1px 2px 5px;
+
+    .detail-row {
+        padding: 30px;
+        border-radius: 6px;
+        background-color: #EEF4FB;
+        border-radius: 10px;
+
+        .detail_title {
+            font-weight: 600;
+            margin-bottom: 15px;
+
+            .dt-icon {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                background-color: #E3EDF8;
+                display: inline-block;
+                text-align: center;
+                border-radius: 5px;
+                margin-right: 5px;
+            }
+        }
+
+        .detail_value {
+            font-weight: 700;
+        }
+    }
+
+    .detail_title {
+        color: #136acd;
+    }
+
+    .detail_value {
+        color: #000;
+        font-size: 24px;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .transaction-in-payout {
+        font-size: 16px;
+        font-weight: 500;
+        padding-top: 10px;
+    }
+}
+
+.py-payment-card.py-payment__bank {
+    background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='267' height='151' viewBox='0 0 267 151'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_16' data-name='Rectangle 16' width='267' height='151' rx='20' transform='translate(4181 336)' fill='%23136acd'/%3E%3C/clipPath%3E%3ClinearGradient id='linear-gradient' x1='0.744' y1='0.75' x2='-0.2' y2='0.266' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='1' stop-color='gray' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg id='Group_42' data-name='Group 42' transform='translate(-4181 -336)'%3E%3Crect id='Rectangle_15' data-name='Rectangle 15' width='267' height='151' rx='20' transform='translate(4181 336)' fill='%23136acd'/%3E%3Cg id='Mask_Group_1' data-name='Mask Group 1' clip-path='url(%23clip-path)'%3E%3Cg id='Group_41' data-name='Group 41' transform='translate(-384.665 30.976)' opacity='0.05'%3E%3Cpath id='Path_16' data-name='Path 16' d='M17.594,97.689h147.52a8.094,8.094,0,0,0,0-16.189H17.594A8.118,8.118,0,0,0,9.5,89.594,8.249,8.249,0,0,0,17.594,97.689Z' transform='translate(4476.5 384.226)' fill='%23fff' fill-rule='evenodd'/%3E%3Cg id='Group_39' data-name='Group 39' transform='translate(4506.236 384.984)'%3E%3Cpath id='Path_17' data-name='Path 17' d='M47.224,114.045H62.6a1.912,1.912,0,0,0,2.024-2.024v-68.4A1.912,1.912,0,0,0,62.6,41.6H47.224A1.912,1.912,0,0,0,45.2,43.624v68.4A2.028,2.028,0,0,0,47.224,114.045Z' transform='translate(3.973 -41.6)' fill='%23fff' fill-rule='evenodd'/%3E%3Cpath id='Path_18' data-name='Path 18' d='M72.424,114.045H87.8a1.912,1.912,0,0,0,2.024-2.024v-68.4A1.912,1.912,0,0,0,87.8,41.6H72.424A1.912,1.912,0,0,0,70.4,43.624v68.4A2.028,2.028,0,0,0,72.424,114.045Z' transform='translate(29.768 -41.6)' fill='%23fff' fill-rule='evenodd'/%3E%3Cpath id='Path_19' data-name='Path 19' d='M22.924,114.045H38.3a1.912,1.912,0,0,0,2.024-2.024v-68.4A1.912,1.912,0,0,0,38.3,41.6H22.924A1.912,1.912,0,0,0,20.9,43.624v68.4A2.028,2.028,0,0,0,22.924,114.045Z' transform='translate(-20.9 -41.6)' fill='%23fff' fill-rule='evenodd'/%3E%3C/g%3E%3Cpath id='Path_20' data-name='Path 20' d='M159.346,55.854,92.973,12.144a9.775,9.775,0,0,0-10.927,0L15.671,55.854A5.059,5.059,0,0,0,18.3,65.163H156.311A5.109,5.109,0,0,0,159.346,55.854Zm-71.837-3.44A9.284,9.284,0,0,1,78.2,43.105a9.309,9.309,0,1,1,18.617,0A9.284,9.284,0,0,1,87.509,52.414Z' transform='translate(4478.716 311.525)' fill='%23fff' fill-rule='evenodd'/%3E%3C/g%3E%3Cpath id='Path_21' data-name='Path 21' d='M4324.7,336s19.336,40.455,54.383,35.621,36.256,5.438,38.069,16.919,9.668,38.068,31.421,32.63,45.924-56.2,45.924-56.2l-32.63-79.763-142-6.043Z' opacity='0.1' fill='url(%23linear-gradient)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A") no-repeat scroll center center !important;
+}
+
+.card_wrapper {
+    width: 290px;
+    float: right;
+
+    .bank-card {
+        color: #FFFFFF;
+        background: url('../../assets/images/bank-card-bg.jpg') no-repeat scroll center center / cover;
+        width: 100%;
+        min-height: 180px;
+        padding: 20px;
+        position: relative;
+        border-radius: 16px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+
+        .star {
+            padding-top: 2px;
+        }
+
+        .card-icon {
+            .Icon {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        
+
+        .footer-card {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-top: auto;
+
+            .card-icon {
+                margin-top: 10px;
+            }
+
+            .card-description {
+                margin-right: auto;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .top-space {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        padding: 20px;
+    }
+}
+
+
+.receipt_settings {
+    .card_wrapper {
+        float: none;
+        margin: auto;
+    }
+}
+
+.payout-update {
+    button {
+        padding-left: 0px;
+        padding-right: 0px;
+
+        .btn.cursor-pointer {
+            width: 221px;
+            text-align: center;
+        }
+    }
+}
+
+.payout-list {
+    thead {
+        tr {
+            th {
+
+                &:nth-child(5),
+                &:nth-child(6) {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

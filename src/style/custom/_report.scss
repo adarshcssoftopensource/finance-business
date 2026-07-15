@@ -1,0 +1,117 @@
+.reports-page-wrapper {
+    .reports__body-item {
+        position: relative;
+        display: block;
+
+        &:hover {
+            .py-heading--subtitle {
+                text-decoration: underline;
+                color: #136acd;
+            }
+        }
+    }
+
+    .reports__body-item:not(:last-child) {
+        padding-bottom: 24px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .reports__body-item .py-heading--subtitle {
+        margin: 0 0 12px 0;
+
+        i {
+            float: right;
+            font-size: 20px;
+        }
+    }
+
+    .reports__body-item .py-text {
+        margin: 0;
+        color: #4d6575;
+    }
+
+    .cash-flow-overview--single {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        padding: 0 70px;
+        text-align: center;
+
+        .cash-flow-overview--single__block {
+            width: 100%;
+
+            .py-number {
+                font-size: 33px;
+
+                &.py-number--positive {
+                    color: #14713f;
+                }
+
+                &.py-number--negative {
+                    color: #a90909;
+                }
+            }
+
+            .py-text--block-label {
+                font-size: 14px;
+                font-weight: 700;
+                color: #47545c;
+            }
+        }
+    }
+
+    .py-table {
+        p {
+            margin-bottom: 0;
+        }
+
+        .py-table__cell--grandtotal {
+            text-align: right;
+        }
+
+        .py-table__row--header .py-table__cell,
+        .py-table__row--header .py-table__cell--amount,
+        .py-table__row--header .py-table__cell--grandtotal,
+        .py-table__row--header .py-table__cell--subgroup,
+        .py-table__row--header .py-table__cell--actions {
+            background-color: #ecf0f3;
+            border-bottom: 1px solid #d4dde3;
+        }
+
+        .py-table__row--header .py-table__cell,
+        .py-table__row--header .py-table__cell--amount,
+        .py-table__row--header .py-table__cell--grandtotal,
+        .py-table__row--header .py-table__cell--subgroup,
+        .py-table__row--header .py-table__cell--actions,
+        .py-table__row--subheader .py-table__cell,
+        .py-table__row--subheader .py-table__cell--amount,
+        .py-table__row--subheader .py-table__cell--grandtotal,
+        .py-table__row--subheader .py-table__cell--subgroup,
+        .py-table__row--subheader .py-table__cell--actions,
+        .py-table__row--total .py-table__cell,
+        .py-table__row--total .py-table__cell--amount,
+        .py-table__row--total .py-table__cell--grandtotal,
+        .py-table__row--total .py-table__cell--subgroup,
+        .py-table__row--total .py-table__cell--actions {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .py-table__cell--amount {
+            text-align: right;
+        }
+
+        .py-table__row--header .py-table__cell,
+        .py-table__row--header .py-table__cell--amount,
+        .py-table__row--header .py-table__cell--grandtotal,
+        .py-table__row--header .py-table__cell--subgroup,
+        .py-table__row--header .py-table__cell--actions {
+            background-color: #ecf0f3;
+            border-bottom: 1px solid #d4dde3;
+        }
+    }
+}

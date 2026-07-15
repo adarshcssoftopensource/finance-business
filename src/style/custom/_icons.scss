@@ -1,0 +1,116 @@
+.Icon {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  fill: currentColor;
+  flex-shrink: 0;
+
+  .Icon__Svg {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+
+  svg {
+    fill: currentColor;
+  }
+
+  >div {
+    display: inline-flex;
+  }
+
+
+  .py-svg-icon,
+  svg {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &.fas,
+  &.fa,
+  &.far,
+  &.pe {
+    &::before {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .fa,
+  .fas,
+  .far,
+  .pe {
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    line-height: 20px;
+  }
+}
+
+.Icon__Md {
+  width: 24px;
+  height: 24px;
+}
+
+.Icon--small {
+  width: 18px;
+  height: 18px;
+  font-size: 1rem;
+  vertical-align: sub;
+  line-height: 1.4rem;
+}
+
+.Icon__M {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.Icon__Lg {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+
+  .Icon__Svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.Icon--xlg {
+  width: 80px;
+  height: auto;
+  fill: currentColor;
+}
+
+.py-svg-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.py-logo--lg {
+  width: auto;
+  display: inline-block;
+  max-height: 100px;
+}
+
+.Icon__hasBackdrop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 4px;
+}
+
+.Icon__colorDarkYellow {
+  color: darken($warning, 10%);
+}

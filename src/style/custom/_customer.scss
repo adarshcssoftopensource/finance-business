@@ -1,0 +1,119 @@
+.customerWrapper{
+    .customerTable{
+        tr{
+            th{
+                font-size: 16px;
+                font-weight: $font-weight-bold;
+            }
+            td{
+                .customerIcon{
+                    color: #344551;
+                  margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    .py-table--condensed{
+        th,
+        .py-table__cell,
+        .py-table__cell-amount,
+        .py-table__cell__action,
+        .py-table__cell,
+        .py-table__cell-amount,
+        .py-table__cell__action {
+            &:last-child {
+                width: 160px;
+            }
+        }
+    } 
+
+  input.form-check-input.shippingCheck {
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    }
+}
+
+.autocomplete-dropdown-container {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    margin-top: -1px;
+    max-height: 200px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 250px;
+    z-index: 99;
+    -webkit-overflow-scrolling: touch;
+
+    .suggestion-item {
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #1c252c;
+        cursor: pointer;
+        display: block;
+        padding: 10px;
+        border-left: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
+
+        &:first-child {
+            border-top: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0px 0px;
+        }
+        &:last-child {
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 0px 0px 5px 5px;
+        }
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.paymentTable-customer {
+    position: relative;
+
+    .vr-middle {
+        min-height: 100px;
+    }
+}
+
+.vr-middle {
+    min-height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.z-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.vh-60 {
+    height: 60vh;
+}
+
+.customerWrapper {
+    .react-bootstrap-table {
+        max-width: 100%;
+
+        .table {
+            min-width: 870px;
+        }
+    }
+}

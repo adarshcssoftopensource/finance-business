@@ -1,0 +1,25 @@
+.nav-tabs {
+  .nav-item {
+    .nav-link {
+      padding: 8px;
+      margin-right: 16px;
+      border: 0;
+      cursor: pointer;
+      font-weight: $font-weight-normal;
+      color: #4d6575;
+      opacity: 1;
+      font-size: 15px;
+
+      &.active {
+        border-bottom: 4px solid $primary;
+        font-weight: $font-weight-bold;
+        color: $black;
+      }
+      &:hover {
+        border-bottom: 4px solid #d4dde3;
+        color: $black;
+      }
+
+    }
+  }
+}

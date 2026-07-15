@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="#E5E5E5"/>
+<g id="Icons">
+<rect x="-552" y="-49" width="816" height="1000" fill="white"/>
+<g id="account_balance">
+<path id="icon/action/account_balance_24px" fill-rule="evenodd" clip-rule="evenodd" d="M2.08325 5.83332L9.99992 1.66666L17.9166 5.83332V7.49999H2.08325V5.83332ZM9.99992 3.54999L14.3416 5.83332H5.65825L9.99992 3.54999ZM4.16657 9.16666H5.83324V15H4.16657V9.16666ZM9.16657 9.16666H10.8332V15H9.16657V9.16666ZM2.08325 16.6667V18.3333H17.9166V16.6667H2.08325ZM14.1666 9.16666H15.8332V15H14.1666V9.16666Z" fill="black"/>
+</g>
+</g>
+</svg>

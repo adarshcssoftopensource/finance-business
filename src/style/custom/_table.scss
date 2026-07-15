@@ -1,0 +1,581 @@
+// Tables
+// Prefix: py-table
+
+$table-row-border-color: #d4dde3;
+$table-hover-bg: #e6f1ff;
+
+.table-bordered {
+  border: none;
+}
+
+.table {
+  td {
+    vertical-align: inherit;
+  }
+}
+
+.table {
+  thead {
+    tr {
+      &:last-child {
+        border-bottom: 2px solid $border-color;
+        border-top: 0;
+      }
+
+      th {
+        border: 0;
+      }
+    }
+
+  }
+
+  tbody {
+    tr {
+      &:first-child {
+        td {
+          border-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.py-table__v__center {
+  .py-table__row {
+
+    td,
+    th,
+    .py-table__cell,
+    .py-table__cell-amount,
+    .py-table__cell__action {
+      vertical-align: middle;
+
+      .py-text--link {
+        float: left;
+        margin-top: 3px;
+      }
+
+      .btn.btn-secondary {
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.table-hover,
+.py-table--hover {
+  tbody {
+
+    .py-table__row,
+    tr:not(.no-hover) {
+      cursor: pointer;
+
+      &:not(.no-hover):hover {
+        background: $table-hover-bg;
+      }
+
+    }
+  }
+
+}
+
+.no-hover:hover {
+  background: none !important;
+}
+
+.react-bootstrap-table {
+  .table {
+    border-radius: 5px;
+
+    tr {
+      th {
+        border: 0;
+        padding-bottom: 8px;
+        vertical-align: bottom;
+        font-size: 15px;
+
+        &.sortable {
+          cursor: pointer;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #d4dde3;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        td {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+.react-bootstrap-table {
+  .order {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    line-height: 9px;
+
+    .caret {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      line-height: 10px;
+      left: 5px;
+
+      &:before {
+        content: "\F0D7";
+        font-family: 'Font Awesome 5 Pro';
+        font-size: 14px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 10px;
+      }
+    }
+
+    &>.dropdown,
+    &>.dropup {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+
+    .dropup {
+      .caret:before {
+        content: "\F0D8";
+      }
+    }
+  }
+
+  .sortable {
+    &.sort-asc {
+      .order {
+        .dropup {
+          display: none;
+        }
+
+        .dropdown {
+          display: block;
+        }
+      }
+    }
+
+    &.sort-desc {
+      .order {
+        .dropup {
+          display: block;
+        }
+
+        .dropdown {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+
+.react-bs-table-sizePerPage-dropdown .dropdown-toggle {
+  color: #1c252c !important;
+  background: #ffffff !important;
+  border: 1px solid #b2c2cd;
+  border-radius: 4px;
+  padding: 4px 12px 4px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 30px;
+
+  &.toggle {
+    border-radius: 4px 4px 0px 0px !important;
+    color: $primary !important;
+    border-color: $primary !important;
+    box-shadow: 0 0 0 3px rgba($primary, .2) !important;
+  }
+}
+
+.react-bs-table-sizePerPage-dropdown .dropdown-toggle:after {
+  margin-left: 8px;
+}
+
+.react-bootstrap-table-pagination .react-bootstrap-table-pagination-list .pagination {
+  justify-content: flex-end;
+
+  .page-item {
+    .page-link {
+      color: $primary;
+    }
+
+    &.active .page-link {
+      z-index: 1;
+      color: $white;
+      background-color: $primary;
+      border-color: $primary;
+      border-color: $primary;
+    }
+  }
+}
+
+
+.py-table__header,
+th {
+
+  td,
+  .py-table__cell,
+  .py-table__cell-amount,
+  .py-table__cell__action {
+    padding-top: 20px;
+    padding-bottom: 8px;
+  }
+}
+
+.py-table {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid $border-color;
+
+  .popover_wrapper {
+    font-size: 16px;
+  }
+
+  .py-table__cell,
+  .py-table__cell__action,
+  .py-table__cell-amount {
+    padding: 12px 8px;
+
+    .py-text--hint {
+      white-space: nowrap;
+      overflow: hidden;
+      display: block !important;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .badge {
+      min-width: 80px;
+    }
+  }
+}
+
+.py-table__row {
+  border-bottom: 1px solid $table-row-border-color;
+}
+
+tbody {
+  .py-table__row {
+    &:not(.no-hover):hover {
+      background-color: #e6f1ff;
+    }
+  }
+}
+
+.py-table__cell__action__icons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.py-table__cell-amount {
+  text-align: right;
+  // font-variant-numeric: tabular-nums;
+}
+
+.py-table__cell__action {
+  text-align: center;
+  width: 160px;
+}
+
+
+.py-table__action {
+  margin: 0 8px;
+  cursor: pointer;
+  color: $black;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: $black;
+  }
+
+
+  .icon {
+    width: unset;
+    height: unset;
+    display: inline-block;
+    cursor: pointer;
+
+
+    +.icon {
+      margin-left: 1rem;
+
+    }
+
+    .pe,
+    .fa,
+    .fas,
+    .far {
+      pointer-events: none;
+
+      &:before {
+        font-size: 20px;
+        text-align: center;
+        color: $black;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+      }
+    }
+
+  }
+}
+
+.py-table__action__danger {
+
+  &:active,
+  &:focus,
+  &:hover {
+
+    a,
+    .fa,
+    .fas,
+    .far,
+    svg {
+      color: $danger;
+      fill: $danger;
+    }
+  }
+
+}
+
+.py-table--condensed,
+.py-table--condensed table {
+
+  thead {
+    tr {
+      th {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  tbody {
+
+    thead {
+      tr {
+        th {
+          padding-right: 8px;
+          padding-left: 8px;
+        }
+      }
+    }
+
+
+    .py-table__row {
+
+      .py-table__cell,
+      .py-table__cell-amount,
+      .py-table__cell__action {
+        padding: 6px 8px;
+        max-width: 300px;
+
+        .el-text {
+          overflow: hidden;
+          display: block;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .py-table__cell-amount {
+        padding: 0px 8px;
+      }
+
+      .py-table__cell__action {
+        max-width: 160px;
+      }
+    }
+
+  }
+}
+
+.estimate-list-table {
+  .py-table__row {
+    .py-table__cell__action {
+      width: 60px;
+    }
+  }
+}
+
+.checkout-list-table {
+  .py-table--condensed {
+    .py-table__row {
+      .py-table__cell {
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+
+.py-table--condensed,
+.py-table--condensed>table {
+  thead {
+    th:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.invoice-status-badge,
+.checkouts-share__header,
+.invoice-view-summary__status,
+.public-preview-page {
+  .badge {
+    min-width: 80px;
+  }
+}
+
+.py-table,
+.py-table--condensed {
+  .py-table__row {
+
+    .py-table__cell,
+    .py-table__cell-amount,
+    .py-table__cell__action {
+
+      .badge {
+        padding: 4px 12px;
+        font-size: 13px;
+        min-width: 80px;
+      }
+
+    }
+  }
+
+}
+
+.py-table__cell {
+  .form-control {
+    margin: 0;
+  }
+}
+
+.py-table {
+  background: $white;
+}
+
+.py-table__cell {
+  padding: 0 16px;
+}
+
+.products-list {
+  .py-table__row {
+    td {
+      .badge {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+.py-table__v__center {
+  .py-table__row {
+    .py-table__cell-amount {
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+.skip-table-space {
+  margin: -8px 0;
+  display: block;
+}
+
+
+.product-service-wrapper {
+  .react-bootstrap-table {
+    .table {
+      min-width: 440px;
+
+      tr {
+        th {
+          &:nth-last-child(2) {
+            text-align: right;
+          }
+        }
+      }
+
+      .py-text--hint,
+      .py-text--hint,
+      .py-text--hint {
+        white-space: inherit;
+      }
+    }
+  }
+}
+
+.customerWrapper,
+.bill-list,
+.vendor-list-table,
+.product-service-wrapper {
+  .py-table__row {
+
+    .py-table__cell,
+    .py-table__cell-amount,
+    .py-table__cell__action,
+    .py-table__cell,
+    .py-table__cell-amount,
+    .py-table__cell__action {
+      height: 60px;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+.customerWrapper,
+.product-service-wrapper {
+  tr {
+
+    th,
+    td {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+  }
+}
+
+.invoice-bill-amount-due-paid {
+  max-width: 300px;
+
+  .py-text--hint {
+    white-space: inherit;
+  }
+}
+
+.align-center-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

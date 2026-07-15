@@ -1,0 +1,122 @@
+// Invoice view with card 
+
+.invoice-step-Collapsible__header-content {
+  display: flex;
+  flex: 1;
+
+  .py-heading--subtitle {
+    margin: 0;
+    flex: 1;
+    padding-top: 5px;
+    white-space: nowrap;
+
+    h4 {
+      margin-bottom: 0;
+    }
+
+    .refresh-action {
+      border: none;
+      border-radius: 50rem;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      margin-left: 5px;
+      background-color: transparent;
+      color: #4d6575;
+
+      .Icon {
+        width: 14px;
+        height: 14px;
+      }
+
+      &:hover {
+        background: rgba($primary, .2);
+      }
+    }
+  }
+
+  .invoice-step-card__actions {
+    .btn {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .collapse-arrow {
+    margin-left: auto;
+    margin-top: 10px;
+    transform: rotate(180deg);
+    height: 20px;
+    margin: 10px;
+    line-height: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &.collapsed {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media (min-width: 580px) {
+    .invoice-steps-card__content {
+      padding-left: 65px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    flex-wrap: wrap;
+
+    .py-heading--subtitle {
+      margin-bottom: 15px;
+    }
+
+  }
+}
+
+.invoice-view__body__vertical-line {
+  margin: -15px 0 0 39px;
+  height: 18px;
+  width: 3px;
+  background: $border-color;
+}
+
+.invoice-view-billing__details {
+  p {
+    line-height: 1.4;
+  }
+}
+
+
+.steps-notifier {
+  display: block !important;
+  width: 100% !important;
+
+
+  &.status-draft {
+    @extend .alert-info;
+  }
+}
+
+.invoice-view-payment-section__content__payment-details__description {
+  margin-bottom: 12px;
+}
+
+.invoice-create-info {
+  // display: flex;
+  align-items: center;
+}
+
+.hover-rotate {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transform: rotate(45deg);
+  }
+}

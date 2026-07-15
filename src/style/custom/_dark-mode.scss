@@ -1,0 +1,1296 @@
+.dark-mode {
+  color: #9ea7b9;
+  background-color: #151a30;
+
+  .side-nav {
+    background-color: #222b45;
+  }
+
+  .main-content {
+    background-color: #151a30;
+  }
+
+  .side-nav .nav-wrapper .nav-item .nav-link {
+    color: #9ea7b9;
+  }
+
+  .py-form__element {
+    background-color: transparent;
+    color: #9fa7ba;
+  }
+
+  .side-toggle {
+    background-color: #192038;
+    border: 1px solid #151a30;
+
+    &:hover {
+      background-color: #151a30;
+    }
+
+    .right-icon .fa,
+    .right-icon .fas,
+    .business-name {
+      color: #c0cbe0;
+    }
+  }
+
+  .side-nav .nav-divider {
+    background-color: #2e3958;
+  }
+
+  .nav-wrapper .nav-footer {
+    border-top-color: #2e3958;
+  }
+
+  .nav-wrapper .plan-switch {
+    background-color: #192038;
+  }
+
+  .nav-wrapper .plan-switch .switch-header {
+    color: #9ea7b9;
+  }
+
+  .dh-widget .widget-title,
+  .py-header--page .py-heading--title,
+  .py-header--page .py-heading--section-title {
+    color: #f7f7f7;
+  }
+
+  .dh-widget {
+    .widget-sub-title,
+    .widget-info {
+      color: #d8e2f7;
+    }
+
+    .widget-box {
+      background-color: #222b45;
+      border: 1px solid #151a30;
+    }
+  }
+
+  .HighchartsReact {
+    .highcharts-container {
+      .highcharts-legend-item {
+        tspan {
+          color: #9ea7b9 !important;
+          fill: #9ea7b9 !important;
+        }
+      }
+
+      .highcharts-axis-labels {
+        tspan,
+        text {
+          color: #9ea7b9 !important;
+          fill: #9ea7b9 !important;
+        }
+      }
+    }
+  }
+
+  .dh-widget {
+    .widget-table {
+      tbody tr {
+        border-color: #2e3958;
+
+        &:hover {
+          background-color: #cacdd3;
+        }
+      }
+
+      thead tr {
+        border-color: #2e3958;
+      }
+    }
+  }
+
+  .btn-gray-accent {
+    background-color: #2f3d65;
+    color: #9ea7b9;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: #394975;
+      color: #bfcce6;
+    }
+  }
+
+  .show > .btn-primary.dropdown-toggle {
+    border-color: var(--bs-btn-active-border-color);
+    background-color: var(--bs-btn-active-bg);
+    color: var(--bs-btn-hover-color);
+    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .Select .Select-control {
+    background-color: #151a30;
+    border: 1px solid #27314c;
+  }
+
+  .custom-select__control {
+    background-color: #151a30;
+    border: 1px solid #27314c;
+  }
+
+  .custom-select__control {
+    background-color: #151a30;
+    border: 1px solid #27314c;
+    box-shadow: none;
+    // height: auto;
+  }
+
+  .custom-select__control:hover {
+    border-color: #27314c;
+  }
+
+  .custom-select__control--menu-is-open,
+  .custom-select__control---is-focused {
+    background-color: #2e3958;
+    border: 1px solid #27314c;
+    box-shadow: none;
+  }
+
+  .Select.is-focused:not(.is-open) > .Select-control {
+    background-color: #2e3958;
+  }
+
+  .custom-select__single-value {
+    color: #b2c2cd;
+  }
+
+  .custom-select__input-container {
+    color: #b2c2cd;
+
+    ::after {
+      color: #b2c2cd;
+    }
+  }
+
+  .custom-select__menu {
+    background-color: #27314c;
+  }
+
+  .custom-select__option:hover,
+  .custom-select__option--is-focused {
+    background-color: #2e3958;
+  }
+
+  .py-table {
+    background-color: #222b45;
+    border: 0px solid #151a30;
+    border-bottom: none;
+  }
+
+  .table {
+    color: #9ea7b9;
+  }
+
+  .react-bootstrap-table .table tbody tr {
+    border-color: #2e3958;
+
+    &:hover {
+      background-color: #2e3958;
+      color: #9ea7b9;
+    }
+  }
+
+  .table thead tr:last-child {
+    border-color: #2e3958;
+  }
+
+  .btn.btn-circle {
+    color: #9ea7b9;
+    border-color: #38425f;
+
+    &:hover {
+      background-color: #38425f;
+    }
+  }
+
+  .py-form-field__hint,
+  .py-text--hint {
+    color: #6a879a;
+  }
+
+  .Select-placeholder,
+  .Select--single > .Select-control .Select-value {
+    color: #9ea7b9 !important;
+  }
+
+  .form-control,
+  [contenteditable='true'],
+  body
+    .py-datepicker--range
+    .react-datepicker-wrapper
+    .react-DateRange__dateInput-container,
+  .DateRange__container {
+    border-color: #2e3958;
+    background-color: #151a30;
+    color: #9ea7b9;
+  }
+
+  .bill-filter__range .react-datepicker__input-container:after,
+  .invoice-filter--date .react-datepicker__input-container:after,
+  .payments-filter__datepicker .react-datepicker__input-container:after,
+  .estimate-filter--date .react-datepicker__input-container:after,
+  .customer-statements--filter__range .react-datepicker__input-container:after,
+  .debit-card--filter__range .react-datepicker__input-container:after,
+  .py-form-field__element .react-datepicker__input-container:after {
+    background-color: #2c3652;
+    color: #9ea7b9;
+    border-color: #2c3652;
+  }
+
+  ::placeholder {
+    color: #9ea7b9 !important;
+  }
+
+  .react-bs-table-sizePerPage-dropdown .dropdown-toggle {
+    background-color: #222b45 !important;
+    border-color: #222b45 !important;
+    color: #9ea7b9 !important;
+  }
+
+  .estimate-filter--date .fillter__action__btn,
+  .payments-filter__datepicker .fillter__action__btn {
+    color: #9ea7b9;
+  }
+
+  .py-heading--section-title,
+  .py-heading--subtitle {
+    color: #9ea7b9;
+  }
+
+  .estimate_form__container {
+    background-color: #222b45;
+    box-shadow: none;
+    border: 1px solid #27314c;
+  }
+
+  .py-box {
+    background-color: #222b45;
+    border-color: #38425f;
+  }
+
+  .estimate_form__container .py-box--footer {
+    border-color: #2c3652;
+    background-color: #2c3652;
+  }
+
+  .estimate_form__container .py-box__header {
+    border-bottom-color: #27314c;
+  }
+
+  .Select.has-value.Select--single
+    > .Select-control
+    .Select-value
+    .Select-value-label,
+  .Select.has-value.is-pseudo-focused.Select--single
+    > .Select-control
+    .Select-value
+    .Select-value-label {
+    color: #9ea7b9;
+  }
+
+  .invoice-itpy-biz-switcher--logo-table-header {
+    background: #2c3652;
+    border-color: #38425f;
+  }
+
+  .invoice-add-info__itemtable {
+    border-color: #2c3652;
+  }
+
+  .invoice-add-info__customize-tab {
+    background: #2c3652;
+  }
+
+  .invoice-add-info__itemtable .drag-item:hover {
+    background-color: #283048;
+  }
+
+  .invoice-add-info__itemtable .drag-item:last-child {
+    border-color: #38425f;
+  }
+
+  .py-table__action {
+    color: #9ea7b9;
+  }
+
+  .invoice-add-info__itemtable .drag-item {
+    border-color: #38425f;
+  }
+
+  .modal-dialog:not(.business-loader) .modal-content {
+    background-color: #222b45;
+  }
+
+  .modal-footer,
+  .modal-header {
+    border-color: #38425f;
+  }
+
+  .modal-header .modal-title {
+    color: #f7f7f7;
+  }
+
+  .py-form-legend {
+    color: #9ea7b9;
+  }
+
+  .py-divider {
+    border-color: #38425f;
+  }
+
+  .alert .close:before,
+  .modal-header .close:before,
+  .alert .close:after,
+  .modal-header .close:after {
+    background-color: #9ea7b9;
+  }
+
+  .invoice-insights__content
+    .invoice-insights-content__column
+    .py-text--block-label {
+    color: #d8e2f7;
+  }
+
+  .btn-search .input-group-append .btn {
+    background-color: #2c3652 !important;
+    border-color: #2c3652 !important;
+  }
+
+  .invoice-list-table-filters-container
+    .invoice-filter--search
+    .btn-search
+    .form-control:focus,
+  .invoice-list-table-filters-container
+    .invoice-filter--search
+    .btn-search
+    :focus[contenteditable='true'],
+  .invoice-list-table-filters-container
+    .invoice-filter--search
+    .btn-search
+    body
+    .py-datepicker--range
+    .react-datepicker-wrapper
+    .react-DateRange__dateInput-container:focus,
+  body
+    .py-datepicker--range
+    .react-datepicker-wrapper
+    .invoice-list-table-filters-container
+    .invoice-filter--search
+    .btn-search
+    .react-DateRange__dateInput-container:focus,
+  .invoice-list-table-filters-container
+    .invoice-filter--search
+    .btn-search
+    .DateRange__container:focus {
+    border-color: #2c3652 !important;
+  }
+
+  .nav-tabs {
+    border-bottom-color: #38425f;
+  }
+
+  .py-nav--tabs .nav-item .nav-link {
+    color: #9ea7b9;
+
+    &.active,
+    &:hover {
+      border-color: #222b45;
+    }
+  }
+
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
+    background-color: #222b45;
+    border-color: #222b45;
+    color: #9ea7b9;
+  }
+
+  .color-muted {
+    color: #6a879a;
+  }
+
+  .invoice-view-header {
+    border-color: #222b45;
+  }
+
+  .py-page__sidebar .py-nav__heading,
+  .py-header--title [class*='py-heading'],
+  .invoice-view-header .py-header--page .py-heading__title {
+    color: #f7f7f7;
+  }
+
+  .block-label {
+    color: #d8e2f7;
+  }
+
+  .summary__amount__datevalue {
+    color: #9ea7b9;
+  }
+
+  .invoice-view__body__vertical-line {
+    background-color: #38425f;
+  }
+
+  .Select.is-disabled > .Select-control {
+    background-color: #373f55;
+    opacity: 0.4;
+    border-color: #2e3958;
+  }
+
+  .Select.is-disabled .Select-placeholder {
+    color: #9ea7b9 !important;
+  }
+
+  .dropdown-menu {
+    background-color: #222b45;
+    color: #9ea7b9;
+    border: 1px solid #2e3958;
+
+    .dropdown-item {
+      color: #9ea7b9;
+
+      &:hover {
+        background-color: #2e3958;
+        color: #9ea7b9 !important;
+      }
+    }
+
+    .dropdown-header {
+      color: #9ea7b9;
+    }
+
+    .dropdown-divider {
+      border-color: #2e3958;
+    }
+  }
+
+  .Select.is-focused > .Select-control,
+  .Select.is-open > .Select-control,
+  .Select.is-focus:not(.is-open) > .Select-control {
+    box-shadow: none !important;
+    border-color: #222b45 !important;
+  }
+
+  .Select.is-focused > .Select-control {
+    background-color: #2e3958;
+  }
+
+  .Select-menu-outer {
+    background-color: #222b45;
+    color: #9ea7b9;
+    border: 1px solid #2e3958;
+  }
+
+  .Select-option {
+    background-color: #222b45;
+    color: #9ea7b9;
+  }
+
+  .Select-option.is-selected {
+    background-color: #2e3958;
+    color: #9ea7b9;
+  }
+
+  .Select-option.is-focused {
+    background-color: #2e3958;
+    color: #9ea7b9;
+  }
+
+  .Select-option.is-disabled {
+    background-color: #373f55;
+    color: #9ea7b9;
+    opacity: 0.2;
+  }
+
+  .Select-input > input {
+    color: #9ea7b9;
+  }
+
+  .Select--multi .Select-value {
+    background-color: #2e3958;
+    color: #9ea7b9;
+    border-color: #2e3958;
+  }
+
+  .Select--multi a.Select-value-label {
+    color: #9ea7b9;
+  }
+
+  .react-datepicker {
+    background-color: #222b45;
+    box-shadow: none;
+    border: 1px solid #2e3958;
+  }
+
+  .react-datepicker__header {
+    background-color: #2e3958;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: #9ea7b9;
+  }
+
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    color: #9ea7b9;
+  }
+
+  .react-datepicker__day:hover {
+    background-color: #2e3958;
+    color: #f7f7f7;
+  }
+
+  .react-datepicker__day--in-range,
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__day--selected {
+    background-color: #2e3958 !important;
+    color: #f7f7f7 !important;
+  }
+
+  .tabfooter {
+    border-color: #38425f;
+  }
+
+  .business-menu .menu-item .item-link .business-title {
+    color: #9ea7b9;
+  }
+
+  .business-menu .menu-item:hover {
+    background-color: #2e3958;
+
+    a {
+      color: #9ea7b9;
+    }
+  }
+
+  .pm-biz-switcher--title {
+    color: #d8e2f7;
+  }
+
+  .text-black {
+    color: #d8e2f7 !important;
+  }
+
+  .text-muted {
+    color: #6a879a !important;
+  }
+
+  .modal-side .modal-content .modal-body .menu-content {
+    border-color: #38425f;
+  }
+
+  .invoice-view__collapsible .invoice-view__collapsible-button .btn-link,
+  .invoice-view__collapsible
+    .invoice-view__collapsible-button.is-open
+    .btn-link {
+    background: #2c3652;
+    border-color: #2c3652;
+  }
+
+  .invoice-view__collapsible {
+    border-color: #2c3652;
+  }
+
+  .invoice-view__collapsible .invoice-view__collapsible-button .btn-link {
+    color: #9ea7b9;
+  }
+
+  .is-highlighted .add-customer-btn {
+    border-color: #2c3652;
+
+    &:hover {
+      background-color: #2c3652;
+    }
+  }
+
+  .invoice-memo {
+    border-color: #2c3652;
+  }
+
+  .invoice-view__footer .py-box textarea,
+  .invoice-memo [contenteditable='true'] {
+    background-color: #222b45;
+  }
+
+  .py-box.is-highlighted {
+    box-shadow: none;
+    border: 1px solid #27314c;
+  }
+
+  .btn-group > .btn:not(:first-child),
+  .btn-group > .btn-group:not(:first-child) > .btn {
+    border-left-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .checkouts-add .py-table__header {
+    background-color: #2e3958;
+    border-color: #2e3958;
+  }
+
+  .checkouts-add .py-table--form,
+  .checkouts-add .request-address-and-phone-row,
+  .checkouts-add .py-table__row--total {
+    border-color: #2e3958;
+  }
+
+  .checkouts-share__body .py-box.py-box--card {
+    background-color: #151a30;
+  }
+
+  .checkouts-share__body .py-box--content {
+    border-color: #2e3958;
+    background-color: #222b45;
+  }
+
+  .nav-tabs .nav-link {
+    color: #9ea7b9;
+  }
+
+  .py-table__row {
+    border-color: #2e3958 !important;
+
+    th,
+    td {
+      border-color: #2e3958 !important;
+    }
+  }
+
+  tbody .py-table__row:not(.no-hover):hover,
+  .table-hover > tbody > tr:hover > * {
+    --bs-table-hover-bg: #2e3958;
+    background: #2e3958 !important;
+  }
+
+  .table-hover > tbody > tr *:not(.badge) {
+    color: #9ea7b9;
+  }
+
+  .payments-filter-container .payments-filter__search .input-group-text {
+    background-color: #222b45 !important;
+    border-color: #2e3958 !important;
+
+    &:hover {
+      background-color: #2e3958 !important;
+    }
+  }
+
+  .table th,
+  .table td {
+    border-color: #2e3958 !important;
+  }
+
+  .dropdown-item a {
+    color: #9ea7b9;
+  }
+
+  .dropdown-item.active,
+  .dropdown-item.active a {
+    background-color: #2e3958 !important;
+    color: #9ea7b9;
+  }
+
+  #pagination .pagination li {
+    background-color: #222b45;
+    border-color: #2e3958 !important;
+
+    a {
+      color: #9ea7b9;
+    }
+
+    &:hover,
+    &.active {
+      background-color: #2e3958;
+    }
+  }
+
+  .page-link {
+    background-color: #222b45;
+    border-color: #2e3958;
+    color: #9ea7b9;
+  }
+
+  .react-bootstrap-table-pagination
+    .react-bootstrap-table-pagination-list
+    .pagination
+    .page-item
+    .page-link {
+    color: #9ea7b9;
+  }
+
+  .react-bootstrap-table-pagination
+    .react-bootstrap-table-pagination-list
+    .pagination
+    .page-item:hover
+    .page-link,
+  .react-bootstrap-table-pagination
+    .react-bootstrap-table-pagination-list
+    .pagination
+    .page-item.active
+    .page-link {
+    background-color: #2e3958;
+    color: #9ea7b9;
+    border-color: #2e3958;
+  }
+
+  .card {
+    background-color: #222b45;
+    color: #9ea7b9;
+    border: 1px solid #2e3958;
+  }
+
+  hr {
+    border-color: #2e3958 !important;
+  }
+
+  .productServices-form .py-form-field--inline .py-form-field__label,
+  .productServices-form
+    .py-form-field--inline
+    .py-form-field__label--align-top {
+    color: #9ea7b9;
+  }
+
+  .table-hover tbody .py-table__row:not(.no-hover):hover,
+  .table-hover tbody tr:not(.no-hover):not(.no-hover):hover,
+  .py-table--hover tbody .py-table__row:not(.no-hover):hover,
+  .py-table--hover tbody tr:not(.no-hover):not(.no-hover):hover {
+    background: #2e3958 !important;
+    color: #9ea7b9 !important;
+  }
+
+  .productServices-form
+    .py-form-field--inline
+    .py-checkbox
+    .py-form__element__label {
+    color: #6a879a;
+  }
+
+  .payments-list-area-content .react-bs-table-container {
+    background-color: #222b45;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .billsWrapper .bill-form .form-group label {
+    color: #9ea7b9;
+  }
+
+  .py-page__sidebar {
+    border-right: 1px solid #222b45;
+    background: #1e263e;
+  }
+
+  .py-page__sidebar .title {
+    color: #d8e2f7;
+  }
+
+  .py-editable-user-list .editable-user-list-item .py-box {
+    border-color: #2e3958;
+  }
+
+  .py-page__sidebar li.active .nav-link,
+  .py-page__sidebar .nav-link.is-active,
+  .py-page__sidebar .nav-link:hover {
+    background-color: #2e3958;
+    color: #9ea7b9;
+  }
+
+  .py-page__sidebar .nav-link {
+    color: #9ea7b9;
+  }
+
+  .has-sidebar .invite-sec .py-page__inner-content {
+    background-color: #222b45;
+    box-shadow: none;
+    border: 1px solid #2e3958;
+  }
+
+  .mobile-landing-page .heading-1 {
+    color: #f7f7f7;
+  }
+
+  .mobile-landing-page .feature-box .box-title {
+    color: #9ea7b9;
+  }
+
+  .invoice-status-badge {
+    background-color: #1b2440;
+    border: 1px solid #252f49;
+  }
+
+  .box-symble-field .edit-icon {
+    background-color: #2c3652;
+  }
+
+  .box-symble-field .input-group {
+    border-color: #2c3652;
+  }
+
+  .box-symble-field .prependAddon-input-card {
+    background-color: #2c3652;
+    border-color: #2c3652;
+  }
+
+  .invoice__record__modal__content .h3 {
+    color: rgb(216, 226, 247);
+  }
+
+  .box-symble-field .prependAddon-input-card .input-group-text {
+    color: rgb(216, 226, 247);
+  }
+
+  .py-stripe__element {
+    border-color: #2c3652;
+    background-color: #151a30;
+  }
+
+  .py-form__element__faux {
+    border-color: #495575;
+    background-color: #495575;
+  }
+
+  .checkoutWrapper .checkouts-preview__browser-header {
+    background: #435075;
+  }
+
+  .checkoutWrapper .checkouts-preview__browser-address-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #08ff92;
+  }
+
+  .public-checkout__price {
+    color: #f7f7f7;
+  }
+
+  .copyright {
+    color: #9ea7b9;
+  }
+
+  .invoice-template li .py-form__element__faux {
+    background-color: #ffffff;
+  }
+
+  .content-header .mobile-header {
+    background-color: #222b45;
+    border-color: #2e3958;
+    .menu-toggle {
+      border-color: #2e3958;
+    }
+  }
+
+  .invoice-timeline-block {
+    .timeline-content {
+      background-color: #2e3958;
+      border-color: #2e3958;
+
+      &:before {
+        background-color: #2e3958;
+        border-color: #2e3958;
+      }
+
+      .timeline-title {
+        color: #9ea7b9;
+      }
+
+      .timeline-desc {
+        color: #6a879a;
+      }
+    }
+
+    &:before {
+      background-color: #2e3958;
+    }
+  }
+
+  .py-box--card .py-box__header {
+    border-color: #2e3958;
+  }
+
+  .invoice-view__collapsible
+    .invoice-view__collapsible-button
+    .invoice-view__collapsible-button__expand-icon
+    svg {
+    fill: #ffffff;
+  }
+
+  .py-heading--title {
+    color: #f7f7f7;
+  }
+
+  .py-popover__panel {
+    background-color: #2e3958;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #d8e2f7;
+    }
+
+    .changePref,
+    .popover-body {
+      color: #9ea7b9;
+    }
+
+    .payOpt {
+      border-color: #42517b;
+    }
+  }
+
+  .bs-popover-bottom > .arrow::after,
+  .bs-popover-auto[x-placement^='bottom'] > .arrow::after {
+    border-bottom-color: #2e3958;
+  }
+
+  .popover {
+    background-color: #2e3958;
+
+    .popover-body {
+      color: #9ea7b9;
+    }
+  }
+
+  .popover_wrapper .tooltip {
+    background-color: #2e3958;
+    color: #9ea7b9;
+
+    &:after {
+      border-top-color: #2e3958;
+    }
+
+    ul {
+      border-color: #42517b;
+
+      li h6 {
+        color: #d8e2f7;
+      }
+    }
+  }
+
+  .automatic_payment_warning {
+    background-color: #2e3958;
+  }
+
+  .py-page__auth {
+    background: #151a30;
+
+    .py-page__login {
+      background-color: #222b45;
+
+      .text-typo-1,
+      .py-text {
+        color: #9ea7b9;
+      }
+
+      .icon-input .form-control,
+      .icon-input [contenteditable='true'],
+      .icon-input
+        body
+        .py-datepicker--range
+        .react-datepicker-wrapper
+        .react-DateRange__dateInput-container,
+      .py-datepicker--range .react-datepicker-wrapper,
+      .icon-input .react-DateRange__dateInput-container,
+      .icon-input .DateRange__container {
+        border-color: #2e3958;
+        background-color: #151a30;
+        color: #9ea7b9;
+      }
+
+      ::placeholder {
+        color: #9ea7b9 !important;
+      }
+
+      .hide-show-eye {
+        background-color: #151a30;
+      }
+    }
+  }
+
+  .rc-steps-item-finish .rc-steps-item-title {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .rc-steps-item-wait .rc-steps-item-title {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .rc-steps-item-process .rc-steps-item-title {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .payment__onboarding__container {
+    background-color: #222b45;
+    box-shadow: none;
+  }
+
+  .list-group-item:not(.active) {
+    border-color: #2e3958;
+    background-color: #151a30;
+    color: #9ea7b9;
+  }
+
+  .price-box {
+    background-color: #222b45;
+    border-color: #27314c;
+
+    &.active {
+      border-color: #136acd;
+    }
+
+    .price-header {
+      .price-amount {
+        color: #f7f7f7;
+      }
+
+      .price-priod {
+        color: #d8e2f7;
+      }
+    }
+
+    .price-features {
+      color: #9ea7b9;
+
+      li {
+        .info-ico,
+        .Icon {
+          color: #9ea7b9;
+        }
+      }
+    }
+  }
+
+  .checkout-calc table,
+  .checkout-calc tr,
+  .checkout-calc td,
+  .checkout-calc th {
+    color: #9ea7b9;
+  }
+
+  input.InputElement.is-complete.Input {
+    color: #9ea7b9;
+  }
+
+  .py-header--title .btn-back {
+    color: #f7f7f7;
+  }
+
+  .error404Wrapper .py-text {
+    color: #9ea7b9;
+  }
+
+  .invoice-template li .py-form__element__label {
+    color: #1c252c;
+  }
+
+  .subscribe-billing-history {
+    .upcoming-invoice-box {
+      background-color: #2e3958;
+
+      &::before {
+        opacity: 0.03;
+      }
+
+      .title {
+        color: #d8e2f7;
+      }
+
+      .footer-info {
+        color: #9ea7b9;
+
+        .date {
+          color: #d8e2f7;
+        }
+      }
+
+      .card-dt {
+        color: #d8e2f7;
+      }
+    }
+  }
+
+  .checkout-calc .coupon-input input[type='text'] {
+    color: #9ea7b9;
+  }
+
+  .bg-white {
+    background-color: #151a30 !important;
+  }
+
+  .invoice-steps-card__content
+    .py-content--narrow-send-type
+    button.py-button--secondary {
+    background-color: #2e3958;
+    border-color: #424e71;
+    color: #9ea7b9;
+    outline: none;
+
+    .py-text--strong {
+      color: #d8e2f7;
+    }
+  }
+
+  .date-calender:after {
+    background-color: #151a30;
+  }
+
+  .py-share-link {
+    background-color: #2e3958;
+
+    a {
+      color: #a0adc3;
+    }
+
+    .link-icon {
+      border-color: #424e71;
+    }
+
+    .copy-action {
+      background-color: #424e71;
+      color: #a0adc3;
+    }
+  }
+
+  .py-peyme-photo-edit {
+    border-color: #2e3958;
+  }
+
+  .peyme-box-wrapper {
+    background-color: #222b45;
+  }
+
+  .peyme-configure-box .name-genarate input[type='text'] {
+    color: #ededed;
+  }
+
+  .peyme-review-box .review-header {
+    background-color: #26304b;
+    border-color: #2e3958;
+
+    .generated-link {
+      color: #9ea7b9;
+    }
+  }
+
+  .peyme-success-box .share-lable {
+    color: #9ea7b9;
+  }
+
+  .input-group-text {
+    background-color: #2e3958;
+    border-color: #364369;
+    color: #9ea7b9;
+  }
+
+  .react-bs-table-sizePerPage-dropdown.dropdown #pageDropDown {
+    border: 1px solid rgb(46, 57, 88) !important;
+  }
+
+  .py-switch .btn {
+    color: #9ea7b9;
+  }
+
+  .dh-widget .options-container .option.active {
+    color: #f7f7f7;
+  }
+
+  .blue-debit-cards .card-grid .pay_icons .Icon {
+    color: #9ea7b9;
+  }
+
+  .dh-widget.quick-link-widget .quick-link-list .icon-link .text {
+    color: #080404;
+  }
+
+  .dh-widget.quick-link-widget .quick-link-list .icon-link .gradient-icon {
+    background-color: #151a30;
+  }
+
+  .dispute-header-info ul,
+  .dispute-header-info ul li {
+    border-color: #38425f;
+  }
+
+  .onboarding-form-wrapper .field-object > .label {
+    background-color: #2e3854;
+    border-color: #2e3854;
+  }
+
+  .payment__onboard__business__type__list > div,
+  .onboarding-form-wrapper .additional_field,
+  .onboarding-form-wrapper > .field-object {
+    border-color: #2e3854;
+  }
+
+  .py-banner {
+    border: 1px solid #222b45;
+    background-color: #222b45;
+  }
+
+  .rc-steps-vertical .rc-steps-item-process .rc-steps-item-icon {
+    background: #222b45;
+  }
+
+  .onboarding-form-wrapper .react-datepicker__input-container:after,
+  .bill-filter__range .react-datepicker__input-container:after,
+  .invoice-filter--date .react-datepicker__input-container:after,
+  .payments-filter__datepicker .react-datepicker__input-container:after,
+  .estimate-filter--date .react-datepicker__input-container:after,
+  .customer-statements--filter__range .react-datepicker__input-container:after,
+  .debit-card--filter__range .react-datepicker__input-container:after,
+  .py-form-field__element .react-datepicker__input-container:after,
+  .rc-steps-item-wait .rc-steps-item-icon {
+    border-color: #2e3854;
+    background-color: #2e3854;
+  }
+
+  .react-tel-input .flag-dropdown:hover,
+  .react-tel-input .flag-dropdown {
+    border-color: #2e3854;
+    background-color: #2e3854;
+    color: #9ea7b9;
+  }
+
+  .onboarding-form-wrapper .stepthreelisthead {
+    background-color: #2e3854;
+  }
+
+  .fillter__action__btn {
+    color: #9ea7b9;
+  }
+
+  .filter-icon-button {
+    border-color: #2f3958 !important;
+  }
+  .veriff-description {
+    color: #9ea7b9 !important;
+  }
+  .btn-close {
+    background-color: #9ea7b9 !important;
+  }
+  .text-primary {
+    // background: #ffffff !important;
+    color: #080404 !important;
+  }
+  .form-label {
+    font-weight: bold;
+    color: #f9f9f9 !important;
+  }
+
+  .modal-footer a {
+    color: #ffffff !important;
+  }
+
+  .modal-footer a:hover {
+    text-decoration: underline;
+    color: #e5e5e5 !important;
+  }
+}

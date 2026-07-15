@@ -1,0 +1,129 @@
+// Headings and display texts
+// Created by: Alex
+
+.py-header--title {
+    flex-grow: 1;
+    margin-top: 5px;
+
+    [class*="py-heading"] {
+        margin: 0;
+    }
+}
+
+.py-heading--title {
+    font-weight: $font-weight-bold;
+    line-height: 40px;
+    font-size: 26px;
+    margin: 32px 0 16px;
+    display: block;
+
+    @include media-breakpoint-up(md) {
+        font-size: 32px;
+    }
+
+    +.py-heading--subtitle {
+        margin-top: 0;
+    }
+
+
+    @media (max-width: 768px) {
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+
+.py-header--actions {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+
+    & > * {
+        margin: 5px;
+    }
+    
+}
+
+
+.py-heading--section-title {
+    font-weight: $font-weight-bold;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.py-heading--section-title,
+.py-heading--subtitle {
+    font-size: 23px;
+    margin: 32px 0 16px;
+    color: $black;
+    font-weight: 500;
+}
+
+
+.py-heading--subtitle {
+    color: #1c252c;
+    font-weight: 500;
+}
+
+.py-heading--subsection-title,
+.py-form-legend {
+    font-size: 19px;
+}
+
+.py-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media ( max-width: 768px ){
+        flex-wrap: wrap;
+    }
+}
+
+.py-header--page {
+    margin-top: 4px;
+    margin-bottom: 30px;
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &.flex {
+        display: flex;
+    }
+
+    .py-heading--title,
+    .py-heading--section-title {
+        margin: 5px 0px;
+        color: $black;
+        padding-top: 2px;
+        display: inline-flex;
+        align-items: center;
+
+        .badge {
+            margin: 0px 0px 0px 10px;
+        }
+    }
+}
+
+.py-header--title,
+.py-header--page {
+    &.product-header-title,
+    &.rec-inv-header-title {
+        .py-heading--title {
+            padding-top: 0px;
+        }
+    }
+}
+
+.py-text--nowrap {
+    white-space: nowrap;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}

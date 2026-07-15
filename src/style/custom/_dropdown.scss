@@ -1,0 +1,32 @@
+.dropdown-item {
+    padding: 12px 15px;
+    line-height: 16px;
+    
+    a {
+        color: #1c252c;
+        font-weight: normal;
+    }
+
+    &.active {
+        background-color: #136acd !important;
+    }
+
+    &.active a {
+        background-color: #136acd !important;
+        color: #ffffff !important;
+    }
+
+    &:hover,
+    &:focus {
+        color: $body-color !important;
+        background-color: rgba($info, .1);
+    }
+
+    .print {
+        display: block;
+    }
+}
+
+.dropdown-toggle.btn.btn-circle::after {
+    display: none;
+}

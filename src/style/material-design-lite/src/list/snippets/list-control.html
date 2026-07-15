@@ -1,0 +1,46 @@
+<!-- List with avatar and controls -->
+<style>
+.demo-list-control {
+  width: 300px;
+}
+
+.demo-list-radio {
+  display: inline;
+}
+</style>
+
+<ul className="demo-list-control mdl-list">
+  <li className="mdl-list__item">
+    <span className="mdl-list__item-primary-content">
+      <i className="material-icons  mdl-list__item-avatar">person</i>
+      Bryan Cranston
+    </span>
+    <span className="mdl-list__item-secondary-action">
+      <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+        <input type="checkbox" id="list-checkbox-1" className="mdl-checkbox__input" checked />
+      </label>
+    </span>
+  </li>
+  <li className="mdl-list__item">
+    <span className="mdl-list__item-primary-content">
+      <i className="material-icons  mdl-list__item-avatar">person</i>
+      Aaron Paul
+    </span>
+    <span className="mdl-list__item-secondary-action">
+      <label className="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+        <input type="radio" id="list-option-1" className="mdl-radio__button" name="options" value="1" checked />
+      </label>
+    </span>
+  </li>
+  <li className="mdl-list__item">
+    <span className="mdl-list__item-primary-content">
+      <i className="material-icons  mdl-list__item-avatar">person</i>
+      Bob Odenkirk
+    </span>
+    <span className="mdl-list__item-secondary-action">
+      <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+        <input type="checkbox" id="list-switch-1" className="mdl-switch__input" checked />
+      </label>
+    </span>
+  </li>
+</ul>

@@ -1,0 +1,27 @@
+.content-wrapper__main__fixed {
+    margin: 0 auto;
+    max-width: 1108px;
+    width: 100%;
+    padding: 16px;
+
+    >.content {
+        padding: 0 !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .content-wrapper__main__fixed {
+        padding: 24px;
+    }
+}
+
+
+.products-list {
+    .py-table__cell,
+    .py-table__cell-amount,
+    .py-table__cell__actions {
+        .py-text--hint {
+            white-space: pre-wrap;
+        }
+    }
+}

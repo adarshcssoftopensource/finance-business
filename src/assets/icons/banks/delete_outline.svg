@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="#E5E5E5"/>
+<g id="Icons">
+<rect x="-346" y="-169" width="816" height="1000" fill="white"/>
+<g id="delete_outline">
+<path id="icon/action/delete_outline_24px" fill-rule="evenodd" clip-rule="evenodd" d="M12.0834 2.5L12.9167 3.33333H15.8334V5H4.16675V3.33333H7.08342L7.91675 2.5H12.0834ZM5.00007 15.8333C5.00007 16.75 5.75007 17.5 6.66674 17.5H13.3334C14.2501 17.5 15.0001 16.75 15.0001 15.8333V5.83333H5.00007V15.8333ZM6.66675 7.5H13.3334V15.8333H6.66675V7.5Z" fill="black"/>
+</g>
+</g>
+</svg>

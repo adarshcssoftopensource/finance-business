@@ -1,0 +1,448 @@
+.peyme-container {
+    padding: 0;
+
+    #peymeMemoLabel {
+        width: 280px;
+        max-width: 100%;
+    }
+}
+
+.peyme-share-wrapper {
+    .link-content {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    #maxQuantity {
+        width: 100px;
+    }
+
+    #maxQuantity::-webkit-outer-spin-button,
+    #maxQuantity::-webkit-inner-spin-button {
+        -webkit-appearance: auto;
+    }
+
+}
+
+.custom-peyme-limit-text-wrapper {
+    border: 1px solid;
+
+    input {
+        border: 0;
+    }
+}
+
+.peyme-box-wrapper {
+    width: 768px;
+    margin: 8% auto;
+    padding: 60px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin-bottom: 60px;
+    position: relative;
+    text-align: center;
+    background-color: #ffffff;
+
+    .peyme-action {
+        min-width: 220px;
+        margin-top: 24px;
+    }
+
+    .peyme-back {
+        border: none;
+        background: none;
+        position: absolute;
+        left: 30px;
+        top: calc(50% - 18px);
+        outline: none;
+        background-color: #ffffff;
+        border: 1px solid #ededed;
+        width: 36px;
+        height: 36px;
+        line-height: 33px;
+        border-radius: 100px;
+        transition: 0.3s;
+        cursor: pointer;
+        text-align: center;
+        color: #1c252c;
+
+        &:hover {
+            background-color: #ededed;
+        }
+    }
+}
+
+.peyme-intro-box {
+    .intro-icon {
+        margin: auto auto 30px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .intro-title {
+        margin-bottom: 15px;
+    }
+
+    .intro-desc {
+        font-size: 18px;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.peyme-configure-box {
+    display: block;
+    width: 360px;
+    max-width: 100%;
+    margin: auto;
+
+    .user-name {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .choose-label {
+        font-size: 16px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .name-genarate {
+        display: flex;
+        width: 360px;
+        max-width: 100%;
+        margin: 0 auto 5px;
+
+        input[type="text"] {
+            width: 100%;
+            border: none;
+            background: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .url-prifix {
+            color: #8190a6;
+        }
+    }
+
+    .suggestion-list {
+        list-style: none;
+        margin: 30px auto auto;
+        padding: 0;
+        font-size: 14px;
+        width: 360px;
+        text-align: left;
+
+        li {
+            border-bottom: 1px solid #ededed;
+            padding: 10px 0;
+
+            &.list-label {
+                color: #4d6575;
+                font-weight: 500;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                padding-bottom: 0px;
+                border-bottom: none;
+            }
+        }
+
+    }
+
+    .suggestion-wrapper {
+        .suggestion-tag {
+            padding: 1%;
+            overflow-wrap: break-word;
+            border-radius: 6px;
+            margin-bottom: 0;
+            line-height: 1;
+            text-align: left;
+        }
+    }
+}
+
+
+.peyme-review-box {
+    display: block;
+    width: 360px;
+    margin: auto;
+
+    .review-header {
+        padding: 40px;
+        background-color: #fbfbff;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #ededed;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        flex-direction: column;
+
+        .uploaded-photo {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border-radius: 100px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+
+            svg {
+                width: 50%;
+                height: 100%;
+            }
+
+            .spinner-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .photo-edit {
+            position: relative;
+            display: inline-block;
+
+            .edit-pen {
+                position: absolute;
+                border: none;
+                background: none;
+                bottom: 15px;
+                right: 34%;
+                background-color: #ffffff;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+                border-radius: 100px;
+                outline: none;
+                box-shadow: 5px 5px 10px 0 rgba(248, 239, 239, 0.2);
+                cursor: pointer;
+
+                .Icon {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+
+
+        .user-name {
+            font-size: 20px;
+        }
+
+        .generated-link {
+            font-weight: 500;
+            font-size: 14px;
+            color: #4d6575;
+        }
+
+    }
+
+    .py-form-field__element {
+        text-align: left;
+    }
+}
+
+.peyme-success-box {
+    display: block;
+    width: 360px;
+    margin: auto;
+    max-width: 100%;
+
+    .check-icon .Icon {
+        width: 60px;
+        height: 60px;
+        color: #00CC96;
+        margin-bottom: 20px;
+    }
+
+    .success-title {
+        font-size: 24px;
+        margin: 0 0 15px;
+    }
+
+    .success-desc {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+
+    .share-lable {
+        font-weight: 500;
+        color: #4d6575;
+        margin-bottom: 15px;
+    }
+}
+
+.social-share {
+    margin: -5px;
+
+    button,
+    a {
+        display: inline-block;
+        margin: 5px;
+
+        i {
+            width: 34px;
+            height: 34px;
+            display: block;
+            line-height: 34px;
+            border-radius: 100px;
+            font-size: 14px;
+            transition: 0.3s;
+            background-color: #6C727A;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            color: #ffffff;
+
+            &:hover {
+                box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            &.fa-facebook-f {
+                background-color: #3B5899;
+            }
+
+            &.fa-facebook-messenger {
+                background-color: #0480FF;
+            }
+
+            &.fa-twitter {
+                background-color: #1A9FF4;
+            }
+
+            &.fa-linkedin-in {
+                background-color: #0A66C2;
+            }
+
+            &.fa-whatsapp {
+                background-color: #25D366;
+            }
+
+            &.fa-envelope {
+                background-color: #ea4335;
+            }
+
+            &.fa-instagram {
+                background-color: #E4405F;
+            }
+        }
+    }
+}
+
+.py-share-link {
+    display: flex;
+    align-items: center;
+    background-color: #f0f3f7;
+    border-radius: 5px;
+    font-size: 16px;
+
+    .link-icon {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+        border-right: 1px solid #ededed;
+        margin-right: 15px;
+        color: #9FAABB;
+    }
+
+    .copy-action {
+        padding: 0;
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+        color: #748cb1;
+        border-radius: 0 5px 5px 0;
+        background-color: #e2e4ec;
+
+
+        &:hover {
+            color: #ffffff;
+            background-color: #136ACD;
+        }
+    }
+}
+
+.upload-option {
+    width: 320px;
+    max-width: 100%;
+
+    .spinner-wrapper {
+        margin: 0;
+        padding: 60px 0 !important;
+    }
+}
+
+
+
+.peyme-limit-input {
+    input {
+        transition: border-color 0.5s;
+    }
+
+    .error-input-box {
+        border-color: #f26e6e;
+        box-shadow: 0 0 0 0.2rem #cd132d40;
+    }
+
+    .normal-input-box {
+        &:focus {
+            border-color: #6eacf2;
+            box-shadow: 0 0 0 0.2rem #136acd40;
+        }
+
+        &:active {
+            border-color: #6eacf2;
+            box-shadow: 0 0 0 0.2rem #136acd40
+        }
+    }
+
+    .limit-button {
+        color: #FFFFFF;
+        background-color: #136acd;
+        border-color: #136acd;
+        width: 5.5vw;
+        justify-content: center;
+    }
+
+    .memo-button {
+        width: 7.5vw;
+    }
+
+    .error-limit-input {
+        animation: shake 0.2s ease-in-out 0s 2;
+        outline: 0;
+    }
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+        ;
+    }
+
+    25% {
+        margin-left: 0.5rem;
+    }
+
+    75% {
+        margin-left: -0.5rem;
+    }
+
+    100% {
+        margin-left: 0rem;
+    }
+}

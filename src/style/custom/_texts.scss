@@ -1,0 +1,111 @@
+// Texts
+// Controls texts behaviours 
+// Version: 1.0
+
+.py-text--link-err,
+.Link__External,
+.py-text--link-dark {
+  color: $red !important;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline !important;
+    text-decoration-skip-ink: auto;
+  }
+}
+.py-text--link,
+.Link__External,
+.py-text--link-dark {
+  color: $primary !important;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline !important;
+    text-decoration-skip-ink: auto;
+    color: $blue-light;
+  }
+}
+
+.Link__External {
+  background-image: url('/assets/icon--external-link.svg');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 11px 11px;
+  padding-right: 15px;
+  display: inline-block;
+}
+
+.py-text--link-share {
+  padding: .5rem;
+  border-radius: $border-radius;
+  border: 1px dashed #b9b3b3;
+}
+
+.py-text--link-dark {
+  color: $black !important;
+}
+
+
+.py-text--large {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 4px 0;
+}
+
+.py-text {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 10px 0px 30px 0px;
+  display: block;
+  a {
+    color: $blue;
+    &:hover {
+      color: $blue-light;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.py-text--normal {
+  font-weight: 400 !important;
+}
+
+.py-text--body {
+  margin: 0 !important;
+}
+
+
+.py-text--strong,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+.py-text--capitalize {
+  text-transform: capitalize !important;
+}
+.py-text--uppercase {
+  text-transform: uppercase !important;
+}
+
+
+.py-brand--type {
+  font-family: $base-font-family !important;
+}
+
+.py-text--small {
+  font-size: 14px;
+}
+
+.py-text--xsmall {
+  font-size: 12px;
+}
+
+
+.py-text__emphasized {
+  font-style: italic;
+}

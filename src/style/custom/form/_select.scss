@@ -1,0 +1,268 @@
+.py-select--native {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    min-width: 160px;
+    max-width: 320px;
+    width: 100%;
+
+    .py-form__element {
+        background: $white;
+        width: 100%;
+        padding-right: 1rem;
+        box-shadow: none;
+        appearance: none !important;
+        -webkit-appearance: none;
+        height: 100%;
+        min-height: 40px;
+        margin: 0;
+        cursor: pointer;
+
+        &.default {
+            background-color: #ededed;
+        }
+    }
+
+    .Select-arrow-zone {
+        display: none;
+    }
+
+}
+
+.py-select--select {
+    display: inline-block;
+    padding: 0;
+    min-width: 160px;
+    max-width: 320px;
+    width: 100%;
+}
+
+
+.py-select--medium {
+    max-width: 320px;
+    width: 100%;
+    display: block;
+}
+
+.py-select--small {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+}
+
+// React Select 
+
+.custom-select-div {
+    .search-box {
+        width: 94%;
+    }
+
+    .multirecipient {
+        display: grid;
+        grid-template-columns: 306px 2fr !important;
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+.Select-clear {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    text-indent: 1000px;
+    vertical-align: middle;
+
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 0;
+        height: 14px;
+        width: 2px;
+        background-color: $border-color;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+.Select {
+
+
+    &.Select--multi {
+        .Select-value {
+            margin-top: 6px;
+        }
+    }
+
+    .Select-control {
+        border-width: $input-border-width;
+        border-color: $border-color;
+        overflow: visible;
+        height: 40px;
+    }
+
+    .custom-select__control {
+        border-width: $input-border-width;
+        border-color: $border-color;
+        overflow: visible;
+        height: auto;
+
+        .custom-select__value-container {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .custom-select__indicators .custom-select__indicator-separator {
+            display: none;
+        }
+
+        
+    }
+
+    .custom-select__menu {
+        z-index: 9;
+    }
+
+    &.is-focused,
+    &.is-open,
+    &.is-focus:not(.is-open) {
+        >.Select-control {
+            box-shadow: $input-focus-box-shadow !important;
+            border-color: $input-focus-border-color !important;
+        }
+
+        >.custom-select__control {
+            box-shadow: $input-focus-box-shadow !important;
+            border-color: $input-focus-border-color !important;
+        }
+    }
+}
+
+.Select {
+
+    &.is-open {
+        .Select-control {
+            border-radius: 4px;
+        }
+
+        .custom-select__control {
+            border-radius: 4px;
+        }
+    }
+
+    &.is-focused {
+
+
+        input {
+            border-radius: 2px;
+        }
+    }
+
+    // Dropdown icon
+    .Select-arrow {
+        border: 0;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        color: #b2c2cd;
+
+        &:before {
+            content: 'arrow_drop_down';
+            font-family: $materialIcons;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+        }
+    }
+
+    // Dropdown-Menu
+    .Select-menu-outer {
+        border: 1px solid #dedddc;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+        margin-top: 8px;
+    }
+
+    .Select-option {
+        line-height: 20px;
+        padding: 10px 16px;
+
+        &.is-focused {
+            background: rgba($info, .1);
+        }
+    }
+}
+
+.Select-placeholder,
+.custom-select__placeholder,
+.Select--single>.Select-control .Select-value {
+    line-height: 38px !important;
+    color: #B2C2CD !important;
+    height: 40px;
+}
+
+.plaid {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+}
+
+
+.upload-btn-wrapper {
+    display: block;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+
+
+    .upload-select-btn {
+        border: none;
+        width: 140px;
+        height: 40px;
+        line-height: 40px;
+        background: #136acd;
+        color: #ffffff;
+        padding: 0px;
+        margin: 30px 0 5px 0;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .upload-btn-content {
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        text-align: center;
+
+        .form-control-file {
+            font-size: 22px;
+            margin-top: 3px;
+            cursor: pointer;
+            margin-left: -140px;
+        }
+    }
+}
+
+.Select-multi-value-wrapper {
+    height: 100%;
+}

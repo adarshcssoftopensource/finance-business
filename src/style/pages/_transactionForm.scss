@@ -1,0 +1,76 @@
+.transaction-form{
+    background: #ecf0f3;
+    .header{
+        height: 65px;
+        border: 1px solid #d4dde3;
+        color: #4d6575;
+    }
+    .input-div-lg{
+        border: 1px solid #bbc9d3;;
+        background: #fff;
+        input{
+            border: none!important;
+            box-shadow: none!important;
+        }
+    }
+    .lb-input{
+        cursor: pointer;
+        background-color: #fff;
+        border: 1px solid #bbc9d3;;
+        h6{
+            font-size: 15px!important;
+            font-weight: 400!important;
+        }
+        ul{
+            list-style: none;
+            .down{
+                width: 20px;
+                height: 20px;
+            }
+            li{
+                font-size: 13px;
+                .react-date-picker__wrapper {
+                  border: none!important;
+                }
+            }
+        }
+    }
+    .input-value{
+        input{
+            border: none;
+            box-shadow: none;
+        }
+    }
+    textarea{
+        border: none!important;
+        box-shadow: none!important;        
+    }
+    .icon-br{
+        border: 1px solid rgb(170, 170, 170);
+        border-radius: 22px;
+        padding: 4px 3px 5px 3px;
+    }
+    .delete-icon{
+        width: 28px;
+        height: 24px;
+    }
+    .save-icon-br{
+        border: 1px solid rgb(170, 170, 170);
+        border-radius: 22px;
+        padding: 8px 5px 5px 5px;
+    }
+    .save-icon{
+        width: 28px;
+        height: 24px;
+    }
+    .cross-icon{
+        width: 20px;
+        cursor: pointer;
+    }
+    .ul-list{
+        border: 1px solid rgb(170, 170, 170);
+        background: #fff;
+        z-index: 111;
+        cursor: pointer;
+    }
+}

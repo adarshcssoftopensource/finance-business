@@ -1,0 +1,16 @@
+@import "../../style/variables";
+
+.recurly-element-card {
+    height: 50px;
+    border-color: $border-color;
+    border-radius: 10px;
+    margin: 4px 0;
+    box-shadow: $input-box-shadow;
+
+    &:focus,
+    &:active {
+        border-color: $primary;
+        border-width: 2px;
+        box-shadow: none;
+    }
+}

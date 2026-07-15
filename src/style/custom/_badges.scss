@@ -1,0 +1,103 @@
+.badge {
+    font-size: 13px;
+    padding: 4px 12px 4px 14px;
+    margin: 2px 0;
+    line-height: 16px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-weight: $font-weight-bold;
+    display: inline-block;
+    border-radius: 40px 12px 12px 40px;
+    white-space: nowrap;
+
+    &.badge-large {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        line-height: 1.4;
+        min-width: 82px;
+    }
+}
+
+
+.badge-lg {
+    line-height: 1.4;
+    font-weight: $font-weight-bold;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
+}
+
+
+/// color schemes
+.badge-primary {
+    background: $primary;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-success {
+    background-color: #adf0cc;
+    color: #14713f;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-secondary {
+    background-color: #d1d7d8;
+    color: #485153;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-processing {
+    background-color: #f4a859;
+    color: #614930;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-info {
+    background-color: #b3e4f5;
+    color: #11637e;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-warning {
+    background-color: #f9dcb3;
+    color: #7b4c09;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B55700' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-danger {
+    background-color: #f3d1d1;
+    color: #a90909;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C22909' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")
+}
+
+.badge-alert {
+    background-color: #eee991;
+    color: #686307;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C22909' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")
+}
+
+.badge-default {
+    background-color: #c7d3dc;
+    color: #395260;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.badge-gray {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23485153' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");    
+}
+
+.circle-badge {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    display: inline-block;
+    background-color: #222142;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 100px;
+    font-size: 14px;
+}

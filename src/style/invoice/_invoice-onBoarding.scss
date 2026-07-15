@@ -1,0 +1,233 @@
+// .invoice-onBoarding__wrapper{
+//     .invoice-onBoarding__box{
+
+//         .invoice-onBoarding__content{
+//             .invoice-onBoarding__content-container{
+//                 display: flex;
+//                 justify-content: center;
+//                 padding: 0 20px;
+//                 .choose-logo__heading,.choose-template__heading{
+//                     color: #718fa2;
+//                     font-weight: normal;
+//                     text-align: center;
+//                 }
+//                 .invoice-onBoarding__content-container__logo-accent-column{
+//                     min-height: 512px;
+//                     .choose-logo{
+//                         width: 302px;
+//                         min-height: 274px;
+//                         text-align: center;
+//                         .uploader-zone{
+//                             border: 1px dashed;
+//                             border-radius: 5px;
+//                             border-color: #136acd;
+//                         }
+//                     }
+//                     .choose-accent-color{
+//                         justify-content: center;
+//                         margin-top: -30px;
+//                         text-align: center;
+//                         .accent-color__heading{
+//                             color: #718fa2;
+//                             font-weight: normal;
+//                             text-align: center;
+//                         }
+//                         .py-color-picker{
+//                             width: 300px;
+//                             padding: 10px;
+//                             box-sizing: border-box;
+//                             background: #fff;
+//                             border-radius: 3px;
+//                             border: 1px solid #ccc;
+//                             margin: 0 auto;
+//                             .py-text.py-text-hint{
+//                                 margin: 16px 0;
+//                                 color: #4d6575;
+//                                 font-size: 14px;
+//                                 line-height: 1.4;
+//                             }
+//                             .py-color-picker__element{
+//                                 display: flex;
+//                                 flex-direction: row;
+//                                 margin-top: 10px;
+//                                 .py-color-picker__element-saturation-container{
+//                                     display: flex;
+//                                     flex-direction: column;
+//                                     flex: 0 0 100px;
+//                                     .saturation-picker{
+//                                         width: 100px;
+//                                         height: 100px;
+//                                         position: relative;
+//                                         float: left;
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//             .invoice-onBoarding__content-submit{
+//                 margin-top: 35px;
+//                 text-align: center;
+//                 .invoice-onboarding__submit__button-container{
+//                     .btn.btn-accent{
+//                         width: 325px;
+//                         margin: 0 auto;
+//                     }
+//                     .hint{
+//                         margin: 20px 0;
+//                         text-align: center;
+//                     }
+//                 }
+//             }
+
+//         }
+//     }
+// }
+
+
+.invoice-onboarding-template-carousel {
+	.carousel {
+		.control-arrow {
+
+			&:hover  {
+				background-color: transparent;
+			}
+
+			&:before {
+				border: none !important;
+				content: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' id='back' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.813 16.187a1.15 1.15 0 0 1-1.626 1.626l-7-7a1.15 1.15 0 0 1 0-1.626l7-7a1.15 1.15 0 0 1 1.626 1.626L7.626 10l6.187 6.187z'%3E%3C/path%3E%3C/svg%3E") !important;
+				width: 50px;
+			}
+
+			&.control-next {
+				&:before {
+					content: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' id='forward' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.586 10L6.293 3.707a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 1 1-1.414-1.414L12.586 10z'%3E%3C/path%3E%3C/svg%3E") !important;
+				}
+			}
+		}
+
+		.slide {
+			transform: scale(0.9);
+			opacity: 0.8;
+			transition: 0.1s;
+
+			&.selected {
+				transform: scale(1);			
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+
+
+.carousel__template {
+    position: relative;
+
+    &.classic {
+		.py-carousel__logo {
+		    position: absolute;
+		    left: 15px;
+		    top: 4%;
+		    display: inline-block;
+			img {
+				max-width: 130px;
+				max-height: 60px;
+				width: auto;
+			}
+		}
+    }
+
+    &.modern {
+		.py-carousel__logo {
+		    position: absolute;
+		    left: 15px;
+		    bottom: 8px;
+		    display: inline-block;
+			img {
+				max-width: 130px;
+				max-height: 30px;
+				width: auto;
+			}
+		}
+		.left-carousel__content {
+		    position: absolute;
+		    left: 0px;
+		    top: 0px;
+		    padding: 25px 15px;
+		    color: #ffffff;
+		    text-align: left;
+		    font-weight: 200;
+		    font-family: Helvetica,Arial,sans-serif;
+		    font-size: 16px;
+
+		    .subheading {
+			    display: block;
+			    font-size: 6px;
+			    font-weight: 400;
+			}
+		}
+		.right-carousel__content {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    font-family: Helvetica,Arial,sans-serif;
+		    text-align: right;
+		    padding: 27px 15px;
+		    font-size: 16px;
+		    font-weight: 200;
+		    color: #ffffff;
+
+		    .subheading {
+			    display: block;
+			    font-size: 6px;
+			}
+		}
+    }
+
+    &.contemporary {
+		.py-carousel__logo {
+		    position: absolute;
+		    left: 15px;
+		    top: 4%;
+		    display: inline-block;
+			img {
+				max-width: 130px;
+				max-height: 75px;
+				width: auto;
+			}
+		}
+		.py-text-body {
+			position: absolute;
+			left: 15px;
+			top: calc(44% - 7px);
+			color: #ffffff;
+			width: calc(100% - 28px);
+			text-align: right;
+			font-family: Helvetica,Arial,sans-serif;
+			display: inline-block;
+			line-height: 10px;
+			overflow: hidden;
+
+			span {
+				font-size: 6px;
+
+				&.services {
+					float: left;
+					margin-top: 4px;
+				}
+				&.rate {
+					margin-right: 37px;
+				}
+				&.quantity {
+					margin-right: 44px;
+				}
+			}
+		}
+    }
+}
+
+
+

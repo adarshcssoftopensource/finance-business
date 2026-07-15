@@ -1,0 +1,190 @@
+@media print {
+	@page {
+		size: 8.5in 11in portrait;
+		margin: 0;
+	}
+	// .container,
+	// .span12 {
+	// 	width: auto
+	// }
+	body {
+		min-width: 0;
+		width: 100%;
+	}
+	// form,
+	// header,
+	// .header,
+	// footer,
+	// .footer,
+	// .breadcrumb,
+	// .record-links,
+	// .sidebar,
+	// #tabs {
+	// 	display: none
+	// }
+	table {
+		page-break-inside: auto;
+	}
+	tr {
+		page-break-inside: avoid;
+		page-break-after: auto;
+		th{
+			background-color: #cccc !important;
+		}
+	}
+	thead {
+		display: table-header-group;
+	}
+	tfoot {
+		display: table-footer-group
+	}
+	tbody {
+		display: table-row-group
+	}
+	table.totals {
+		page-break-inside: avoid
+	}
+	.print_footer{
+		page-break-inside: avoid;
+		.modern-template__business-info{
+			page-break-inside: avoid;
+		}
+		// border: 10px solid;
+		// page-break-after: auto;
+	}
+	.classic-template__separator__header__frame {
+		.py-heading--title {
+			line-height: 54px;
+		}
+	}
+	.classic-template__items {
+		.py-table__body,
+		.py-table__header {
+			background-color: #ffffff !important;
+			border: none !important;
+			.py-table__row {
+				background-color: #ffffff !important;
+				border: none !important;
+				td,
+				th {
+					background-color: #ffffff !important;
+					border: none !important;
+				}
+			}
+		}
+	}
+	.classic-template__items {
+		.py-table__header {
+			.py-table__row {
+			    border-bottom: 1px dotted #4d6575 !important;
+			}
+		}
+		.py-table__body {
+		    border-bottom: 1px dotted #4d6575 !important;
+		}
+	}
+	.classic-template__items {
+	  .py-table {
+	    border-bottom: none;
+	    tbody {
+	      .py-table__row:not(.no-hover):hover {
+	        background-color: transparent;
+	      }
+	    }
+	    .py-table__cell,
+	    .py-table__cell__action,
+	    .py-table__cell-amount {
+	      padding: 12px 15px;
+	    }
+	  }
+	}
+	.classic-template__separator__header__frame__text {
+	    border-width: 0 0;
+	    border-style: solid;
+	    height: 56px;
+	    line-height: 66px;
+	    position: relative;
+	    padding: 0 10px;
+	}
+
+	.classic-template__metadata {
+	  .py-table--plain {
+	    td {
+	      padding: 5px 7px 5px 5px !important;
+	    }
+	  }
+	}
+	.invoice-preview__body{
+		width: 1120px;
+		border: none;
+		box-shadow: none;
+		outline: none;
+
+		.contemporary-template,
+		.classic-template {
+			width: 960px;
+			min-height: 1080px;
+			margin: auto;
+			display: block;
+		}
+
+
+		.contemporary-template {
+			.contemporary-template__items {
+			    margin-right: -15px;
+			    margin-left: -16px;
+			}
+		}
+
+		.modern-template {
+			border: 1px solid #ededed;
+			width: 960px;
+			margin: auto;
+			display: block;
+			min-height: 1080px;
+		}
+
+
+		.modern-template {
+			page-break-inside: avoid;
+
+			.modern-template__items {
+				.py-table {
+					.py-table__header {
+						.py-table__row {
+							th {
+								background-color: #ffffff !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.contemporary-template__metadata {
+    .invoice-template-details {
+        table {
+            tr {
+                td {
+                    padding: 0px 7px 10px 5px !important;
+                }
+                &:last-child {
+                    background: #f4f5f5 !important;
+                    td {
+                    	background: #f4f5f5 !important;
+                        padding-top: 10px !important;
+                        padding-bottom: 10px !important;
+
+                        &:first-child {
+                            border-radius: 5px 0px 0px 5px !important;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}

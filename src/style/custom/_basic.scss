@@ -1,0 +1,202 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+#app-container {
+  height: 100%;
+}
+
+.main-app-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.app-content-wrapper.main-body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1 1 0%;
+  flex: 1 1 0%;
+  min-height: 100%;
+  transition: left 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 2 0 0%;
+  flex: 2 0 0%;
+  background: #fff;
+  overflow: auto;
+  height: 100%;
+  transition: 0.3s;
+  max-width: 100%;
+  width: 980px;
+  min-width: 960px;
+  @media (max-width: 992px) {
+    min-width: 768px;
+  }
+  @media (max-width: 768px) {
+    min-width: 580px;
+  }
+}
+
+.content-wrapper__main {
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
+  padding: 24px 12px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (min-width: 480px) {
+    min-width: 480px;
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 6px);
+  }
+
+  &.import-wrapper,
+  &.statement,
+  &.estimateForm,
+  &.dashboard-wrapper {
+    // max-width: 1108px;
+    padding: 24px;
+  }
+
+}
+
+
+@media only screen and (min-width: 1400px) {
+  .content-wrapper__main {
+    padding: 24px 64px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .content-wrapper__main {
+    padding: 24px;
+  }
+}
+
+.main-body-sc {
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100vh;
+}
+
+.nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.full-height {
+  height: calc(100vh - 70px);
+}
+
+.variant-numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+.w-80 {
+  width: 80px;
+  max-width: 80px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #ffffff !important;
+}
+
+.popover {
+  box-shadow: 0 4px 36px 4px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  border: none !important;
+
+  .arrow {
+    &:before {
+      border: none !important;
+      box-shadow: 0 4px 36px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+}
+
+.weightbold {
+  font-weight: 700 !important;
+}
+
+.banking-collaps {
+  background-color: #f2f7ff;
+  border-color: #f2f7ff;
+
+  .py-box {
+    border: none;
+    background: none;
+  }
+}
+
+.heading-sm {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-item-list {
+  margin: 0px -5px;
+
+  li {
+    margin: 0px 5px;
+  }
+
+}
+
+.react-bootstrap-table {
+  max-width: 100%;
+  margin-bottom: 15px;
+
+  .table {
+    min-width: 768px;
+    margin-bottom: 0px
+  }
+}
+
+.col-xs-6 {
+  width: 50% !important;
+}

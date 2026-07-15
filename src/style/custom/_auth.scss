@@ -1,0 +1,891 @@
+.mainApp {
+  background: #fff !important;
+}
+
+.side-toggle {
+  .text-muted {
+    display: none;
+  }
+}
+
+.full-height {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.py-page__login {
+  .btn-social--google {
+    background-color: #ecf4ff !important;
+    color: #002b64 !important;
+    min-width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px 8px 8px;
+    border-radius: 10px;
+    border: none;
+    min-height: 50px;
+    width: auto;
+    font-weight: 500;
+
+    span {
+      padding: 8px 15px 8px 0px !important;
+    }
+
+    &:before {
+      content: url("data:image/svg+xml,%0A%3Csvg id='brands-and-logotypes' xmlns='http://www.w3.org/2000/svg' width='24.032' height='24.032' viewBox='0 0 24.032 24.032'%3E%3Cpath id='Path_789' data-name='Path 789' d='M5.744,107.433a6.112,6.112,0,0,1,.916-3.219v-4H2.529a11.568,11.568,0,0,0,0,14.437H6.66v-4A6.112,6.112,0,0,1,5.744,107.433Z' transform='translate(0 -95.418)' fill='%23fbbd00'/%3E%3Cpath id='Path_790' data-name='Path 790' d='M198.872,373.872,196,376.745l2.872,2.872a12.162,12.162,0,0,0,7.457-2.529v-4.127H202.2A6.509,6.509,0,0,1,198.872,373.872Z' transform='translate(-186.934 -355.585)' fill='%230f9d58'/%3E%3Cpath id='Path_791' data-name='Path 791' d='M56.955,325.477l-4.132,4.132a12.453,12.453,0,0,0,1.061,1.208,12.175,12.175,0,0,0,8.665,3.589v-5.744A6.513,6.513,0,0,1,56.955,325.477Z' transform='translate(-50.294 -310.374)' fill='%2331aa52'/%3E%3Cpath id='Path_792' data-name='Path 792' d='M268.255,200.133a12.361,12.361,0,0,0-.2-2.22l-.108-.589H256v5.744h5.814a6.481,6.481,0,0,1-2.484,2.663l4.127,4.127a12.444,12.444,0,0,0,1.208-1.061A12.175,12.175,0,0,0,268.255,200.133Z' transform='translate(-244.223 -188.356)' fill='%233c79e6'/%3E%3Cpath id='Path_793' data-name='Path 793' d='M203.476,7.651l.508.508L208.045,4.1l-.508-.508A12.175,12.175,0,0,0,198.872,0L196,2.872l2.872,2.872A6.468,6.468,0,0,1,203.476,7.651Z' transform='translate(-187.095 0)' fill='%23cf2d48'/%3E%3Cpath id='Path_794' data-name='Path 794' d='M62.548,5.744V0a12.175,12.175,0,0,0-8.665,3.589A12.438,12.438,0,0,0,52.822,4.8l4.132,4.132a6.513,6.513,0,0,1,5.595-3.184Z' transform='translate(-50.293 0)' fill='%23eb4132'/%3E%3C/svg%3E%0A");
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 3px rgba(19, 106, 205, 0.2) !important;
+    }
+  }
+
+  .icon-input {
+    position: relative;
+
+    .input-icon-label {
+      position: absolute;
+      top: 16px;
+      left: 15px;
+      line-height: 1em;
+      z-index: 3;
+    }
+  }
+
+  .custom-select__value,
+  .form-control {
+    height: 50px;
+    border: 1px solid #d4dde3;
+    border-radius: 10px;
+    padding: 5px 16px;
+
+    &[name='password'],
+    &[name='confirmPassword'] {
+      padding-right: 35px;
+    }
+  }
+
+  .flag-dropdown,
+  .selected-flag {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .Select-control {
+    height: 50px;
+    border: 1px solid #d4dde3;
+    border-radius: 10px;
+
+    .Select-placeholder,
+    .Select-value {
+      line-height: 48px !important;
+      color: #21252960 !important;
+      height: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .Select-input {
+      height: 46px;
+      padding-left: 15px;
+      padding-right: 15px;
+      line-height: 48px;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: #21252960 !important;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #21252960 !important;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #21252960 !important;
+  }
+
+  :-ms-input-placeholder {
+    color: #21252960 !important;
+  }
+
+  .py-heading--title {
+    margin-top: 0px;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+    font-size: 26px;
+    color: #212529;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .hide-show-eye {
+    font-size: 14px;
+    position: absolute;
+    right: 2px;
+    top: 37px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    z-index: 1;
+    background: white;
+    border-radius: 100px;
+    display: block;
+  }
+
+  /* .form-control {
+        font-style: normal;
+        border-width: 2px;
+    } */
+
+  ::placeholder {
+    font-style: normal !important;
+  }
+
+  @media (max-width: 580px) {
+    .reg-redirect-msg {
+      a {
+        display: block;
+      }
+    }
+  }
+
+  .suggest-info {
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .suggest-info {
+      display: none;
+    }
+  }
+}
+
+.create-businessform .Select {
+  padding: 0 !important;
+  height: 43px;
+}
+
+.create-businessform .Select .Select-control {
+  border: none !important;
+}
+
+.create-businessform .form-control {
+  height: 45px !important;
+}
+
+.onboarding__logo {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eef4fc;
+  border-bottom: 1px solid #ededed;
+}
+
+.gray-bg {
+  background: #f8fcff;
+
+  &.auth-page {
+    height: 100vh;
+  }
+}
+
+// .py-page__auth {
+//     background: #EEF4FC;
+//     min-height: 100%;
+//     box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.05);
+//     overflow-y: auto;
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+//     z-index: 1;
+
+//     .step-logo {
+//         max-width: 170px;
+//         margin: auto;
+//         display: block;
+//     }
+
+//     .py-form-field__label,
+//     label {
+//         display: block !important;
+//         text-align: left !important;
+//         margin-bottom: 5px !important;
+//     }
+
+//     .login-form.onboard-form {
+
+//         .step-title {
+//             text-align: center;
+//             margin-bottom: 30px;
+//             font-size: 26px;
+//         }
+//     }
+
+//     &.onboarding__initial {
+//         max-height: inherit;
+//         min-height: 100vh;
+//         display: flex;
+//     }
+
+//     .py-page__login {
+//         max-width: 570px;
+//         width: calc(100% - 30px);
+//         margin: auto;
+//         font-family: 'Poppins', sans-serif !important;
+//         border-radius: 20px;
+//         background-color: #ffffff;
+//         position: relative;
+//         padding: 30px;
+//         box-shadow: 0px 0px 60px 0px #21252910;
+
+//         @media (max-width: 768px) {
+//             padding: 20px;
+//         }
+
+//         .py-text {
+//             color: #212529;
+//             font-size: 14px;
+//             margin: 0px;
+
+//             a {
+//                 font-weight: 400
+//             }
+//         }
+
+//         .py-select--native {
+//             margin: 4px 0px;
+//         }
+
+//         .py-text--link {
+//             color: #2F80ED;
+//         }
+
+//         .btn {
+//             font-weight: 500 !important;
+//         }
+
+//         .btn-sq {
+//             background: #4198ff !important;
+//             border: none;
+//             height: 50px;
+//             border-radius: 10px !important;
+//             text-transform: uppercase;
+//             font-weight: 500 !important;
+//             font-size: 14px;
+//             padding: 16px 22px;
+//             transition: 0.3s;
+
+//             .spinner-border {
+//                 width: 12px;
+//                 height: 12px;
+//                 border-width: 2px;
+//             }
+//         }
+
+//         .btn-resend {
+//             margin-top: 2rem;
+//         }
+
+//         .btn-primary-light {
+//             background-color: #ECF4FF !important;
+//             color: #4198FF !important;
+//         }
+
+//         .bold {
+//             font-weight: 700;
+//             font-size: 14px;
+//         }
+//     }
+
+//     .btn-primary,
+//     .btn-primary.dropdown-toggle {
+//         background-color: #2F80EC;
+//     }
+
+//     .py-text--divider {
+//         margin: 2rem auto;
+//     }
+
+//     .form-group {
+//         margin-bottom: .5rem;
+//     }
+
+//     // .alert-fixed {
+//     //     position: fixed !important;
+//     //     max-width: 66.66667% !important;
+//     //     width: 100% !important;
+//     //     margin: 0 !important;
+//     //     margin-left: auto;
+//     //     right: 0;
+//     //     top: 1rem;
+//     //     display: block;
+//     // }
+//     // .alert {
+//     //     display: inline-block;
+//     //     width: 100%;
+
+//     //     &.alert-danger {
+//     //         border:2px solid rgba($danger, .6) !important;
+//     //         background: rgba($danger, .4);
+//     //         color: $danger;
+//     //     }
+//     // }
+// }
+
+/* --- Modern Login Enhancements --- */
+.py-page__auth {
+  background: #eef4fc;
+  min-height: 100%;
+  box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+
+  /* Floating circles for subtle animation */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(108, 99, 255, 0.1);
+    z-index: 0;
+    animation: float 8s ease-in-out infinite alternate;
+  }
+  &::before {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+  }
+  &::after {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 4s;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) scale(1.05);
+    }
+    100% {
+      transform: translateY(0px) scale(1);
+    }
+  }
+
+  .log-form-box {
+    gap: 32px;
+  }
+
+  .step-logo {
+    max-width: 280px;
+    margin: auto;
+    display: block;
+
+    svg,
+    img {
+      display: block;
+      width: auto;
+      height: 36px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .py-form-field__label,
+  label {
+    display: block !important;
+    text-align: left !important;
+    margin-bottom: 5px !important;
+    font-weight: 500;
+    color: #212529;
+    font-size: 14px;
+  }
+
+  .login-form.onboard-form {
+    .step-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 26px;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  &.onboarding__initial {
+    max-height: inherit;
+    min-height: 100vh;
+    display: flex;
+  }
+
+  .py-page__login {
+    max-width: 570px;
+    width: calc(100% - 30px);
+    margin: auto;
+    font-family: 'Poppins', sans-serif !important;
+    border-radius: 20px;
+    background-color: #ffffff;
+    position: relative;
+    padding: 40px 30px;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .py-text {
+      color: #212529;
+      font-size: 14px;
+      margin: 0px;
+
+      a {
+        font-weight: 500;
+        color: #2f80ed;
+        transition: 0.3s;
+        &:hover {
+          color: #1c5dc7;
+        }
+      }
+    }
+
+    .py-select--native {
+      margin: 4px 0px;
+    }
+
+    .py-text--link {
+      color: #2f80ed;
+      font-weight: 500;
+      transition: 0.3s;
+      &:hover {
+        color: #1c5dc7;
+      }
+    }
+
+    .btn {
+      font-weight: 500 !important;
+    }
+
+    .btn-sq {
+      background: linear-gradient(90deg, #6c63ff, #3ab0ff) !important;
+      border: none;
+      height: 50px;
+      border-radius: 12px !important;
+      text-transform: uppercase;
+      font-weight: 500 !important;
+      font-size: 14px;
+      padding: 16px 22px;
+      box-shadow: 0 8px 15px rgba(108, 99, 255, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(108, 99, 255, 0.3);
+      }
+
+      .spinner-border {
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+      }
+    }
+
+    .btn-resend {
+      margin-top: 2rem;
+    }
+
+    .btn-primary-light {
+      background-color: #ecf4ff !important;
+      // color: #4198FF !important;
+    }
+
+    .bold {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='number'],
+    .form-control {
+      height: 50px;
+      border-radius: 12px;
+      border: 1px solid #d4dde3;
+      padding: 0 16px;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #6c63ff;
+        box-shadow: 0 0 8px rgba(108, 99, 255, 0.2);
+        outline: none;
+      }
+    }
+  }
+
+  .btn-primary,
+  .btn-primary.dropdown-toggle {
+    background-color: #2f80ec;
+    transition: 0.3s;
+    &:hover {
+      background-color: #92a9cf;
+    }
+  }
+
+  .py-text--divider {
+    margin: 2rem auto;
+  }
+
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.py-page__auth {
+  .spinner-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.login-form {
+  label {
+    line-height: 1.6em;
+    font-size: 14px;
+  }
+}
+
+.top-banner {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #2475d1;
+  color: #ffffff;
+  font-weight: 700;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  a {
+    color: #ffffff;
+    white-space: normal;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sign-content {
+  max-width: 540px;
+  width: 100%;
+  padding: 30px 15px;
+
+  .title-1 {
+    font-size: 40px;
+    line-height: 1em;
+    font-weight: 400;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+
+    .big {
+      display: block;
+      font-size: 80px;
+      font-weight: 500;
+      line-height: 95px;
+      margin-top: 5px;
+    }
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 27px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+
+    p:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .lead {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 55px;
+  }
+}
+
+.play-box {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .play-button {
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    line-height: 130px;
+    background: #ededed;
+    border-radius: 5px;
+    background-image: url('../../assets/images/play-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(27, 128, 237, 0.4);
+      z-index: -1;
+    }
+
+    .play-icon {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #ffffff;
+      display: inline-block;
+      line-height: 54px;
+      border-radius: 100%;
+      color: #ffffff;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #ffffff;
+        color: #2f80ed;
+      }
+    }
+  }
+
+  .play-content {
+    width: calc(100% - 150px);
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+
+    .title {
+      font-size: 21px;
+      font-weight: 500;
+      color: #212529;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .desc {
+      color: rgba(0, 43, 100, 0.4);
+      font-weight: 500;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+}
+
+.py-text-left-bar {
+  position: relative;
+  color: rgba(0, 43, 100, 0.4);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0px 10px;
+
+  &:after,
+  &:before {
+    content: '';
+    background-color: #2f80ed;
+    width: 30px;
+    height: 2px;
+    display: inline-block;
+    transform: translateY(-4px);
+
+    @media (max-width: 768px) {
+      width: 20px;
+    }
+  }
+
+  span {
+    margin: 0px 10px;
+  }
+}
+
+.over-scroll {
+  min-height: 600px;
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 1500px) {
+  .sign-content {
+    .title-1 {
+      font-size: 25px;
+      margin-bottom: 30px;
+
+      .big {
+        font-size: 70px;
+        line-height: 80px;
+      }
+    }
+
+    .lead {
+      margin: 30px 0px 35px;
+    }
+
+    .play-box {
+      .play-content {
+        .title {
+          font-size: 18px;
+        }
+      }
+
+      .play-button {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+
+        .play-icon {
+          width: 50px;
+          height: 50px;
+          line-height: 46px;
+        }
+      }
+    }
+  }
+}
+
+.text-typo-1 {
+  color: rgba(0, 43, 100, 0.4);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.text-typo-2 {
+  color: #002b64;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .hidden-xs {
+    display: none !important;
+  }
+
+  .over-scroll {
+    min-height: inherit;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+}
+
+.login-link {
+  font-size: 14px;
+  color: #212529;
+}
+
+.anime-content {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.anime-item {
+  position: absolute;
+}
+
+.anime-item.one {
+  top: 9%;
+  left: 5%;
+  animation: animationFramesOne 25s alternate infinite linear;
+}
+
+.anime-item.two {
+  right: 20%;
+  bottom: 15%;
+  animation: jump 8s infinite linear;
+}
+
+.anime-item.three {
+  bottom: 21%;
+  left: 22%;
+  animation: animationFramesTwo 13s infinite linear;
+}
+
+.anime-item.four {
+  top: 30%;
+  left: 27%;
+  animation: animationFramesFive 25s alternate infinite linear;
+}
+
+.anime-item.five {
+  bottom: 5%;
+  right: 5%;
+  animation: animationFramesThree 35s alternate infinite linear;
+}
+
+.anime-item.six {
+  top: 55%;
+  right: 16%;
+  animation: animationFramesFour 20s alternate infinite linear;
+}
+
+.anime-item.seven {
+  top: 8%;
+  right: 20%;
+  animation: animationFramesOne 15s infinite linear;
+}
+
+.anime-item.eight {
+  bottom: 10%;
+  left: 0%;
+  animation: animationFramesFour 20s alternate infinite linear;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .py-page__auth {
+    flex-direction: column;
+
+    .py-page__login {
+      padding: 20px;
+    }
+  }
+}

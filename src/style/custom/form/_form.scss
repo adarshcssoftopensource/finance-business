@@ -1,0 +1,31 @@
+.form-control, 
+[contenteditable="true"],
+.py-datepicker--range .react-datepicker-wrapper .react-DateRange__dateInput-container,
+.DateRange__container {
+	box-shadow: none;
+}
+
+.public-checkout__inner-container {
+	.errors.full-width.top {
+		display: flex;
+		line-height: 1em;
+		margin-top: 3px;
+		margin-bottom: 10px;
+	}
+}
+
+.react-tel-input .form-control {
+	width: 320px;
+	border-color: #b2c2cd;
+}
+
+.signup_form_phone{
+	.form-control{
+		padding-left: 12% !important;
+	}
+	.flag-dropdown {
+		.country-list {
+			z-index: 111;
+		}
+	}
+}

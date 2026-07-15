@@ -1,0 +1,305 @@
+.mainWrapper{
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+    -webkit-font-smoothing: antialiased; 
+    text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+     line-height: 100%;
+    background-color: #F0F0F0;
+    color: #1c252c;
+}
+.tableParent{
+    background-color: #F0F0F0;
+    border-collapse: collapse;
+    border:"0"
+}
+.parent-td{
+    padding: 30px 0px;
+}
+.child_one{
+    margin: auto; 
+    background-color: #ffffff;
+    border-collapse: collapse;
+}
+.child-table-two{
+    margin: auto;
+    border-collapse: collapse;
+}
+.child-table-two-td{
+    padding: 50px 0px;
+    vertical-align: middle;
+    text-align: center;
+}
+.child-table-three{
+    border-collapse: collapse;
+    margin: auto;
+    text-align: center;
+}
+.child-table-three-td{
+    text-align: center; 
+    vertical-align: middle;
+
+    .main-logo {
+        display: inline-block;
+        max-width: 150px;
+    }
+}
+
+
+
+/* SECOND TABLE */
+.second-child-table{
+    margin: auto;
+    border-collapse: collapse;
+}
+.second-child-table-td{
+    padding: 0px;
+    vertical-align: middle;
+    text-align: center;
+}
+.second-child-table-first-table{
+    border-collapse: collapse;
+    margin: auto;
+    text-align: center;
+}
+.second-child-table-first-table-td{
+    font-family: 'Poppins', Helvetica Neue, Arial, sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #212529;
+    margin: auto;
+    text-align: center;
+    line-height: 52px;
+    padding: 0px 0px 20px;
+}
+.second-child-table-second-table{
+    border-collapse: collapse;
+    margin: auto;
+    text-align: center;
+}
+.second-child-table-second-table-td{
+    font-family: 'Poppins', Helvetica Neue, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(33,37,41,0.7);
+    margin: auto;
+    text-align: center; 
+    line-height: 30px;
+    padding: 0px 0px 50px 0px;
+}
+
+
+/* THIRD CHILD TABLE */
+.third-child-table{
+    margin: auto;
+    border-collapse: collapse;
+}
+.third-child-table-td{
+    vertical-align: middle;
+}
+.third-child-table-first-inner-table{
+    border-collapse: collapse;
+    margin:0px;
+    text-align: center;
+}
+.third-child-table-first-inner-table-td{
+    font-family: 'Poppins', Helvetica Neue, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(33,37,41,0.7);
+    margin: auto;
+    text-align: left; 
+    line-height: 24px; 
+    padding: 0px;
+    padding: 15px 20px 15px 30px;
+    background-color: #F5FAFF;
+    vertical-align: top;
+}
+.third-child-table-first-inner-table-td.td-1{
+    color: #212529;
+}
+.third-child-table-first-inner-table-td.td-2{
+    font-weight: 500;
+    color: #212529;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-3{
+    color: #212529;
+}
+.third-child-table-first-inner-table-td.td-4{
+    color: #212529;
+    background-color: #ffffff;
+}
+.third-child-table-first-inner-table-td.td-5{
+    font-weight: 500;
+    color: #212529;
+    background-color: #ffffff;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-6{
+    color: #212529;
+    background-color: #ffffff;
+}
+.third-child-table-first-inner-table-td.td-7{
+}
+.third-child-table-first-inner-table-td.td-8{
+    font-weight: 500;color: #212529;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-9{
+    color: #212529;
+}
+.third-child-table-first-inner-table-td.td-10{
+    color: rgba(33,37,41,0.7);
+    background-color: #ffffff;
+}
+.third-child-table-first-inner-table-td.td-11{
+    font-weight: 500;color: #212529;
+    background-color: #ffffff;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-12{
+    color: #212529;
+    background-color: #ffffff;
+}
+.third-child-table-first-inner-table-td.td-13{
+    color: rgba(33,37,41,0.7);
+    background-color: #F5FAFF;
+}
+.third-child-table-first-inner-table-td.td-14{
+    font-weight: 500;color: #212529;background-color: #F5FAFF;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-15{
+    color: #212529;background-color: #F5FAFF;
+}
+.third-child-table-first-inner-table-td.td-16{
+    color: rgba(33,37,41,0.7);
+    background-color: #ffffff;
+}
+.third-child-table-first-inner-table-td.td-17{
+    font-weight: 500;color: #212529;background-color: #ffffff;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-18{
+    color: #212529;
+    background-color: #ffffff;
+}
+.third-child-table-first-inner-table-td.td-19{
+    color: rgba(33,37,41,0.7);background-color: #F5FAFF;
+}
+.third-child-table-first-inner-table-td.td-20{
+    font-weight: 500;color: #212529;background-color: #F5FAFF;
+    padding: 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-21{
+    color: #212529;background-color: #F5FAFF;
+}
+
+
+/* Fourth-child-table */
+.fourth-child-table{
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.td-50{
+    vertical-align: middle;padding: 0px 0px 40px 0px;
+}
+.fourth-child-table-inner-first-table{
+    border-collapse: collapse;
+    margin:0px;
+    text-align: center;
+}
+.third-child-table-first-inner-table-td.td-22{
+    color: #212529;
+    word-break: break-all;
+    padding: 40px 0px 50px 0px;
+    background-color: #ffffff;
+}
+
+.fourth-child-table-inner-second-table{
+    border-collapse: collapse;margin: auto;text-align: center;
+}
+.third-child-table-first-inner-table-td.td-23{
+    background-color: #ffffff;
+    font-size: 30px;color: #212529;text-align: center; line-height: 40px;padding: 0px 0px 10px 0px;
+}
+.fourth-child-table-inner-third-table{
+    border-collapse: collapse;
+    margin: auto;text-align: center;
+
+}
+.third-child-table-first-inner-table-td.td-24{
+    background-color: #ffffff;
+    font-size: 14px;font-weight: 400;color: #212529;text-align: center; line-height: 30px;padding: 0px 0px 30px 0px;
+}
+.fourth-child-table-inner-fourth-table{
+    border-collapse: collapse;margin: auto;text-align: center;
+}
+.fourth-child-table-inner-fourth-table tr .td-25{
+    background-color: #136ACD;border-radius: 100px;padding: 22px 30px;line-height: 16px;
+}
+.fourth-child-table-inner-fourth-table tr .td-25 a{
+    display: inline-block; color: #ffffff;font-family: 'Poppins', Helvetica Neue, Arial, sans-serif;font-size: 16px;font-weight: 700;margin: auto;text-align: center;text-decoration: none;
+}
+
+
+/* FIFTH TABLE */
+.fifth-child-table{
+    margin: auto; background-color: #F7FAFE;border-collapse: collapse;
+}
+.td-26{
+    padding: 50px 30px 30px 30px
+}
+.fifth-child-table-inner-first-table{
+    border-collapse: collapse;margin: auto;
+}
+.commom-table-style{
+    border-collapse: collapse;margin: auto;
+}
+.td-27{
+
+    padding: 0px 0px 20px 0px;
+}
+.a-common-style{
+    max-width: 100%;
+max-width: 100%;
+}
+.third-child-table-first-inner-table-td.td-28{
+    font-size: 12px;color: #212529;text-align: center;line-height: 20px;padding: 0px 0px 15px 0px;
+}
+.third-child-table-first-inner-table-td.td-28.td-29{
+    font-size: 12px;color: #212529;text-align: center;line-height: 20px;padding: 0px 0px 15px 0px;
+    padding: 0px 0px 20px 0px;
+}
+.a-common-again-style{
+    color: #1c252c; text-decoration: underline;font-weight: 500;
+}
+.td-common-again-style{
+    font-family: 'Poppins', Helvetica Neue, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #1c252c;
+    margin: auto;
+    text-align: center;
+    line-height: 20px;
+}
+.td-30{
+    padding: 0px 0px 15px 0px;
+}
+.fifth-child-table-inner-fourth-table{
+    border-collapse: collapse;
+}
+.td-31{
+
+    text-align: center;
+}
+.td-31-a-tag{
+    display: inline-block;margin: 0 5px;
+}

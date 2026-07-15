@@ -1,0 +1,1042 @@
+   .invoice-header {
+       margin-bottom: 30px;
+
+       .py-header--page {
+           margin: 0;
+           display: flex;
+           /* .py-header--action {
+      .btn {
+        font-size: 16px;
+        font-weight: 400;
+        border: none;
+        box-shadow: none;
+        line-height: 1em;
+        padding: 12px 30px;
+        &:hover {
+          background-color: #0f529f;
+          box-shadow: none;
+          border: none;
+        }
+      }
+    } */
+       }
+   }
+
+   .invoiceWrapper {
+       .react-bootstrap-table .table {
+           border-radius: 0px 0px 5px 5px;
+       }
+
+       .editableDiv {
+           border: none;
+           content: "Input";
+           font-size: 16px;
+           min-height: 100px;
+           max-height: 100px;
+           padding-top: 2px;
+           overflow: scroll;
+           display: block;
+       }
+
+       .editableDiv:empty:before {
+           content: "Enter notes or Terms of Service that are visible to your customer";
+           font-style: italic !important;
+           color: #b2c2cd !important;
+           font-size: 16px !important;
+       }
+   }
+
+   .invoice-insights__content {
+       .invoice-insights__content-row {
+           display: flex;
+           justify-content: space-between;
+           flex-wrap: wrap;
+       }
+
+       .invoice-insights-content__column {
+           width: calc(100% / 3);
+           overflow: hidden;
+           word-break: break-word;
+
+           .py-text--block-label {
+               color: #4d6575;
+               display: inline-block;
+               font-size: 14px;
+               margin: 3px 0px 5px 0px;
+               font-weight: $font-weight-samibold;
+           }
+
+           .py-text--large {
+               margin: 0;
+           }
+
+           .py-text--small {
+               color: #849194;
+           }
+
+           .invoice-insights-content__column-value {
+               font-size: 24px;
+               margin-right: 3px;
+               font-weight: $font-weight-normal;
+
+               &:first-letter {
+                   font-size: 12px;
+               }
+           }
+
+           @media (max-width: 768px) {
+               width: calc(100% / 1);
+               justify-content: flex-start !important;
+               align-items: flex-start !important;
+               margin-bottom: 15px;
+           }
+       }
+
+       .bottom-row {
+           margin-top: 5px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+           @media (max-width: 768px) {
+               margin-top: 0px;
+           }
+
+           .py-text--hint {
+               margin: 0;
+           }
+
+           .icon {
+               svg {
+                   fill: #4d6575;
+               }
+           }
+       }
+
+       .round-light-bg {
+           background-color: #E0F4FB;
+           padding: 10px 30px;
+           border-radius: 100px;
+       }
+   }
+
+   .invoice-list-table-filters-container {
+       display: flex;
+       align-items: stretch;
+       margin-bottom: 20px;
+
+       @media (max-width: 980px) {
+           &>div {
+               margin-bottom: 10px;
+           }
+       }
+
+       .invoice-filter--status {
+           .Select-menu-outer {
+               height: auto;
+               max-height: inherit;
+
+               .Select-menu {
+                   max-height: inherit;
+               }
+           }
+       }
+
+       .form-control {
+           margin: 0;
+       }
+
+       .invoice-filter--customer {
+           flex-grow: 1;
+           margin-right: 10px;
+           min-width: 200px;
+
+           @media (max-width: 980px) {}
+       }
+
+       .DateRange__container,
+       .invoice-filter--status {
+           margin-right: 10px;
+
+           .Select {
+               min-width: 140px;
+           }
+       }
+
+       .invoice-filter--search {
+           .btn-search {
+               flex-wrap: nowrap;
+
+               .form-control {
+                   box-shadow: none;
+                   font-style: normal;
+                   font-weight: 400;
+
+                   &:focus {
+                       border: 1px solid #b2c2cd;
+                   }
+
+                   &::placeholder {
+                       color: #b2c2cd;
+                   }
+               }
+
+               ::placeholder {
+                   font-weight: 400;
+               }
+           }
+       }
+
+
+       .Select-control {
+           height: 40px;
+       }
+
+       .custom-select__control {
+           height: 44px;
+
+           .custom-select__value-container {
+               padding-top: 0;
+               padding-bottom: 0;
+           }
+
+           .custom-select__indicators .custom-select__indicator-separator {
+               display:none;
+           }
+       }
+
+
+
+       .Select-placeholder,
+       .Select-value {
+           // width: auto !important;
+           // height: auto !important;
+           // top: 50% !important;
+           // transform: translateY(-50%) !important;
+           // bottom: initial !important;
+           // line-height: 1 !important;
+       }
+
+       .invoice-filter--date {
+           display: flex;
+           margin-right: 10px;
+           width: 420px;
+
+           .DateRange__control {
+               width: 100%;
+           }
+       }
+
+       .invoice-filter--search {
+           .input-group-append {
+               .btn {
+                   border-top-right-radius: 4px;
+                   border-bottom-right-radius: 4px;
+                   border: 1px solid;
+               }
+           }
+       }
+   }
+
+   .payoutn {
+       margin-left: 20px;
+       border: 0px;
+
+       .nav-link {
+           font-size: 19px !important;
+           margin-right: 7px;
+           width: 48%;
+           background: #edf2f7;
+           border: 1px solid #d8d8d8 !important;
+           padding: 10px 0 10px 100px;
+           border-radius: 0px;
+
+           .badge {
+               margin-left: 4px !important;
+           }
+       }
+
+       // .nav-link:hover{
+       //     border: 1px solid #d8d8d8 !important;
+       // }
+
+       .nav-link.active {
+           border-radius: 0px;
+           border: none !important;
+           font-weight: bold !important;
+           border-top: 4px solid #136acd !important;
+           border-bottom: none;
+       }
+   }
+
+   .cardSave-check {
+       label {
+           display: inline;
+           vertical-align: middle;
+           font-size: 15px;
+           line-height: 24px;
+           color: #4c5357;
+           font-weight: 400;
+       }
+   }
+
+   .customStripeElement {
+       top: -17px;
+       position: relative;
+       /* height: 44px; */
+       color: black;
+       padding: 0px !important;
+       border-radius: 4px !important;
+
+       input {
+           border: none;
+       }
+
+       .input-group {
+           input {
+               padding-left: 0;
+           }
+       }
+   }
+
+   /*
+
+
+.prependAddon-input-card {
+  // position: absolute;
+  left: 16px;
+  top: 6px !important;
+  // height: 30px !important;
+  font-size: 16px;
+
+  +.form-control {
+    margin: 0;
+  }
+
+  span {
+    background-color: #fff;
+    // border: none;
+    border-radius: 4px;
+    width: 40px;
+    justify-content: center;
+    font-size: 16px !important;
+    padding: 0;
+  }
+
+  .input-group-text {
+    color: #b2c2cd;
+  }
+}
+
+
+.prependAddon-input-card.disabled {
+  left: 16px;
+  top: 6px !important;
+
+  span {
+    background-color: #e9ecef;
+    // border: none;
+    border-radius: 4px;
+    width: 40px;
+    justify-content: center;
+    font-size: 16px !important;
+    padding: 0;
+  }
+
+  .input-group-text {
+    color: #41494f;
+  }
+}
+*/
+   // .invoice-list-table-filters-container {
+   //     .Select-control {
+   //         height: 38px !important;
+   //     }
+
+   //     .date-frm {
+   //         .form-control {
+   //             border-top-right-radius: 0px !important;
+   //             border-bottom-right-radius: 0px !important;
+   //             // border-right: none !important;
+   //         }
+   //     }
+
+   //     .date-to {
+   //         .form-control {
+   //             border-top-left-radius: 0px !important;
+   //             border-bottom-left-radius: 0px !important;
+   //         }
+   //     }
+   // }
+
+   .group-input {
+       position: relative;
+       margin-bottom: 15px;
+
+       a {
+           position: absolute;
+           right: -17px;
+           top: 14px;
+           cursor: pointer;
+
+           &:hover {
+               color: #136acd !important;
+           }
+       }
+   }
+
+   .custom-textarea {
+       height: 170px !important;
+   }
+
+   .send-invoice-email__provider {
+       cursor: pointer;
+       width: 100%;
+       padding: 10px 0;
+
+       .send-invoice-email__provider__link {
+           display: block;
+
+           .send-invoice-email__provider__logo {
+               height: 60px;
+               display: inline-block;
+               vertical-align: middle;
+               margin-right: 30px;
+           }
+       }
+
+       .send-invoice-email__provider__forward-icon {
+           display: inline-block;
+           vertical-align: middle;
+           float: right;
+           line-height: 60px;
+           font-size: 30px;
+       }
+   }
+
+   .send-invoice-email__divider {
+       display: block;
+       height: 0;
+       padding: 0;
+       border: none;
+       border-bottom: 1px solid #d4dde3;
+       overflow: hidden;
+       margin: 0 auto;
+   }
+
+   .tabfooter {
+       border-top: 1px solid #dee2e6;
+       padding-top: 15px;
+       /*  margin: 0 -36px; */
+       padding-right: 15px;
+
+       &:after {
+           content: "";
+           clear: both;
+           display: table;
+       }
+
+       button {
+           margin-left: 5px;
+       }
+   }
+
+   .modal-title {
+       font-weight: 600;
+   }
+
+   .checkout-list-table,
+   .invoice-list-table {
+       .py-table--condensed {
+
+           .py-table__cell__action {
+               text-align: right;
+               max-width: 205px !important;
+           }
+
+           tbody {
+               .py-table__row {
+
+
+                   .py-table__cell-amount {
+                       .py-table__cell-content {
+                           float: right;
+
+                           .ov-text {
+                               display: inline-block;
+                           }
+                       }
+                   }
+
+                   .py-table__cell__action,
+                   .py-table__cell-amount,
+                   .py-table__cell {
+                       vertical-align: middle;
+                       position: relative;
+
+                       .py-table__cell-content,
+                       .ov-text {
+                           display: block;
+                           white-space: nowrap;
+                           overflow: hidden;
+                           text-overflow: ellipsis;
+                           margin: 0;
+                           max-width: 115px;
+                       }
+
+                       .ov-text {
+                           display: inline-block;
+                       }
+
+                       .py-table__cell-content {
+                           max-width: 175px;
+                       }
+                   }
+
+                   .py-table__cell-amount {
+                       font-variant-numeric: tabular-nums;
+                   }
+
+                   .dropdown {
+                       margin: 0 8px;
+                   }
+
+                   .py-table__cell__action {
+                       &:last-child {
+                           .py-table__actions-cell-content {
+                               white-space: nowrap;
+                               display: flex;
+                               align-items: center;
+                               justify-content: flex-end;
+                           }
+                       }
+                   }
+               }
+           }
+       }
+
+       .py-table__cell-action,
+       .py-table__cell-content {
+           .py-text--link {
+               margin: 0;
+           }
+       }
+
+       .py-table__cell-action {
+           justify-content: flex-end;
+
+           .py-text--link {
+               margin-right: 0.5rem;
+           }
+       }
+
+       &.tab-unpaid {
+           .py-table--condensed {
+               thead {
+                   tr {
+                       th {
+                           &:first-child {
+                               width: 78px;
+                           }
+
+                           &:nth-child(2) {
+                               min-width: 138px;
+                           }
+
+                           &:nth-child(3) {
+                               min-width: 94px;
+                           }
+
+                           &:nth-child(4) {
+                               min-width: 82px;
+                           }
+
+                           &:nth-child(5) {
+                               min-width: 176px;
+                           }
+
+                           &:nth-child(6) {
+                               width: 125px;
+                               text-align: right;
+                           }
+
+                           &:last-child {
+                               min-width: 164px;
+                               text-align: right;
+                           }
+                       }
+                   }
+               }
+           }
+       }
+
+       &.tab-draft {
+           .py-table--condensed {
+               thead {
+                   tr {
+                       th {
+                           &:first-child {
+                               width: 78px;
+                           }
+
+                           &:nth-child(2) {
+                               min-width: 94px;
+                           }
+
+                           &:nth-child(3) {
+                               min-width: 82px;
+                           }
+
+                           &:nth-child(5) {
+                               min-width: 125px;
+                               text-align: right;
+                           }
+
+                           &:last-child {
+                               min-width: 164px;
+                               text-align: right;
+                           }
+                       }
+                   }
+               }
+           }
+       }
+
+       &.tab-all {
+           .py-table--condensed {
+               thead {
+                   tr {
+                       th {
+                           &:first-child {
+                               width: 78px;
+                           }
+
+                           &:nth-child(2) {
+                               min-width: 94px;
+                           }
+
+                           &:nth-child(3) {
+                               min-width: 82px;
+                           }
+
+                           &:nth-child(5),
+                           &:nth-child(6) {
+                               min-width: 125px;
+                               text-align: right;
+                           }
+
+                           &:last-child {
+                               min-width: 164px;
+                               text-align: right;
+                           }
+                       }
+                   }
+               }
+
+               tbody {
+                   .py-table__row {
+
+                       .py-table__cell {
+                           &:nth-child(5) {
+                               text-align: right;
+
+                               .py-table__cell-content {
+                                   float: right;
+                               }
+
+                           }
+                       }
+                   }
+               }
+           }
+       }
+
+       @media (max-width: 980px) {
+           .react-bootstrap-table {
+               max-width: 100%;
+           }
+       }
+
+   }
+
+   .invoice-view-header {
+       border-bottom: 1px solid #d3d3d3;
+
+       .py-header--page {
+           .py-header--actions {
+               .btn {
+                   font-weight: 500 !important;
+               }
+           }
+       }
+   }
+
+   .send-with-py {
+       padding: 20px 32px;
+
+       .py-form-field--inline {
+
+           .py-form-field__label,
+           .py-form-field__blank {
+               width: 30%;
+           }
+
+           .py-form-field__element {
+               width: 70%;
+
+               .text-break {
+                   text-overflow: ellipsis;
+                   white-space: nowrap;
+                   max-width: 300px;
+                   overflow: hidden;
+                   display: inline-block;
+               }
+           }
+       }
+
+       .multirecipient {
+           display: grid;
+           grid-template-columns: 282px 2fr;
+           margin: 0px 0px 10px 0px;
+       }
+
+       .multirecipient__icon {
+           width: 24px;
+           height: 24px;
+           margin-left: 8px;
+           margin-top: 8px;
+           position: relative;
+           color: $primary;
+           display: inline-flex;
+           align-items: center;
+           justify-content: center;
+
+           &:before {
+               content: "";
+               width: 32px;
+               height: 32px;
+               background: rgba($primary, 0.1);
+               position: absolute;
+               transform: scale(0);
+               border-radius: 50rem;
+               transform-origin: center center;
+               transition: transform 0.2s ease-out;
+           }
+
+           &:hover {
+               &:before {
+                   transform: scale(1);
+               }
+           }
+       }
+
+       .tabfooter {
+           text-align: right;
+       }
+   }
+
+   // Invoice List, On hover of date show popover
+
+   .popover_wrapper {
+
+       // position: relative;
+       .tooltip {
+           background: #ffffff;
+           bottom: calc(100% + 2px);
+           color: #1c252c;
+           display: block;
+           left: 50%;
+           margin-bottom: 0px;
+           opacity: 0;
+           pointer-events: none;
+           visibility: hidden;
+           position: absolute;
+           width: 460px;
+           padding: 20px;
+           border-radius: 8px;
+           font-size: 16px;
+           border: 1px solid rgba(77, 101, 117, 0.07);
+           box-shadow: 0 4px 36px 4px rgba(0, 0, 0, 0.1);
+           -webkit-transform: translateX(-50%);
+           -moz-transform: translateX(-50%);
+           -ms-transform: translateX(-50%);
+           -o-transform: translateX(-50%);
+           transform: translateX(-50%);
+           -webkit-transition: all 0.5s ease-out;
+           -moz-transition: all 0.5s ease-out;
+           -ms-transition: all 0.5s ease-out;
+           -o-transition: all 0.5s ease-out;
+           transition: all 0.5s ease-out;
+           transition-delay: 1.25s;
+           -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+           -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+           -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+           -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+           box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+
+           &:after {
+               content: "";
+               position: absolute;
+               left: 50%;
+               top: 100%;
+               transform: translateX(-50%);
+               border-top: 15px solid #ffffff;
+               border-left: 15px solid transparent;
+               border-right: 15px solid transparent;
+           }
+
+           .customer_details {
+               margin-top: 15px;
+
+               .customer_container {
+                   display: flex;
+                   width: 100%;
+
+                   .col-left {
+                       width: 115px;
+                       text-align: right;
+                       padding-right: 5px;
+                   }
+
+                   .col-right {
+                       float: left;
+                       padding-left: 5px;
+                       width: calc(100% - 115px);
+                   }
+               }
+
+               p {
+                   margin: 0px;
+                   padding: 0px;
+                   padding-top: 2px;
+               }
+           }
+
+           ul {
+               margin: 0px;
+               padding: 0px;
+               display: flex;
+               padding-bottom: 10px;
+               border-bottom: 1px solid #ccc;
+               justify-content: space-between;
+
+               li {
+                   display: inline-grid;
+
+                   h6 {
+                       color: #617785;
+                       margin-bottom: 5px;
+                       font-size: 14px;
+                   }
+               }
+           }
+       }
+   }
+
+   .py-table__row {
+       &:hover .tooltip {
+           opacity: 1;
+           pointer-events: auto;
+           visibility: visible;
+       }
+   }
+
+   /* IE can just show/hide with no transition */
+   .lte8 .popover_wrapper .tooltip {
+       display: none;
+   }
+
+   .lte8 .popover_wrapper:hover .tooltip {
+       display: block;
+   }
+
+
+   .invoice-insights__content__row {
+       .filter__action {
+           border-radius: 50rem;
+           min-width: 28px;
+           min-height: 28px;
+           display: inline-flex;
+           align-items: center;
+           justify-content: center;
+           cursor: pointer;
+           outline: none;
+
+           .Icon {
+               width: 18px;
+               height: 18px;
+           }
+
+           &:hover {
+               background: rgba($primary, .2);
+           }
+
+       }
+   }
+
+   .invoice-filter--search {
+       .btn-search {
+           max-width: 300px;
+           width: 100%;
+
+           .form-control {
+               width: 170px;
+           }
+       }
+   }
+
+   .invoice-list-table-filters-container {
+       .DateRange__dateInput {
+           width: 142px;
+       }
+   }
+
+   .prependAddon-input-card {
+       z-index: 4;
+
+       .input-group-text {
+           background: none !important;
+           border: none !important;
+           padding: 0px !important;
+           height: 1em;
+       }
+
+       &+.form-control {
+           border-radius: 4px !important;
+           border: none;
+           box-shadow: none;
+           outline: none;
+
+           &:hover,
+           &:focus {
+               border: none;
+               box-shadow: none;
+               outline: none;
+           }
+       }
+   }
+
+   .box-symble-field {
+        width: 100%;
+       .input-group {
+           display: flex;
+           align-items: center;
+           padding: 0px;
+           border: 1px solid #b2c2cd;
+           border-radius: 4px;
+           margin: 0px;
+           min-height: 38px;
+           overflow: hidden;
+       }
+
+       .form-control {
+           margin-bottom: 0;
+       }
+
+       .edit-icon {
+           position: absolute;
+           right: 0px;
+           top: 0px;
+           width: 40px;
+           height: 40px;
+           line-height: 40px;
+           color: #b2c2cd;
+           z-index: 3;
+           background-color: #ffffff;
+           text-align: center;
+           cursor: pointer;
+       }
+
+       .prependAddon-input-card {
+           color: #b2c2cd;
+           background-color: #e9ecef;
+           height: 38px;
+           line-height: 38px;
+           padding: 10px 14px;
+           text-align: center;
+           border: none;
+           border-right: 1px solid #b2c2cd;
+
+           .input-group-text {
+               background: none !important;
+               border: none !important;
+               padding: 0px !important;
+               color: #495057;
+               margin-right: 0px;
+           }
+
+
+           &+.form-control {
+               border-radius: 4px !important;
+               border: none;
+               box-shadow: none;
+               outline: none;
+               margin-top: 0px;
+               padding: 0px 0px 0px 10px;
+               text-align: left;
+               height: auto !important;
+               min-height: inherit;
+
+               &:hover,
+               &:focus {
+                   border: none;
+                   box-shadow: none;
+                   outline: none;
+               }
+           }
+       }
+
+       .input-group.input-group-lg {
+           min-height: 48px;
+
+           .prependAddon-input-card {
+               height: 48px;
+               line-height: 48px;
+           }
+
+           .edit-icon {
+               height: 48px;
+               line-height: 48px;
+           }
+       }
+   }
+
+   .invoice__record__modal__body {
+       .py-form-field__element {
+           margin-top: 0px;
+           margin-bottom: 0px;
+
+           .form-control {
+               margin-top: 0px;
+               margin-bottom: 0px;
+           }
+       }
+   }
+
+   .DateRange__control {
+       .react-datepicker__close-icon {
+           background-color: #ffffff;
+       }
+   }
+
+   .invoice-thumbnail {
+       border: 1px solid #E4E4E4;
+       min-height: 210px;
+       background-color: #ffffff;
+       border-radius: 4px;
+       overflow: hidden;
+
+       .img-thumbnail {
+           border: none;
+           box-shadow: none;
+           border-radius: 0px;
+       }
+   }
+
+   .invoice-filter--search {
+       ::placeholder {
+           font-style: normal !important;
+           color: #B2C2CD;
+           font-weight: 400;
+       }
+   }

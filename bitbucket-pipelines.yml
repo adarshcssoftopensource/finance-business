@@ -1,0 +1,87 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:22.11.0
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build & deploy to dev
+          size: 2x
+          image: node:22.11.0
+          caches:
+            - node
+          deployment: Dev
+          script:
+            - corepack enable # Enable Corepack
+            - corepack prepare yarn@4.6.0 --activate # Activate Yarn 4.6.0
+            - yarn install
+            - yarn run build
+            - pipe: atlassian/firebase-deploy:0.6.0
+              variables:
+                KEY_FILE: $KEY_FILE
+                  # PROJECT_ID: '<string>' # Optional.
+                MESSAGE: 'Deploying to dev env'
+                EXTRA_ARGS: '--only hosting:dev' # Optional.
+                DEBUG: 'true' # Optional.
+    payyit:
+      - step:
+          name: Build & deploy Payyit
+          size: 2x
+          image: node:22.11.0
+          deployment: Payyit
+          caches:
+            - node
+          script:
+            - corepack enable
+            - corepack prepare yarn@4.6.0 --activate
+            - yarn
+            - yarn run build
+            - pipe: atlassian/firebase-deploy:3.0.0
+              variables:
+                KEY_FILE: $KEY_FILE_PAYYIT
+                PROJECT_ID: 'payyit' # Optional.
+                MESSAGE: 'Deploying to prod env'
+                EXTRA_ARGS: '--project payyit --only hosting:prod-payyit' # Optional.
+                DEBUG: 'false' # Optional.
+  tags:
+    test-*:
+      - step:
+          name: Build & deploy Test
+          deployment: Test
+          caches:
+            - node
+          script:
+            - corepack enable
+            - corepack prepare yarn@4.6.0 --activate
+            - yarn
+            - yarn run build:test
+            - pipe: atlassian/firebase-deploy:0.6.0
+              variables:
+                KEY_FILE: $KEY_FILE
+                # PROJECT_ID: '<string>' # Optional.
+                MESSAGE: 'Deploying to test env'
+                EXTRA_ARGS: '--only hosting:test' # Optional.
+                DEBUG: 'false' # Optional.
+    prod-*:
+      - step:
+          name: Build & deploy Prod form tag
+          deployment: Prod
+          caches:
+            - node
+          script:
+            - corepack enable
+            - corepack prepare yarn@4.6.0 --activate
+            - yarn install
+            - yarn run build:prod
+            - pipe: atlassian/firebase-deploy:0.6.0
+              variables:
+                KEY_FILE: $KEY_FILE
+                # PROJECT_ID: '<string>' # Optional.
+                MESSAGE: 'Deploying to prod env'
+                EXTRA_ARGS: '--only hosting:prod' # Optional.
+                DEBUG: 'false' # Optional.
+

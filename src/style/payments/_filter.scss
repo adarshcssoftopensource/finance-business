@@ -1,0 +1,40 @@
+.payments-filter-container {
+  display: flex;
+
+  .payments-filter__search{
+    flex-grow: 1;
+    margin-right: 1rem;
+    min-width: 250px;
+
+    .input-group-text {
+      padding: 0px 15px;
+      font-size: 20px;
+      color: #849194 !important;
+      background-color: #ecf0f3 !important;
+    }
+  }
+  
+  .payments-filter__datepicker {
+    max-width: 475px;
+  }
+
+  .input-group {
+    .form-control {
+      margin: 0;
+      font-size: 16px;
+    }    
+    ::placeholder {
+      font-style: normal !important;
+      color: #B2C2CD;
+      font-weight: 400;
+    }
+  }
+
+  @media ( max-width: 768px ){
+    flex-wrap: wrap;
+
+    .payments-filter__search {
+      margin-bottom: 15px;
+    }
+  }
+}

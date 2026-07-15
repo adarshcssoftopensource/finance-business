@@ -1,0 +1,38 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
+import { getRemoteConfig } from 'firebase/remote-config'
+import { getDatabase } from 'firebase/database'
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
+export const database = getDatabase(app)
+export const analytics = getAnalytics(app)
+const remoteConfig = getRemoteConfig(app)
+remoteConfig.settings.minimumFetchIntervalMillis = 5000
+remoteConfig.defaultConfig = {
+  auth_signup : true,
+  auth_signin : true,
+  auth_waitlist : true,
+  paymentOnboarding : false,
+  transferToBank : false,
+  chatWithSupport : false,
+  
+}
+
+export default remoteConfig

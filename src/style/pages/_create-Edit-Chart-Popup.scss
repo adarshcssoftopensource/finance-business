@@ -1,0 +1,48 @@
+
+
+.sl-crate{
+    border: 1px solid #b2c2cd;
+    border-radius: 4px;
+    box-shadow: none;
+    cursor: pointer;
+    color: #1c252c;
+    .drop-ar{
+        width: 25px;
+        height: 25px;
+    }   
+}
+.br-err{
+    border: 1px solid #d74242 !important;
+    border-radius: 4px;
+    box-shadow: none;
+    cursor: pointer;
+    color: #c6cccd;
+    .drop-ar{
+        width: 25px;
+        height: 25px;
+    }   
+}
+
+.lk{
+    h6{
+        b{
+            cursor: pointer;
+            &:hover{
+                border-bottom: 1px solid #136acd !important;            
+            }
+        }
+    }
+}
+
+// .filter{
+    .hovr{
+        &:hover{
+            background-color: #e0f4fb!important;
+        }
+    }
+// }
+
+
+.fs-28{
+    font-size: 28px!important;
+}

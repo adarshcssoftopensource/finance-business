@@ -1,0 +1,51 @@
+<!-- Uses a header that contracts as the page scrolls down. -->
+<style>
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
+}
+</style>
+
+<div className="demo-layout-waterfall mdl-layout mdl-js-layout">
+  <header className="mdl-layout__header mdl-layout__header--waterfall">
+    <!-- Top row, always visible -->
+    <div className="mdl-layout__header-row">
+      <!-- Title -->
+      <span className="mdl-layout-title">Title</span>
+      <div className="mdl-layout-spacer"></div>
+      <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label className="mdl-button mdl-js-button mdl-button--icon"
+               for="waterfall-exp">
+          <i className="material-icons">search</i>
+        </label>
+        <div className="mdl-textfield__expandable-holder">
+          <input className="mdl-textfield__input" type="text" name="sample"
+                 id="waterfall-exp">
+        </div>
+      </div>
+    </div>
+    <!-- Bottom row, not visible on scroll -->
+    <div className="mdl-layout__header-row">
+      <div className="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav className="mdl-navigation">
+        <a className="mdl-navigation__link" href="">Link</a>
+        <a className="mdl-navigation__link" href="">Link</a>
+        <a className="mdl-navigation__link" href="">Link</a>
+        <a className="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div className="mdl-layout__drawer">
+    <span className="mdl-layout-title">Title</span>
+    <nav className="mdl-navigation">
+      <a className="mdl-navigation__link" href="">Link</a>
+      <a className="mdl-navigation__link" href="">Link</a>
+      <a className="mdl-navigation__link" href="">Link</a>
+      <a className="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main className="mdl-layout__content">
+    <div className="content-wrapper__main__fixed"><!-- Your content goes here --></div>
+  </main>
+</div>

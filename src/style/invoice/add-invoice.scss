@@ -1,0 +1,913 @@
+/* .invoice-add-info__itemtable tr td:first-child .table, .invoice-add-info__itemtable tr:first-child {
+    background: #ecf0f3;
+} */
+
+.invoice-add__body {
+  .classic-template__metadata {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .template-metadata-customer-billing,
+    .template-metadata-customer-shipping {
+      max-width: 195px;
+
+      .py-text--hint {
+        font-weight: 600;
+        font-size: 13px;
+        color: #4d6575;
+      }
+    }
+  }
+}
+
+.invoice-customize-form {
+  .py-form-field__hint {
+    width: 160px;
+    display: inline-block;
+  }
+}
+
+.btn-icon-space {
+  i {
+    font-size: 100%;
+    margin-left: 10px;
+  }
+}
+
+.invoice-view__collapsible {
+  overflow: hidden;
+  border: 1px solid #d4dde3;
+  margin: 24px 0;
+  border-radius: 8px;
+
+  .business-inof {
+    margin-top: 15px;
+
+    .address {
+      font-size: 16px;
+      line-height: 20px;
+      word-break: break-word;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .py-box {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0px;
+  }
+
+  .form-control {
+    max-width: 430px;
+    padding: 0px 8px;
+  }
+
+  ::placeholder {
+    font-style: normal !important;
+    color: #b4c8d7;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+  }
+
+  .invoice-view__collapsible-button {
+    .btn-link {
+      width: 100%;
+      margin: 0;
+      background-color: $white;
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: $black;
+
+      &:focus,
+      &:active,
+      &:hover {
+        text-decoration: none;
+        box-shadow: none;
+      }
+
+      &:hover {
+        background: #ecf0f3;
+      }
+    }
+
+    &.is-open {
+      .btn-link {
+        background: #ecf0f3;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 1px solid #d4dde3;
+      }
+
+      .invoice-view__collapsible-button__expand-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .invoice-view__collapsible-button__expand-icon {
+      transition: transform 0.3s ease-in-out;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .invoice-view__collapsible-button__content {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+
+      .collapse_title {
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.uploader-zone {
+  border: 1px dashed $primary;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 100%;
+
+  .remove-icon {
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .uploaded-video {
+    line-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  .uploaded-image {
+    img {
+      max-width: 300px;
+    }
+  }
+
+  .py-text--browse {
+    font-weight: 400;
+  }
+
+  .py-text--hint {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    right: 0;
+  }
+}
+
+.invoice-view__footer {
+  overflow: auto;
+
+  .py-box {
+    padding: 0;
+    margin: 0;
+
+    textarea {
+      min-height: 83px;
+      padding: 8px 16px;
+      box-shadow: none;
+      appearance: none;
+      border: 0;
+      border-radius: 0 0 8px 8px;
+      max-width: 100%;
+      width: 100%;
+
+      &:focus {
+        border: 0;
+      }
+    }
+  }
+}
+
+.is-highlighted {
+  box-shadow: 0 8px 32px rgba(77, 101, 117, 0.35);
+  border-radius: 12px;
+  border-color: transparent;
+
+  .card {
+    padding-bottom: 0;
+    border: none;
+    padding: 1.1rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.6rem;
+  }
+
+  .add-customer-btn {
+    background: none;
+    border: 1px solid #d4dde3;
+    border-radius: 5px;
+    width: 320px;
+    max-width: 100%;
+    height: 160px;
+    color: $primary;
+    font-weight: 600;
+    font-size: 16px !important;
+    text-align: center;
+
+    &:hover {
+      color: $blue;
+      border: 1px solid $blue-light;
+      background-color: #f1f3f3;
+    }
+  }
+}
+
+.invoice-add-info__section {
+  margin-right: -15px;
+  margin-left: -15px;
+
+  .invoice-item-row-tax-section__taxes {
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .invoice-add-info__fileds {
+      .invoice-item-table-body {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    .invoice-item-row-tax-section__taxes {
+      width: 100%;
+    }
+  }
+}
+
+.py-modal {
+  .form-control-center {
+    align-items: center;
+
+    .pm-form-currency {
+      position: relative;
+      display: flex;
+
+      &:before {
+        content: '$';
+        display: inline-block;
+        color: $gray-200;
+        position: absolute;
+        left: 0.5rem;
+        top: 0.5rem;
+        font-weight: $font-weight-bold;
+      }
+
+      .form-control {
+        padding: 0.5rem;
+        width: 100%;
+        font-size: 1.2rem !important;
+        padding-left: 1.5rem;
+        min-width: 100px;
+
+        &:disabled {
+          // min-width: 50px;
+          // width: 100%;
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}
+
+.invoice-add-info__customize-tab {
+  display: inline-block;
+  margin-left: 17px;
+  background: #ecf0f3;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+
+  .modal-trigger {
+    font-weight: 600;
+    display: block;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+}
+
+.table--plain {
+  border: none;
+  background: #333;
+}
+
+.table--plain tr th,
+.table--plain tr td {
+  border: none;
+}
+
+.invoice-item-row-tax-section__tax__amount {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 117px;
+  padding-left: 10px;
+  padding-right: 35px;
+}
+
+.invoice-item-row-tax-section__tax__remove {
+  display: flex;
+  align-items: center;
+  width: 40px;
+}
+
+.invoice-add-totals__totals {
+  display: flex;
+  padding: 16px 0;
+  justify-content: flex-end;
+
+  .invoice-add-totals__totals__amounts {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 30px;
+    padding-right: 15px;
+    justify-content: flex-end;
+    width: 100%;
+
+    .invoice-add-totals__totals__amounts__line {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @media (max-width: 580px) {
+        flex-wrap: wrap;
+      }
+
+      .invoice-add-totals__totals__amounts__line__label {
+        max-width: 500px;
+        word-break: break-word;
+      }
+
+      .invoice-add-totals__totals__amounts__line__amount {
+        line-height: 20px;
+        margin-left: 10px;
+        overflow-wrap: break-word;
+        width: 136px;
+      }
+    }
+  }
+}
+
+.invoice-memo {
+  border-top: 1px solid #d4dde3;
+  padding: 16px;
+  margin: 0 -16px;
+
+  textarea.reactStrap-design {
+    border: none;
+    font-size: 16px;
+  }
+
+  textarea.reactStrap-design::placeholder {
+    color: #b9cbdd;
+    font-style: italic;
+  }
+
+  .py-heading__title {
+    font-size: 16px;
+    font-weight: 400;
+
+    span {
+      font-size: 16px !important;
+      font-weight: 400;
+    }
+  }
+}
+
+textarea.decp {
+  height: 35px;
+}
+
+td.additem {
+  padding: 0;
+}
+
+.additem a {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: $primary;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.additem a:hover {
+  background: #f4f5f5;
+  color: #136acd !important;
+}
+
+.Select-input:last-child {
+  input {
+    height: auto;
+  }
+}
+
+.invoice-add-totals__totals__amounts__line__label__currency-select {
+  min-width: 350px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    min-width: 230px;
+  }
+
+  @media (max-width: 580px) {
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .Select-multi-value-wrapper {
+    min-height: 40px;
+  }
+
+  .Select-placeholder,
+  .Select--single > .Select-control .Select-value {
+    height: 100%;
+  }
+
+  .Select-value-label {
+    line-height: 2.5;
+  }
+}
+
+.combine-btn {
+  margin-left: 8px;
+
+  button {
+    padding: 6px 20px;
+    background: none;
+    border: none;
+
+    &:hover {
+      background: none;
+    }
+
+    &:focus {
+      background: none;
+      border: none;
+      box-shadow: none !important;
+    }
+  }
+
+  .btn-grey {
+    color: #fff;
+  }
+
+  .dropdown {
+    border-left: 1px solid #c49cf9;
+    width: 36px;
+
+    button {
+      padding: 7px 9px;
+      margin-top: 2px;
+
+      &:hover {
+        background: none;
+      }
+
+      &:focus {
+        background: none;
+        border: none;
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+.send-invoice-email__followup {
+  padding: 15px 0 50px;
+  text-align: center;
+
+  .send-invoice-email__followup__logo {
+    margin: 10px 0;
+    height: auto;
+    width: 80px;
+  }
+}
+
+/*=============Coustmize the Invoice ===============*/
+
+.customize_invoice_modal {
+  max-width: 600px;
+
+  .py-form-field__hint {
+    .form-control {
+      width: 160px;
+    }
+
+    margin-bottom: 0px;
+  }
+
+  .py-form-field {
+    margin-bottom: 0px;
+    margin-top: -5px;
+  }
+
+  .modal-body {
+    .py-radio + .py-form-field__hint {
+      display: grid;
+    }
+
+    .py-divider {
+      margin: 15px auto;
+    }
+
+    .py-form-field--inline {
+      .py-form-field__label,
+      .py-form-field__label--align-top {
+        width: 25%;
+      }
+
+      .py-form-field__element {
+        width: 75%;
+      }
+    }
+  }
+}
+
+.modal-header {
+  position: relative;
+  margin: 0;
+
+  h5 {
+    font-size: 23px;
+  }
+
+  .py-close {
+    position: absolute;
+    right: 24px;
+    height: 24px;
+    width: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+.modal-body {
+  .container {
+    padding: 20px 48px 20px 24px;
+  }
+}
+
+.hideColumn {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.invoice-edit-item-columns-hide-section {
+  legend {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    width: 22%;
+  }
+}
+
+.invoice-edit-item-columns-hide-section__name-description-section {
+  display: inline-block;
+  width: 75%;
+
+  .py-form-field {
+    width: 50%;
+    display: inline-block;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.py-frame {
+  width: 100%;
+  // padding: 0 24px 0 24px ;
+  margin: 0 auto;
+  border-color: transparent;
+}
+
+.invoice-item-table-header {
+  display: flex;
+  justify-content: space-between;
+  background: #ecf0f3;
+  padding: 0px 4px 0 24px;
+  border-bottom: 2px solid #b2c2cd;
+  border-width: 2px;
+
+  .py-table__cell {
+    position: relative;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.py-table__cell.item-cell {
+  width: 225px;
+}
+
+.all_scroll_effect {
+  cursor: all-scroll;
+}
+
+.py-table__cell.detail-cell {
+  width: 440px;
+  display: inline-flex;
+}
+
+.py-table__cell.quantity-cell {
+  width: 100px;
+}
+
+.py-table__cell.price-cell {
+  width: 100px;
+}
+
+.py-table__cell.amount-cell {
+  width: 150px;
+  text-align: right;
+  word-break: break-all;
+  word-wrap: break-all;
+}
+
+.invoice-item-table-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+.invoice-item-table {
+  .py-table__cell {
+    padding: 10px 5px;
+  }
+}
+
+.py-table__cell.bin-cell {
+  width: 40px;
+  text-align: center;
+}
+
+.py-table__cell input:not(.custom-select__input) {
+  height: 40px;
+}
+
+.invoice-item-row-tax-section__tax {
+  display: flex;
+  align-items: center;
+
+  .Select-menu-outer {
+    min-width: 168px;
+  }
+}
+
+.py-table__cell.tex-cell {
+  width: 210px;
+}
+
+.btn-add-invoice {
+  border-radius: 0;
+  border: none;
+}
+
+.form-focus--expand {
+  height: 40px !important;
+  overflow: hidden;
+  resize: none;
+
+  // &:focus {
+  //     height: auto !important;
+  // }
+}
+
+.eye_logo {
+  position: absolute;
+  top: -3px;
+  width: 20px;
+}
+
+.info-logo img {
+  max-width: 300px;
+}
+
+.jumbo-text {
+  font-size: 33px !important;
+  height: 40px;
+  padding: 0px 8px;
+  line-height: normal;
+}
+
+/*Added by Ritesh*/
+.invoice-view__collapsible-button {
+  .invoice-memo {
+    height: 83px !important;
+    font-size: 16px !important;
+    resize: none;
+  }
+}
+
+.btn-add-invoice i.icon {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.btn-add-invoice i.icon::before {
+  height: 20px;
+  vertical-align: middle;
+  float: left;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.invoice-item-table .Select .Select-input input {
+  height: 34px;
+  padding: 0;
+}
+
+.invoice-add-info__itemtable {
+  border-top: 1px solid #ecf0f3;
+
+  .drag-item {
+    border-top: 1px solid #d4dde3;
+
+    .invoice-item-table-body {
+      .py-table__cell.amount-cell {
+        padding-right: 5px;
+      }
+
+      .py-table__action.py-table__action__danger {
+        margin-right: 10px;
+        margin-top: -3px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 15px 15px 10px 15px;
+    }
+  }
+
+  .drag-item:hover {
+    background-color: #f0f4fa;
+  }
+
+  .drag-item:last-child {
+    border-bottom: 1px solid #ecf0f3;
+  }
+
+  .drag-item:first-child {
+    border-top: 0px solid #ecf0f3;
+  }
+
+  .py-table {
+    border-bottom: 0px solid #ecf0f3;
+  }
+
+  .py-table.invoice-item-table {
+    .invoice-add-select {
+      max-width: calc(100% - 80px);
+      margin: auto auto auto 33px;
+    }
+  }
+}
+
+.Select-arrow-zone {
+  line-height: 36px;
+}
+
+.create-inovice-right-field {
+  .py-form-field__element {
+    width: 70%;
+  }
+}
+
+.uploader-zone {
+  .upload-icon {
+    font-size: 40px;
+    color: $primary;
+    margin-bottom: 5px;
+    display: block;
+  }
+}
+
+// .verifiedbox {
+//     border: 1px dashed $primary;
+//     align-items: center;
+//     border-radius: 5px;
+// }
+
+.create-invoice-header {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-between;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  .create-invoice-header-left {
+    width: 100%;
+    max-width: 300px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .create-invoice-header-right {
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+
+    .create-invoice-header-left {
+      margin-bottom: 15px;
+      max-width: 100%;
+    }
+  }
+}
+
+.create-inovice-right-field {
+  .py-form-field__label,
+  .py-form-field__label--align-top {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .py-form-field__element {
+    max-width: 160px;
+  }
+
+  .py-form-field--inline {
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 580px) {
+    margin-top: 20px;
+  }
+}
+
+.invoice-add__body__center {
+  .invoice-add-customer {
+    @media (max-width: 580px) {
+      .add-customer-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.invoice-item-table-body {
+  @media (max-width: 768px) {
+    .py-table__cell.item-cell {
+      width: calc(100% - 30px);
+    }
+
+    .py-table__cell.detail-cell {
+      width: 100%;
+    }
+
+    .py-table__cell.quantity-cell {
+      width: 30%;
+    }
+
+    .py-table__cell.price-cell {
+      width: 30%;
+    }
+
+    .py-table__cell.amount-cell {
+      width: calc(40% - 46px);
+    }
+  }
+}

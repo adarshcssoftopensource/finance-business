@@ -1,0 +1,159 @@
+.iav-form {
+    min-height: 80px;
+}
+.existing-account-selection__instruction {
+    display: block;
+    margin-top: 0;
+}
+.wv-text, .wv-text--body {
+    margin: 16px 0;
+        margin-top: 16px;
+}
+.account-select {
+    margin-bottom: 1rem;
+}
+.account-select__header {
+    padding: 1rem;
+    background: #f1f3f3;
+    color: #1c252c;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #b2c2cd;
+}
+.account-select__header {
+    color: #1c252c;
+}
+.account-select__header__bank__logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+.wv-wizard__content__task.is-current .wv-text--large {
+   
+    font-weight: 600;
+}
+.account-select__header__bank__name {
+    margin: 0;
+    padding-left: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.wv-text--strong {
+    font-weight: bold;
+}
+.account-select__account:last-of-type {
+    border-radius: 0 0 8px 8px;
+}
+.account-select__account--is-selected {
+    background: #e6f1ff;
+}
+
+.account-select__account {
+    border: 1px solid #b2c2cd;
+        border-top-color: rgb(178, 194, 205);
+        border-top-style: solid;
+        border-top-width: 1px;
+    border-top: 0;
+    cursor: pointer;
+}
+
+.account-select__account__details {
+    display: flex;
+    cursor: inherit;
+    padding: 1rem;
+}
+.account-select__account__radio {
+    width: 18px;
+    margin-right: 0.5rem;
+}
+.account-select__account__details {
+    cursor: inherit;
+}
+.account-select__account__details {
+    cursor: inherit;
+}
+.wv-checkbox, .wv-radio {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    cursor: pointer;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+radio [type="radio"] {
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+.iav-form input, .iav-form select {
+    height: auto;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+radiocheck--faux {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    border: 1px solid #b2c2cd;
+        border-top-color: rgb(178, 194, 205);
+        border-right-color: rgb(178, 194, 205);
+        border-bottom-color: rgb(178, 194, 205);
+        border-left-color: rgb(178, 194, 205);
+    background: #fff;
+    transition: border .1s linear,background-color .1s linear;
+    margin-top: 3px;
+    margin-right: 8px;
+}
+.wv-wizard__content__task.is-current .wv-text--large {
+    font-weight: 600;
+}
+.wv-text, .wv-text--body {
+    margin: 16px 0;
+}
+.existing-account-selection__footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.wv-button-group, .wv-button-wrapper {
+    
+    align-items: center;
+    margin: -4px;
+    flex-wrap: wrap;
+}
+[class*="wv-button"], .wv-button-wrapper > .wv-dropdown {
+    margin: 4px;
+}
+.wv-button--primary{
+        color: #fff;
+        background: #136acd;
+        border: 1px solid transparent;
+    }
+
+.button--primary{
+        padding: 8px 20px;
+        text-align: center;
+        min-width: 100px;
+        border-radius: 500px;
+        margin: 0;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+        outline: 0;
+        font-family: Averta,sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    
+}
+

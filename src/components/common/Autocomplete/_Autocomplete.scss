@@ -1,0 +1,57 @@
+.Autocomplete {
+  position: relative;
+}
+.Autocomplet__field {
+  position: relative;
+
+  .form-control {
+    margin: 0;
+    padding-left: 32px;
+  }
+
+  .Icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+.Autocomplete__content-cont {
+  position: absolute;
+  width: 100%;
+}
+.Autocomplete__content {  
+  background: $white;
+  box-shadow: $box-shadow;
+  z-index: 222;
+  position: relative;
+  border-radius: $card-border-radius;
+  padding-top: 16px;
+  max-height: 480px;
+  overflow-y: scroll;
+}
+
+.Autocomplete__options {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  
+}
+.Autocomplete__optionsItem {
+  padding: 8px 16px;
+
+  &:hover {
+    background: rgba($info, .1);
+  }
+}
+
+.Autocomplete__footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding: 16px 16px;                                                                                                                                    
+}

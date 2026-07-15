@@ -1,0 +1,21 @@
+node_modules
+dist
+prod
+.env
+.env.local
+.env.dev
+.env.prod
+.env.test
+.vscode/*
+.DS_Store
+dist_old
+
+# Jetbrains
+.idea
+firebase-debug.log
+.firebase/*
+/.idea/
+/.idea/*
+# vercel hosting
+.vercel
+build

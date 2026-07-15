@@ -1,0 +1,14 @@
+// Type display classes
+.display-4 {
+  font-weight: 500;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 500;
+}
+
+.list-inline {
+	margin-bottom: 5px !important;	
+	.list-inline-item:not(:last-child) {
+		margin-right: 1px;
+	}
+}

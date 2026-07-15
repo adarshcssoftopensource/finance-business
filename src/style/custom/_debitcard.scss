@@ -1,0 +1,458 @@
+.blue-debit-cards {
+    justify-content: center;
+
+    .card-grid {
+        .pay_icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 100%;
+
+            .Icon {
+                width: 50px;
+                height: 50px;
+                color: #1c252c;
+            }
+        }
+
+        .blue-debit-card {
+            height: 200px;
+            background: rgb(34, 98, 174);
+            position: relative;
+            z-index: 1;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 25px;
+            max-width: 320px;
+            margin: 0 auto 30px;
+
+
+            @media (max-width: 1300px) {
+                height: 180px;
+            }
+
+            .apply-physical-card {
+                .btn-apply {
+                    border: none;
+                    background-color: #ffffff;
+                    padding: 10px 30px;
+                    border-radius: 100px;
+                    font-weight: 600;
+                    color: #136ACD;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .map-bg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0.2;
+                z-index: -1;
+            }
+
+            .header-part {
+                height: 33.33%;
+
+                .title {
+                    font-size: 18px;
+                    color: #ffffff;
+
+                    @media (max-width: 1300px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .body-part {
+                height: 33.33%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+
+                .balance {
+                    font-size: 36px;
+                    font-weight: 600;
+                    font-family: monospace;
+
+                    @media (max-width: 1300px) {
+                        font-size: 26px;
+                    }
+                }
+
+                .card-number {
+                    font-size: 18px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    line-height: 1;
+                    height: 20px;
+                    position: relative;
+                    font-family: monospace;
+
+                    @media (max-width: 1300px) {
+                        font-size: 16px;
+                    }
+
+                    .star {
+                        display: inline-block;
+                    }
+
+                    .click-copy {
+                        position: absolute;
+                        left: calc(100% + 6px);
+                        top: 2px;
+                        width: 14px;
+                        text-align: left;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .footer-part {
+                height: 33.33%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+
+                .list {
+                    list-style: none;
+                    margin: 0 0 -5px 0;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    color: #ffffff;
+                    justify-content: space-evenly;
+                    width: 80%;
+
+                    li {
+                        margin-left: 15px;
+                    }
+
+                    .item-label {
+                        font-size: 10px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+
+                        @media (max-width: 1300px) {
+                            font-size: 8px;
+                        }
+                    }
+
+                    .item-value {
+                        font-size: 15px;
+                        font-family: monospace;
+                        display: flex;
+
+                        @media (max-width: 1300px) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            .click-copy {
+                border: none;
+                background: none;
+                color: #ffffff;
+                font-size: 14px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .debit-label {
+                width: 100%;
+                font-size: 10px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #ffffff;
+                margin-bottom: 5px;
+            }
+
+            .visa-logo {
+                color: #ffffff;
+                height: 20px;
+                overflow: hidden;
+                width: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+
+                .Icon {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+
+        }
+
+
+        .add-button {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #ffffff;
+            border: none;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            border-radius: 100px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            outline: none;
+            z-index: 3;
+            transform: translate(30%, 30%);
+            font-size: 16px;
+            color: #136acd;
+            padding: 0;
+
+            &:hover,
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                background-color: #136acd;
+                color: #ffffff;
+            }
+
+            &.reveal {
+                bottom: auto;
+                top: 0;
+                transform: translate(30%, -30%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .py-lock-switch {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            transform: translate(30%, 30%);
+        }
+    }
+}
+
+.debitcard-transactions {
+
+    .table th,
+    .table td {
+        padding: 12px 8px;
+    }
+
+    .table-hover tbody .py-table__row,
+    .table-hover tbody tr:not(.no-hover),
+    .py-table--hover tbody .py-table__row,
+    .py-table--hover tbody tr:not(.no-hover) {
+        cursor: default;
+    }
+
+    .react-bootstrap-table {
+        .py-table {
+            thead {
+                th:nth-child(n+3) {
+                    text-align: right;
+                }
+
+                .caret {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .refresh-btn-height {
+        max-height: 42px;
+    }
+    .filter__action {
+        border-radius: 50rem;
+        min-width: 28px;
+        min-height: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        margin-left: 8px;
+        .Icon {
+            width: 18px;
+            height: 18px;
+        }
+        &:hover {
+            background: rgba($primary, .2);
+        }
+    }
+}
+
+.py-lock-switch {
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #136acd;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #136acd;
+        color: #ffffff;
+    }
+
+    .py-toggle__checkbox {
+        display: none;
+    }
+
+    .py-toggle__handle {
+        position: relative;
+
+        &::before {
+            content: "\f023";
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 700;
+        }
+
+        &.active::before {
+            content: "\f023";
+        }
+
+        &.inactive::before {
+            content: "\f09c";
+        }
+    }
+
+    input[type="checkbox"]:checked~.py-toggle__handle:before {
+        content: "\f09c";
+    }
+
+}
+
+.debitcard-transactions {
+    margin-top: 70px;
+
+    .btn-search {
+        .input-group-append {
+            .btn {
+                border-radius: 0 4px 4px 0;
+            }
+        }
+    }
+
+    .transaction-filter {
+        margin: -8px -8px 17px -8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .btn {
+            border-radius: 5px;
+        }
+
+        &>div {
+            margin: 8px;
+            max-width: 200px;
+
+            @media (max-width: 1600px) {
+                max-width: 160px;
+            }
+
+            &.amount-filter {
+                max-width: 240px;
+
+                @media (max-width: 1600px) {
+                    max-width: 200px;
+                }
+                @media (max-width: 768px) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+
+            &.description-filter {
+                max-width: 250px;
+
+                @media (max-width: 1600px) {
+                    max-width: 320px;
+                }
+            }
+
+        }
+
+        .input-group {
+            flex-wrap: nowrap;
+        }
+
+        .form-control {
+            margin: 0;
+        }
+
+        .debit-card--filter__range {
+            display: flex;
+            margin-right: 10px;
+            width: 420px;
+            max-width: 420px;
+            @media (max-width: 768px) {
+                width: 100%;
+                max-width: 100%;
+            }
+            .DateRange__control {
+                width: 100%;
+                line-height: 8px;
+            }
+        }
+    }
+}
+
+.debit-preview-image {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(28, 37, 44, 0.18) !important;
+    position: relative;
+    margin: 0 0 60px 0;
+
+    .overlaytext {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        line-height: 1.2;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        font-weight: 500;
+    }
+}
+
+.debit-card-footer {
+    max-width: 750px;
+}
+
+
+         

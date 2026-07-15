@@ -1,0 +1,106 @@
+.account-list {
+  list-style-type: none;
+  padding: 0;
+
+  .btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) {
+    margin-left: 1px;
+  }
+}
+
+// .account_info {
+//   display: flex;
+//   align-items: flex-start;
+//   list-style-type: none;
+// }
+
+.account-card__list {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.account-card__single {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 2px 2px rgba(113, 110, 128, 0.1), 0px 8px 48px rgba(113, 110, 128, 0.1);
+  overflow: hidden;
+  background-color: $white;
+  padding: 30px 30px 25px 30px;
+}
+
+.account-card__single-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 20px 0px;
+
+  .Icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.Callout {
+  background: #ffffff;
+  color: $primary;
+  padding: 10px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ededed;
+}
+
+.Search__Typehead {
+  position: relative;
+  .Search__Typehead__Icon {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+.bank-icons-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    margin: 24px 0;
+
+    .intitution-list__item {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F8F8F8;
+      border-radius: 8px;
+
+      &:hover {
+        background: $gray-300;
+        box-shadow: 0 0 16px rgba($black, .1);
+      }
+    }
+    img {
+      max-width: 56px;
+    }
+}
+
+
+.banking-collaps {
+  background-color: #f2f7ff;
+  border-color: #f2f7ff;
+  .py-box {
+    border: none;
+    background: none;
+  }
+}

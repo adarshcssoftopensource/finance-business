@@ -1,0 +1,18 @@
+{
+    "Starter": {
+        "customUser": 1,
+        "restrictedRoutes": ["/app/purchase", "/app/reports", "/app/reward"]
+    },
+    "Premium": {
+        "customUser": 7,
+        "restrictedRoutes": []
+    },
+    "Premium Pro": {
+        "customUser": 100,
+        "restrictedRoutes": []
+    },
+    "Premium Elite": {
+        "customUser": 100,
+        "restrictedRoutes": []
+    }
+}

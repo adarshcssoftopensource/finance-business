@@ -1,0 +1,101 @@
+.py-switch {
+  display: block;
+  margin-bottom: 8px;
+  position: relative;
+  cursor: pointer;
+
+
+  [type="checkbox"] {
+
+    +.py-toggle__handle {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      width: 48px;
+      min-width: 48px;
+      height: 20px;
+      border-radius: 100px;
+      background: #86A5AC;
+      transition: all 240ms;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow: hidden;
+      line-height: 24px;
+      position: relative;
+
+      &:before,
+      &:after {
+        position: absolute;
+        top: 2px;
+        font-size: 10px;
+        display: inline-block;
+        color: $white;
+        font-weight: $font-weight-bold;
+        width: 16px;
+        height: 16px;
+        background: $white;
+        border-radius: 100px;
+        line-height: 16px;
+        transition: 0.3s;
+        text-transform: uppercase;
+      }
+
+      &:before {
+        content: "Yes";
+        right: 30px;
+        text-indent: -22px;
+        text-align: left;
+      }
+
+      &:after {
+        content: "No";
+        left: 2px;
+        text-indent: 20px;
+      }
+
+      &.onoff:before {
+        content: "On";
+      }
+      
+      &.onoff:after {
+        content: "Off";
+      }
+    }
+
+    +.py-toggle__label {
+      margin-left: 8px;
+    }
+
+    &:checked~.py-toggle__handle {
+      background: $primary;
+      &:before {    
+        right: 2px;
+      }
+      &:after {        
+        left: 30px;
+      }
+    }
+  }
+}
+
+.py-toggle__checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.py-toggle__label {
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  font-size: 15px;
+}
+
+.receipts-setting__hint-text {
+  margin: 0px;
+  max-width: 500px;
+}
+
+.receipts-setting__icon-text {
+  margin: 0 0 0 25px;
+  font-size: 10px !important;
+}

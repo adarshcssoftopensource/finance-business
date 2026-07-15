@@ -1,0 +1,453 @@
+.py-stripe__element {
+    padding: 0.7rem;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    height: 40px;
+    max-height: 40px;
+    font-weight: normal;
+
+    &:focus {
+        border-color: $primary;
+    }
+
+    &::placeholder {
+        color: rgba($black, 0.3);
+        font-weight: normal;
+    }
+}
+
+.payment-view {
+
+    .payment-view__input-group {
+        display: flex;
+        margin-bottom: 0px;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+
+        .payment-view__card-number {
+            flex: 50%;
+            width: 70%;
+
+            @media (max-width: 768px) {
+                flex: 100%;
+                width: 100%;
+            }
+        }
+
+        .payment-view__cvc {
+            width: 30%;
+
+            @media (max-width: 768px) {
+                flex: 100%;
+                width: 100%;
+            }
+        }
+
+        .payment-view__expire-date {
+            flex: 30%;
+            padding: 0px 10px;
+
+            @media (max-width: 768px) {
+                flex: 100%;
+                width: 100%;
+                padding: 17px 0px;
+            }
+        }
+
+    }
+}
+
+
+.payment-view {
+    .payment-view__amount {
+        .input-group {
+            position: relative;
+        }
+
+        .input-group-prepend {
+            border: 1px solid $border-color;
+            border-right: 0;
+            position: absolute;
+            left: 0;
+            bottom: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+
+            .input-group-text {
+                background: transparent;
+                z-index: 1;
+                border: 0;
+            }
+        }
+
+        .form-control {
+            padding-left: 30px;
+            border-radius: 4px !important;
+            z-index: 0;
+            margin: 0px !important;
+
+            &:focus {
+                z-index: 0;
+            }
+        }
+    }
+}
+
+.payment-view__tabs {
+    border: 0;
+
+    .nav-link {
+        flex: 1;
+        border: 0;
+        // border-top: 8px solid transparent;
+        font-size: 18px;
+        padding: 1rem;
+        justify-content: center;
+        border-radius: 0;
+        font-weight: $font-weight-bold;
+        margin: 0 1rem;
+        background: $gray-100;
+        position: relative;
+
+        &:before {
+            content: '';
+            width: 0%;
+            position: absolute;
+            height: 4px;
+            top: -4px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform-origin: left;
+            transition: all .1s ease-in-out;
+        }
+
+        &:last-child {
+            margin-left: 0;
+        }
+
+        &.active {
+
+            &:before {
+                background: $primary;
+                width: 100%;
+            }
+        }
+    }
+
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        .nav-link {
+            font-size: 16px;
+            padding: 8px 12px;
+            margin: 0px 10px;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .nav-link {
+            font-size: 14px;
+            padding: 10px 10px;
+            margin: 0px 5px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-link {
+            font-size: 12px;
+            padding: 10px 8px;
+            margin: 0px 5px;
+        }
+    }
+}
+
+.payment-view__tabs__content {
+    background: $white;
+    padding: 30px;
+    box-shadow: 0 0 4px rgba($black, .1);
+
+    .py-box--large {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+// public checkout
+
+.public-checkout__price {
+    display: flex;
+    justify-content: center;
+    font-size: 54px;
+    line-height: 64px;
+}
+
+.public-checkout__inner-container {
+    margin: auto;
+    max-width: 580px;
+    padding: 20px;
+}
+
+.b-r-n {
+    border-right: none;
+}
+
+.card-detail-field-group {
+    width: 100%;
+
+    .py-stripe__element {
+        margin: -1px 0 0 -1px;
+
+        &:focus {
+            z-index: 2;
+        }
+    }
+}
+
+.relative {
+    position: relative;
+
+    .carret-container {
+        position: absolute;
+        right: 15px;
+        top: 12px;
+    }
+}
+
+.contact-error {
+    color: #c22929;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.error-text {
+    color: #FC1E4F;
+    font-size: 24px;
+}
+
+.onboarding__business__details {
+    .aditional-information {
+        .action-icon {
+            width: 100px;
+            float: right;
+        }
+    }
+}
+
+.aditional-information tr td {
+    width: 33.33%;
+}
+
+.expandBody {
+    padding: 16px;
+    border-radius: 0 0 6px 6px;
+}
+
+.SUCCESS {
+    background: #adf0cc;
+}
+
+.DECLINED,
+.FAILED {
+    background: #f3d1d1;
+}
+
+.REFUNDED {
+    background: #eee991;
+    color: #1c252c;
+}
+
+.PENDING {
+    background: #c7d3dc;
+}
+
+.success-text {
+    color: #14713f;
+}
+
+.refunded-text {
+    color: #686307
+}
+
+.declined-text {
+    color: #a90909
+}
+
+.pending-text {
+    color: #395260;
+}
+
+.PaymentList__Container {
+    .badge {
+        min-width: 95px !important;
+    }
+}
+
+.table-business-list {
+    .py-table__cell__action {
+        text-align: right;
+
+        :last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+.payments-list-area-content {
+    .react-bs-table-container {
+        overflow: auto;
+        max-width: 100%;
+    }
+}
+
+
+// Payments-Splash-page
+
+.price-box-calc {
+    background-color: #ffffff;
+    padding: 95px 30px 40px 30px;
+    border: 1px solid #E2E2E2;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s;
+    transform: translateY(0px);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-box-calc:hover {
+    box-shadow: 0px 8px 30px 0px rgba(47, 128, 247, 0.1);
+    transform: translateY(-5px);
+}
+
+.price-box-calc .title {
+    background-color: #000000;
+    color: #ffffff;
+    display: inline-block;
+    padding: 12px;
+    border-radius: 0px 0px 20px 20px;
+    width: 200px;
+    max-width: 100%;
+    line-height: 18px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+}
+
+.price-box-calc .title span {
+    font-size: 12px;
+    display: block;
+}
+
+.price-box-calc.large-box .title {
+    width: 400px;
+}
+
+.price-box-calc .single-calc {
+    margin-bottom: 25px;
+}
+
+.price-box-calc .single-calc:last-child {
+    margin-bottom: 0;
+}
+
+.price-box-calc .single-calc .value {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.price-box-calc .single-calc .value .comming-song {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+}
+
+.price-box-calc .single-calc .value .tip {
+    position: relative;
+    padding-right: 23px;
+}
+
+.price-box-calc .single-calc .value .tip .info-ic {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.price-box-calc .bg-pink {
+    background: #EC5078 !important;
+}
+
+.price-box-calc .bg-success {
+    background: #28C195 !important;
+}
+
+.price-box-calc .bg-primary {
+    background: #136ACD !important;
+}
+
+
+.text-divider {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.text-divider:before {
+    content: " ";
+    display: block;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #f7f7f7;
+    position: absolute;
+    left: 0;
+    top: 49%;
+    z-index: -1;
+    width: 100%;
+}
+
+.text-divider span {
+    background-color: #F8FCFF;
+    padding: 0 1em;
+}
+
+.info-ic {
+    display: inline-block;
+    border: none;
+    background: none;
+    outline: none;
+    margin: 0 0 0 4px;
+    padding: 0;
+    color: inherit;
+    line-height: 1em;
+}
+
+.info-ic {
+    font-size: 16px;
+    color: #007bff;
+}
+
+.text-pink {
+    color: #EC5078 !important;
+}
+
+.text-success {
+    color: #28C195 !important;
+}
+
+.text-primary {
+    color: #136ACD !important;
+}

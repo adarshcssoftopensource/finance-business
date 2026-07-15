@@ -1,0 +1,36 @@
+.dispute-view-header .py-header--page {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dispute-header-info {
+    margin-bottom: 50px;
+}
+
+.dispute-header-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dispute-header-info ul li {
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 20px;
+    width: 50%;
+    margin: -1px 0;
+}
+
+.dispute-header-info ul li:nth-child(even) {
+    border-right: none;
+}
+
+.dispute-header-info h5 {
+    font-size: 18px;
+}

@@ -1,0 +1,133 @@
+.chart-account {
+    ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .main {
+        ul {
+            list-style: none;
+            border-bottom: 1px solid #d4dde3;
+            margin: 0px;
+            padding: 0px;
+
+            .list1 {
+                font-weight: bold;
+                cursor: pointer;
+                color: #1c252c;
+                border-bottom: 4px solid #136acd;
+
+                .number {
+                    background: #dfe6f1;
+                    color: #3c5b8b;
+                    font-weight: 600;
+                    border-radius: 500px;
+                    font-size: 13px;
+                }
+            }
+
+            .list-hover {
+                cursor: pointer;
+
+                &:hover {
+                    border-bottom: 4px solid #d4dde3;
+                }
+
+                .number {
+                    background: #dfe6f1;
+                    color: #3c5b8b;
+                    font-weight: 600;
+                    border-radius: 500px;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .head-tb {
+        background-color: #e0e7eb;
+    }
+
+    .help {
+        height: 20px !important;
+        width: 35px !important;
+    }
+
+    .body-tb {
+        .fs-17 {
+            font-size: 17px;
+        }
+
+        .fs-16 {
+            font-size: 16px;
+        }
+
+        .fs-14 {
+            font-size: 14px;
+        }
+
+        .rw-one {
+            list-style: none;
+            border-bottom: 1px solid #d4dde3 !important;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #e6f1ff;
+            }
+
+            .archived-text {
+                height: fit-content !important;
+            }
+        }
+    }
+
+    .edit {
+        width: 20px;
+        height: 20px;
+    }
+
+    .plus {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        margin-top: -3px;
+        display: inline-block;
+    }
+
+    .chart-button {
+        background: none !important;
+        border: none !important;
+
+        &:hover {
+            background: #f0f4fa !important;
+        }
+    }
+
+    .simple-btn {
+        color: #136acd !important;
+    }
+}
+
+.bg-ar {
+    background: #b7b6b5 !important;
+}
+
+.msg {
+    border-bottom: 1px solid #d4dde3 !important;
+
+    &:hover {
+        background-color: #e6f1ff;
+    }
+}
+
+.disabled {
+    background: #b2c2cd !important;
+    cursor: not-allowed !important;
+}
+
+.value-length-overflow {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

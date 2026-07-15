@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="#E5E5E5"/>
+<g id="Icons">
+<rect x="-84" y="-49" width="816" height="1000" fill="white"/>
+<g id="credit_card">
+<path id="icon/action/credit_card_24px" fill-rule="evenodd" clip-rule="evenodd" d="M16.6667 3.33334H3.33341C2.40841 3.33334 1.67508 4.07501 1.67508 5.00001L1.66675 15C1.66675 15.925 2.40841 16.6667 3.33341 16.6667H16.6667C17.5917 16.6667 18.3334 15.925 18.3334 15V5.00001C18.3334 4.07501 17.5917 3.33334 16.6667 3.33334ZM16.6668 15H3.33343V10H16.6668V15ZM3.33343 6.66667H16.6668V5.00001H3.33343V6.66667Z" fill="black"/>
+</g>
+</g>
+</svg>
