@@ -40,6 +40,12 @@ const businessReducer = (state = initialSettings, action) => {
                     ...STATIC_BUSINESS.subscription,
                     ...(action.selectedBusiness?.subscription || {}),
                     isSubscribed: true,
+                    title:
+                      action.selectedBusiness?.subscription?.title ||
+                      STATIC_BUSINESS.subscription.title,
+                    planLevel:
+                      action.selectedBusiness?.subscription?.planLevel ||
+                      STATIC_BUSINESS.subscription.planLevel,
                   },
                   isSubscribed: true,
                   organizationName:

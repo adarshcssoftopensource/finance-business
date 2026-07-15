@@ -12,22 +12,13 @@ export function getSession(queryString) {
     return getMySession(queryString)
       .then(statementResponse => {
         if (statementResponse.statusCode === 200) {
-          const sessions = statementResponse.data?.allUserSession
-          const userId = localStorage.getItem("user.id")
-          // Demo/static: empty session list must not wipe the login (mock APIs often return [])
-          if (
-            userId &&
-            Array.isArray(sessions) &&
-            sessions.length > 0 &&
-            !sessions.some(session => session.userId === userId || session.userId === String(userId))
-          ) {
-            console.log("User session invalid. Logging out...");
-            localStorage.clear();
-            return;
-          }
+          // Demo/static: never wipe login from session list mismatches
           dispatch({
             type: SET_MY_DEVICE_SESSION,
-            payload: statementResponse.data
+            payload: statementResponse.data || {
+              allUserSession: [],
+              session: { valid: true },
+            }
           });
           dispatch({ type: STOP_DEVICE_SESSION_LOADING });
           return statementResponse;
@@ -37,7 +28,7 @@ export function getSession(queryString) {
       .catch(error => {
         dispatch({
           type: SET_SESSION_ERROR_STATE,
-          message: error.message
+          message: error?.message || 'Session fetch failed'
         });
         dispatch({ type: STOP_DEVICE_SESSION_LOADING });
       });

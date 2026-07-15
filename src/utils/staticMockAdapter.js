@@ -1067,6 +1067,7 @@ export function buildStaticResponse(url = '', method = 'GET', body = null) {
           _id: 'session1',
           refreshToken: STATIC_AUTH_TOKEN,
           isActive: true,
+          isCurrent: true,
           deviceInfo: { browser: 'Chrome', os: 'Linux' },
         },
       ],

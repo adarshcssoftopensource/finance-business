@@ -485,10 +485,25 @@ export const logout = async (search = null, to = null) => {
 
   const basicAuthToken = localStorage.getItem('basicAuthToken')
   localStorage.clear();
-  localStorage.setItem('basicAuthToken', basicAuthToken)
+  if (basicAuthToken) {
+    localStorage.setItem('basicAuthToken', basicAuthToken)
+  }
 
-  // Static demo: clear session only — no forced redirect to /signin
-  await persistingStore.purge()
+  try {
+    await persistingStore.purge()
+  } catch (e) {
+    /* ignore */
+  }
+
+  const target =
+    to === 'signup'
+      ? `/signup${search || ''}`
+      : `/signin${search || ''}`
+  history.push(target)
+  // Ensure persisted UI fully resets after sign-out
+  window.setTimeout(() => {
+    window.location.href = target
+  }, 0)
 }
 export const setupRefreshTimer = () => {
   if (!localStorage.getItem('token')) {

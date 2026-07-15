@@ -92,7 +92,13 @@ class Sidebar extends PureComponent {
             })
         }
         const { selectedBusiness } = this.props;
-        if (selectedBusiness && selectedBusiness.subscription && !selectedBusiness.subscription.title) {
+        // Demo: never treat missing plan title as session expiry (causes random logouts)
+        if (
+          process.env.REACT_APP_MY_ENVIRONMENT !== 'development' &&
+          selectedBusiness &&
+          selectedBusiness.subscription &&
+          !selectedBusiness.subscription.title
+        ) {
             this.props.showSnackbar("Your session has been expired", true)
             this.onSignOut()
         }
@@ -139,23 +145,27 @@ class Sidebar extends PureComponent {
         });
     };
 
-    onSignOut = () => {
-        const {
-            deviceSession: { sessions: { allUserSession = [] } = {} } = {},
-            signOutSelectedSession
-        } = this.props;
-        const currentSession = allUserSession?.filter((value) => value.isCurrent);
-        if (currentSession.length) {
-            const payload = {
-                type: "single",
-                payload: {
-                    status: "expired",
-                    isDeleted: true
-                }
-            };
-            signOutSelectedSession(currentSession[0]._id, payload);
+    onSignOut = async () => {
+        try {
+            const {
+                deviceSession: { sessions: { allUserSession = [] } = {} } = {},
+                signOutSelectedSession
+            } = this.props;
+            const currentSession = (allUserSession || []).filter((value) => value.isCurrent);
+            if (currentSession.length && signOutSelectedSession) {
+                const payload = {
+                    type: "single",
+                    payload: {
+                        status: "expired",
+                        isDeleted: true
+                    }
+                };
+                signOutSelectedSession(currentSession[0]._id, payload);
+            }
+        } catch (e) {
+            /* ignore session cleanup errors in demo */
         }
-        logout()
+        await logout()
     };
 
     changeBusiness = async (e, business) => {
@@ -223,9 +233,14 @@ class Sidebar extends PureComponent {
         });
     }
 
-    createNewBusiness = () => {
-        this.sideToggle();
-        history.push(`/app/accounts/business/add`)
+    createNewBusiness = (e) => {
+        if (e) {
+          e.preventDefault()
+          e.stopPropagation()
+        }
+        this.setState({ modal: false }, () => {
+          history.push(`/app/accounts/business/add`)
+        })
     };
 
     _toggle = (from) => {
