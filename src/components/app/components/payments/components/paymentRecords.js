@@ -815,21 +815,22 @@ class PaymentRecords extends PureComponent {
     let {openMail,openReceiptMail,invoiceData,receiptItem} = this.state;
     let data = [];
     props.data.map((d, i) => {
+      const paymentType = d.paymentType || 'Invoice'
       data.push({
-        id: d.id,
+        id: d.id || d._id,
         status: d.status,
         method: d.method || d.paymentIcon,
         methodToDisplay: d.methodToDisplay || d.paymentIcon,
         paymentIcon: d.method === 'alipay' ? 'alipay' : d.paymentIcon,
         date: d.paymentDate,
-        customer: `${d?.customer?.firstName || d?.customer?.lastName ? `${d?.customer?.firstName} ${d.customer.lastName}` : d?.customer?.email}`,
-        totalAmount: d.amountBreakup.total,
-        amountBreakup: d.amountBreakup,
+        customer: `${d?.customer?.firstName || d?.customer?.lastName ? `${d?.customer?.firstName || ''} ${d?.customer?.lastName || ''}`.trim() : d?.customer?.email || ''}`,
+        totalAmount: d.amountBreakup?.total ?? d.amount ?? 0,
+        amountBreakup: d.amountBreakup || { total: d.amount || 0 },
         amount: d.amount,
         note: d.note,
         account: d.account,
-        paymentType: d.paymentType,
-        linkId: d[d.paymentType.toLowerCase()],
+        paymentType,
+        linkId: d[paymentType.toLowerCase()],
         ownAccount: d.ownAccount,
         index: i,
         refund: d.refund,

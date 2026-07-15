@@ -59,14 +59,14 @@ class ProfitLoss extends Component {
     const limit = this.props.limit !== undefined ? this.props.limit : this.state.limit;
     this.setState({ loading: true });
     const { statusCode, data } = await fetchProfitAndLoss(this.props.limit !== undefined ? this.props.limit : this.state.limit);
-    if (statusCode !== 200) {
+    if (statusCode !== 200 || !Array.isArray(data?.values)) {
       this.setState({ loading: false });
       return;
     }
    
-    const categories = data && data.values.map((row, idx) => idx % 2 !== 0 && limit == 24 ? '' : row.displayName);
-    const income = data && data.values.map(row => row.income);
-    const expense = data && data.values.map(row => row.expense);
+    const categories = data.values.map((row, idx) => idx % 2 !== 0 && limit == 24 ? '' : row.displayName);
+    const income = data.values.map(row => row.income);
+    const expense = data.values.map(row => row.expense);
 
  
     this.setState({

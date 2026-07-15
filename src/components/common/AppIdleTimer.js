@@ -6,13 +6,7 @@ const { REACT_APP_LOGOUT_TIME } = process.env
 
 class AppIdleTimer extends PureComponent {
   onIdle = () => {
-    const basicAuthToken = localStorage.getItem('basicAuthToken')
-    localStorage.clear();
-    localStorage.setItem('basicAuthToken', basicAuthToken)
-    this.props.history.push({
-      pathname: '/signin',
-      state: { showInactiveModal: true }
-    })
+    // Static demo: no idle redirect to /signin
   }
 
   renderComponentOnRouteCheck = () => {

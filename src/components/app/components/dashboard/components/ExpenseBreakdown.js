@@ -20,13 +20,17 @@ class ExpenseBreakdown extends Component {
 
   async fetchExpenseBreakdown() {
     this.setState({ loading: true });
-    const { statusCode, data } = await fetchExpenseBreakdown(this.props.limit);
-    if (statusCode !== 200) {
+    try {
+      const { statusCode, data } = await fetchExpenseBreakdown(this.props.limit);
+      if (statusCode !== 200 || !Array.isArray(data?.values)) {
+        this.setState({ loading: false });
+        return;
+      }
+      data.values = data.values.map((row) => ({ name: row.displayName, y: row.amount, percentage: row.percentage }));
+      this.setState({ loading: false, data });
+    } catch (e) {
       this.setState({ loading: false });
-      return;
     }
-    data.values = data.values.map((row) => ({ name: row.displayName, y: row.amount, percentage: row.percentage }));
-    this.setState({ loading: false, data });
   }
 
   getOptions = () => {

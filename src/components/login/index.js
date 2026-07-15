@@ -162,14 +162,14 @@ class Login extends PureComponent {
     let payload =
       formTab === '1'
         ? {
-            email: this.state.email,
-            password: this.state.password,
-          }
+          email: this.state.email,
+          password: this.state.password,
+        }
         : {
-            email: this.state.email,
-            password: this.state.password,
-            OTP,
-          }
+          email: this.state.email,
+          password: this.state.password,
+          OTP,
+        }
     payload.deviceInfo = await getDeviceInfo()
     payload.isRememberMe = this.state.isRememberMe
     const { search } = this.props.location
@@ -262,22 +262,16 @@ class Login extends PureComponent {
 
   handleVerifyRecaptcha = async (e) => {
     e.preventDefault()
-    const { executeRecaptcha } = this.props.googleReCaptchaProps
-
-    if (!executeRecaptcha) {
-      console.log('Recaptcha has not been loaded')
-
-      return
+    try {
+      const { executeRecaptcha } = this.props.googleReCaptchaProps || {}
+      if (executeRecaptcha) {
+        const captchaToken = await executeRecaptcha('login')
+        this.setState({ captchaToken })
+      }
+    } catch (err) {
+      // Demo/static mode: continue without captcha
     }
-
-    const captchaToken = await executeRecaptcha('login')
-    this.setState({ captchaToken })
-
-    if (captchaToken) {
-      this.loginFormSubmit(e)
-    } else {
-      this.props.showSnackbar('Recaptcha token generated!', true)
-    }
+    this.loginFormSubmit(e)
   }
 
   render() {
@@ -372,6 +366,11 @@ class Login extends PureComponent {
                           ? 'Two-Step Authentication'
                           : 'Sign in'}
                       </h1>
+                      {formTab === '2' && (
+                        <p className="text-muted small mt-2 mb-0">
+                          Demo OTP: 1234
+                        </p>
+                      )}
                     </div>
                   </div>
                   {/* Form Fields */}

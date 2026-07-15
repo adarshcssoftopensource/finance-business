@@ -9,7 +9,14 @@ export const getBusinessMcc = () => {
         try {
             let allMcc = await utilityServices.getMccWithBusinessCategory();
             if (allMcc.statusCode === 200) {
-                return dispatch({ type: actionTypes.FETCH_MCC_SUCCESS, message: allMcc.message, payload: allMcc.data.mcc })
+                const list = Array.isArray(allMcc?.data?.mcc)
+                  ? allMcc.data.mcc
+                  : Array.isArray(allMcc?.data)
+                    ? allMcc.data
+                    : Array.isArray(allMcc?.mcc)
+                      ? allMcc.mcc
+                      : []
+                return dispatch({ type: actionTypes.FETCH_MCC_SUCCESS, message: allMcc.message, payload: list })
             } else {
                 return dispatch({ type: actionTypes.FETCH_MCC_ERROR, payload: allMcc.data, message: allMcc.message })
             }

@@ -2,7 +2,6 @@ import history from '../../customHistory';
 import React, { Component } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import { logger } from '../GlobalFunctions';
 
 // OnClick : https://github.com/react-bootstrap-table/react-bootstrap-table2/issues/302
 
@@ -13,6 +12,7 @@ class DataTableWrapper extends Component {
       page: 0,
       expanded: []
     };
+    this._allowSortEvents = false;
   }
 
   componentDidMount() {
@@ -80,16 +80,31 @@ class DataTableWrapper extends Component {
     }
   };
 
-  _handlePageChange = (type, {
-    page,
-    sizePerPage
-  }) => {
-    const { changePage = () => logger.log() } = this.props;
-    logger.log('page click', page, sizePerPage);
-    changePage(type, {
-      page,
-      sizePerPage
-    });
+  _handlePageChange = (type, newState = {}) => {
+    const { page, sizePerPage } = newState
+    const { changePage, page: curPage = 1, limit: curLimit } = this.props
+    if (!changePage) return
+
+    // Remote tables fire synthetic events on remount; only forward real changes.
+    if (type === 'pagination') {
+      const nextPage = page || curPage
+      const nextSize = sizePerPage || curLimit
+      if (nextPage === curPage && nextSize === curLimit) {
+        return
+      }
+      changePage(type, newState)
+      return
+    }
+
+    if (type === 'sort') {
+      // defaultSorted triggers repeated 'sort' events → fetch/setState loops
+      if (!this._allowSortEvents) {
+        this._allowSortEvents = true
+        return
+      }
+      changePage(type, newState)
+      return
+    }
   };
 
   _handleOnExpand = (row, isExpand, rowIndex, e) => {
@@ -114,7 +129,10 @@ class DataTableWrapper extends Component {
       totalData = data.length,
       from,
       limit,
-      expandRowComponent
+      expandRowComponent,
+      classes: tableClasses,
+      hover = true,
+      keyField = 'id',
     } = this.props;
     const { expanded } = this.state;
     const pageData = localStorage.getItem('paginationData');
@@ -206,16 +224,15 @@ class DataTableWrapper extends Component {
       <div>
         <BootstrapTable
           remote
-          keyField="id"
+          keyField={keyField}
           data={data}
           rowEvents={rowEvents}
           columns={columns}
           rowClasses={rowClass}
-          classes="py-table"
-          hover
-          defaultSorted={!!defaultSorted ? defaultSorted : []}
+          classes={tableClasses || 'py-table'}
+          hover={hover}
+          defaultSorted={[]}
           pagination={paginationFactory(option)}
-          {...this.props}
           expandRow={expandRow}
           onTableChange={this._handlePageChange}
         />

@@ -7,7 +7,7 @@ import { getAmountToDisplay } from "../../../../../../utils/GlobalFunctions";
 const showSellAndBuyTag = (item) => {
     const isPurchase = window.location.pathname.includes('purchase');
     const text = isPurchase ? 'Buy & Sell' : 'Sell & Buy';
-    if (item.sell.allowed && item.buy.allowed) {
+    if (item?.sell?.allowed && item?.buy?.allowed) {
       return <span className="badge badge-default">{text}</span>;
     }
     return null;
@@ -17,7 +17,7 @@ export const nameRender = (cell, row, rowIndex, formatExtraData) => {
     if(!!row){
         return (
             <Fragment>
-                <a class="py-table__cell-content" >
+                <a className="py-table__cell-content" >
                     {row.name} {showSellAndBuyTag(row)}
                 </a>
                 {row.description && (<span className="py-text--hint">{row.description}</span>)}
@@ -27,13 +27,21 @@ export const nameRender = (cell, row, rowIndex, formatExtraData) => {
 };
 
 export const priceRender = (cell, row, rowIndex, formatExtraData) => {
-    const selectedBusiness = JSON.parse(JSON.parse(localStorage.getItem('reduxPersist:root')).businessReducer).selectedBusiness
+    let selectedBusiness = {}
+    try {
+      const root = JSON.parse(localStorage.getItem('reduxPersist:root') || '{}')
+      const businessReducer = typeof root.businessReducer === 'string'
+        ? JSON.parse(root.businessReducer)
+        : root.businessReducer
+      selectedBusiness = businessReducer?.selectedBusiness || {}
+    } catch (e) {
+      /* ignore */
+    }
     if(!!row){
         return (
             <Fragment>
-                <a class="py-table__cell-content">
-                {/* {currency} */}
-                {getAmountToDisplay(selectedBusiness.currency, row.price)}
+                <a className="py-table__cell-content">
+                {getAmountToDisplay(selectedBusiness.currency || row.currency || { code: 'USD', symbol: '$' }, row.price)}
                 </a>
                 {row.taxes && row.taxes.length ?
                 <span className="py-text--hint">

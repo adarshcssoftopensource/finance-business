@@ -175,10 +175,14 @@ class Estimates extends Component {
             if(this.state.limit !== sizePerPage){
                 pageNo = 1;
             }
+            if (pageNo === offset && sizePerPage === limit) {
+                return
+            }
             queryData = queryData.replace(`pageNo=${offset}`, `pageNo=${pageNo}`)
             queryData = queryData.replace(`pageSize=${limit}`, `pageSize=${!!sizePerPage ? sizePerPage : limit}`)
             this.setState({offset: pageNo, queryData, limit: sizePerPage})
             localStorage.setItem('paginationData', JSON.stringify({offset: pageNo, queryData, limit: sizePerPage}))
+            this.fetchEstimateInvoice(queryData);
         }else if(type === 'sort'){
             const sortBy = !sort
             if(queryData.includes('sort')){
@@ -188,8 +192,8 @@ class Estimates extends Component {
 
             }
             this.setState({queryData, sort: sortBy})
+            this.fetchEstimateInvoice(queryData);
         }
-        this.fetchEstimateInvoice(queryData);
     }
 
     render() {
@@ -297,7 +301,7 @@ class Estimates extends Component {
                         <DataTableWrapper
                         data={data.estimates || []}
                         columns={columns}
-                        defaultSorted={""}
+                        defaultSorted={defaultSorted}
                         classes="py-table py-table--hover py-table--condensed py-table__v__center"
                         from="estimateList"
                         hover={true}
@@ -305,7 +309,6 @@ class Estimates extends Component {
                         page={offset}
                         limit={limit}
                         totalData={data.meta.total}
-                        sort={this.state.sort}
                         sortField='date'
                     />
                     ) : (<NoDataMessage

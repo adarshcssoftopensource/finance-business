@@ -126,8 +126,8 @@ export default class EditDetailsModal extends Component {
                     receiptDate: props.data.receiptDate || _formatDate(new Date()),
                     currency: props.currency,
                     amountBreakup: {
-                        ...props.data.amountBreakup,
-                        subTotal: Number(props.data.amountBreakup.subTotal || 0).toFixed(2),
+                        ...(props.data.amountBreakup || {}),
+                        subTotal: Number(props.data.amountBreakup?.subTotal || 0).toFixed(2),
                     }
                 }
             });
@@ -136,13 +136,15 @@ export default class EditDetailsModal extends Component {
 
     async fetchCurrencies() {
         const response = await fetchCurrencies();
-        const list = response.map(country => country.currencies[0]);
+        const list = (Array.isArray(response) ? response : [])
+            .map(country => country?.currencies?.[0] || country)
+            .filter(Boolean);
         const currencies = orderBy(uniqBy(list, "code"), "code", "asc");
         this.setState({ currencies });
     }
 
     async fetchTaxes() {
-        const response = (await taxServices.fetchTaxes()).data.taxes;
+        const response = (await taxServices.fetchTaxes())?.data?.taxes || [];
         response.forEach(row => {
             row.id = row._id;
             delete row._id;
@@ -381,7 +383,7 @@ export default class EditDetailsModal extends Component {
                     <Button outline color="primary" onClick={this.close}>Cancel</Button>
                     <Button hidden={this.props.updating} color="primary" outline onClick={this.save}>Save</Button>
                     <Button hidden={this.props.updating} color="primary" onClick={this.submit}>Post to Accounting</Button>
-                    <Button hidden={!this.props.updating} color="primary" ><Spinner size="sm" color="default" /></Button>
+                    <Button hidden={!this.props.updating} color="primary" ><Spinner size="sm" color="primary" /></Button>
                 </ModalFooter>
             </Modal>
         )

@@ -6,7 +6,6 @@ import LoginService from '../api/LoginService'
 import { _setToken } from '../utils/authFunctions'
 import { verifyRegister, verifyInvitation } from '../api/globalServices'
 import { openGlobalSnackbar } from './snackBarAction'
-import {logout} from "../utils/GlobalFunctions";
 import { getDeviceInfo } from "../utils/common";
 
 export const generateResetLink = data => {
@@ -102,18 +101,29 @@ export const invitationVerify = (search) => {
 }
 
 export const refreshToken = async (createNewRefreshToken = false) => {
-    const deviceInfo = await getDeviceInfo();
-    const refreshData = await (LoginService.refreshToken({
-        accessToken: localStorage.getItem("token"),
-        refreshToken: localStorage.getItem("refreshToken"),
-        createNewRefreshToken,
-        deviceInfo
-    }));
-    if (refreshData.statusCode === 200 || refreshData.statusCode === 201) {
-        _setToken(refreshData.data)
-        return refreshData.data;
-    } else {
-        logout();
+    try {
+        const deviceInfo = await getDeviceInfo();
+        const refreshData = await (LoginService.refreshToken({
+            accessToken: localStorage.getItem("token"),
+            refreshToken: localStorage.getItem("refreshToken"),
+            createNewRefreshToken,
+            deviceInfo
+        }));
+        if (refreshData.statusCode === 200 || refreshData.statusCode === 201) {
+            const payload = refreshData.data || refreshData
+            _setToken(payload)
+            return payload;
+        }
+        // Static demo: keep existing session instead of logging out
+        return {
+            accessToken: localStorage.getItem('token'),
+            refreshToken: localStorage.getItem('refreshToken'),
+        };
+    } catch (e) {
+        return {
+            accessToken: localStorage.getItem('token'),
+            refreshToken: localStorage.getItem('refreshToken'),
+        };
     }
 }
 

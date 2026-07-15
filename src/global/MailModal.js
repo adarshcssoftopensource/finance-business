@@ -93,14 +93,14 @@ class MailModal extends React.Component {
       this.setState({emailLoader: true})
       let { mailInvoice } = this.state;
       let response = await fetchUsersEmails(localStorage.getItem('user.id'))
-      emails = response.data.emails.filter(item => item.status.toLowerCase() === 'verified');
+      emails = (response?.data?.emails || []).filter(item => item.status?.toLowerCase() === 'verified');
       if(emails.length <= 0){
         this.setState({emailLoader: false})
         this.props.isVerifiedEmail && this.props.isVerifiedEmail(false)
         this.closeMailInvoice();
         this.props.showSnackbar('Please verify your email first to enable this feature', true)
       }else{
-        mailInvoice.from = response.data.emails.find(item => item.isPrimary === true).email;
+        mailInvoice.from = (response.data.emails.find(item => item.isPrimary === true) || emails[0]).email;
         this.props.isVerifiedEmail &&this.props.isVerifiedEmail(true)
         this.setState({emails, mailInvoice, emailLoader: false})
       }

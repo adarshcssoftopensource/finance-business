@@ -152,16 +152,16 @@ class Payment extends PureComponent {
           <CenterSpinner />
         </Container>
       );
-    } else if (data && (!data.isConnected || !data.isOnboardingApplicable) && !data.legalData.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
+    } else if (data && (!data.isConnected || !data.isOnboardingApplicable) && !data?.legalData?.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
       return <PaymentInit {...this.props} />;
     }
-    else if (data && data.isConnected && !data.isSetupDone && data.charges.expressSupported && data.charges.expressEnabled && !data.legalData.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
+    else if (data && data.isConnected && !data.isSetupDone && data?.charges?.expressSupported && data?.charges?.expressEnabled && !data?.legalData?.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
       return <Fragment>{this.redirectToExpressOnBoarding()}</Fragment>;
     }
-    else if (data && data.isConnected && !data.isVerified.payment && !data.isSetupDone && !data.isProviderSwitched && !data.legalData.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
+    else if (data && data.isConnected && !data?.isVerified?.payment && !data.isSetupDone && !data.isProviderSwitched && !data?.legalData?.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
       return <Fragment>{this.redirectToOnBoarding()}</Fragment>;
     }
-    else if (data && data.onboardingStatus === 'rejected' && !data.isProviderSwitched && !data.legalData.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
+    else if (data && data.onboardingStatus === 'rejected' && !data.isProviderSwitched && !data?.legalData?.isPayByBankEnabled && !data?.legalData?.isBnplEnabled) {
       return <Fragment>{this.redirectToOnBoarding()}</Fragment>;
     } else if (data && data.providerName === 'stripe' && data.onboardingStatus === 'need_verification') {
       return <Fragment>{this.redirectToKYCError()}</Fragment>;

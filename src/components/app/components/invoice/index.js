@@ -93,11 +93,20 @@ class Invoice extends PureComponent {
       businessInfo && businessInfo.organizationName
         ? `Finance - ${businessInfo.organizationName} - Finance`
         : `Finance - Invoices`
-    const {
-      selectedBusiness: {
-        meta: { invoice }
+    let invoiceMeta = { firstVisit: false }
+    try {
+      const raw = localStorage.getItem('reduxPersist:root')
+      if (raw) {
+        const root = JSON.parse(raw)
+        const businessReducer = typeof root.businessReducer === 'string'
+          ? JSON.parse(root.businessReducer)
+          : root.businessReducer
+        invoiceMeta = businessReducer?.selectedBusiness?.meta?.invoice || invoiceMeta
       }
-    } = JSON.parse(JSON.parse(localStorage.getItem('reduxPersist:root')).businessReducer)
+    } catch (e) {
+      /* ignore corrupt persist */
+    }
+    const invoice = invoiceMeta
     let queryData = `pageNo=${this.state.offset}&pageSize=${this.state.limit}`
     const pageData = localStorage.getItem('paginationData')
 
@@ -154,7 +163,7 @@ class Invoice extends PureComponent {
       this.setState({
         isOnBoard: invoice.firstVisit
       })
-    } else if (businessInfo.meta.invoice.firstVisit) {
+    } else if (businessInfo?.meta?.invoice?.firstVisit) {
       history.push('/app/invoices/start')
     }
     this.setState({ queryData, isSearchByCustomerNameDisabled: false, selectedCustomer: undefined })
@@ -203,20 +212,13 @@ class Invoice extends PureComponent {
   }
 
   fetchInvoicesCount = async queryData => {
-    let { filterData, invoiceCount, activeTab } = this.state
     const response = await getInvoicesCount(queryData)
-    const invoiceCountResponse = response.data.invoiceCount
-    // if(filterData.status) {
-    //   invoiceCount[activeTab] = invoiceCountResponse[activeTab];
-    // } else {
-    //   invoiceCount = invoiceCountResponse;
-    // }
-    this.setState((prevState) => {
-      return {
-      ...prevState,
-          invoiceCount: invoiceCountResponse
-      }
-    });
+    const invoiceCountResponse = response?.data?.invoiceCount || {
+      draft: 0,
+      unpaid: 0,
+      total: 0,
+    }
+    this.setState({ invoiceCount: invoiceCountResponse })
   }
 
   onRefreshClick = async () => {
@@ -228,14 +230,12 @@ class Invoice extends PureComponent {
   }
 
   fetchCustomersList = async () => {
-    const customerList = (await customerServices.fetchCustomersSlim()).data
-      .customers
+    const customerList = (await customerServices.fetchCustomersSlim())?.data?.customers || []
     this.setState({ customerList })
   }
 
   fetchInvoiceDashboardCount = async () => {
-    let invoiceDashboardData = (await getInvoiceDashboardCount()).data
-      .invoiceDashboardData
+    let invoiceDashboardData = (await getInvoiceDashboardCount())?.data?.invoiceDashboardData || this.state.invoiceDashboardData
     this.setState({ invoiceDashboardData, refreshData: false })
   }
 
@@ -397,11 +397,15 @@ class Invoice extends PureComponent {
       if (this.state.limit !== sizePerPage) {
         pageNo = 1;
       }
+      if (pageNo === offset && sizePerPage === limit) {
+        return
+      }
       queryData = queryData.replace(`pageNo=${offset}`, `pageNo=${pageNo}`)
       queryData = queryData.replace(`pageSize=${limit}`, `pageSize=${!!sizePerPage ? sizePerPage : limit}`)
       this.setState({ offset: pageNo, queryData, limit: sizePerPage })
 
       localStorage.setItem('paginationData', JSON.stringify({ offset: pageNo, queryData, limit: sizePerPage }))
+      this.fetchInvoices(queryData);
     } else if (type === 'sort') {
       const sortBy = !sort
       if (queryData.includes('sort')) {
@@ -411,8 +415,8 @@ class Invoice extends PureComponent {
 
       }
       this.setState({ queryData, sort: sortBy })
+      this.fetchInvoices(queryData);
     }
-    this.fetchInvoices(queryData);
   }
 
   render() {

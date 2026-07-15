@@ -29,11 +29,11 @@ export function ProfileRoutes(url, params) {
                  params={params} />
       <MainRoute exact path={`${url}/email-notification`} component={EmailNotification}
                  params={params} />
+      <MainRoute exact path={`${url}/business/add`} component={AddBusiness} params={params} />
       <MainRoute exact path={`${url}/business/:businessId/edit`} component={EditBusiness}
                  params={params} />
       <MainRoute exact path={`${url}/business/:businessId/primary`} component={ConfirmPrimary}
                  params={params} />
-      <MainRoute exact path={`${url}/business/add`} component={AddBusiness} params={params} />
       <MainRoute exact path={`${url}/verification`} component={Verification} params={params} />
       <MainRoute exact path={`${url}/sessions`} component={DeviceSession} params={params} />
       <MainRoute exact path={`${url}/security`} component={Security} params={params} />

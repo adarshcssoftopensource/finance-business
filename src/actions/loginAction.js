@@ -70,10 +70,11 @@ export const setErrorMessage = (errorMessage) => {
 
 export const fetchFeatureFlags = async () => {
   const featureFlags = await getAllFeatureFlags();
-  if (featureFlags && !isEmpty(featureFlags)) {
-    localStorage.setItem('featureFlags', JSON.stringify(featureFlags));
+  const flags = featureFlags?.data || featureFlags;
+  if (flags && !isEmpty(flags)) {
+    localStorage.setItem('featureFlags', JSON.stringify(flags));
   }
-  return featureFlags;
+  return flags;
 }
 
 export const fetchMe = async (isCheckVerifiedEmail) => {

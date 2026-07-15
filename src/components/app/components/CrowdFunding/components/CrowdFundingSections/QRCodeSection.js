@@ -64,7 +64,7 @@ const QRCodeSection = props => {
                 {/* <QRCode
                   id="share-crowdfunding"
                   value={
-                    crowdFundingData ? crowdFundingData.funding.publicView.shareableLinkUrl : ''
+                    crowdFundingData?.funding?.publicView?.shareableLinkUrl || ''
                   }
                   size={164}
                   level={'H'}

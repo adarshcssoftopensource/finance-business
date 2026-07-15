@@ -15,8 +15,8 @@ function Index({ history, openPdfModal }) {
   return (
     <div className="responsive-table-wrapper mt-3">
       <div className="billing-filter-header row">
-        <div class="py-header--title mt-0 col-8">
-          <h2 class="py-heading--title mb-3">Billing History</h2>
+        <div className="py-header--title mt-0 col-8">
+          <h2 className="py-heading--title mb-3">Billing History</h2>
         </div>
         {/* <div class="billing-filter--search col-4">
      <div class="btn-search input-group">
@@ -45,7 +45,7 @@ function Index({ history, openPdfModal }) {
               <tbody>
                 {history && history.length > 0 && history?.map((dt, i) => (<tr key={dt._id}>
                   <td className="py-table__cell" >
-                    <span class={`badge badge-${getBillingStatus(dt.status)}`}>{dt.status}</span>
+                    <span className={`badge badge-${getBillingStatus(dt.status)}`}>{dt.status}</span>
                   </td>
                   <td className="py-table__cell billing-col cursor-pointer" style={{ cursor: "pointer" }} onClick={() => openPdfModal(dt)} id={`Tooltip-${dt._id}-${i}`}>
                     <span className="ov-text btn-link" > {dt.paymentId}</span>

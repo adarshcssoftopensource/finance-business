@@ -21,8 +21,8 @@ function CurrentPlanCard({ plan, isSubscriptionCreateAllowed: propsIsSubscriptio
         {plan ?
           <>
             {isModifyPlanAllowed && <Link className="bttn-white" to="/app/setting/subscription-plans" >Modify plan</Link>}
-            {plan.trial.isTrial && <div className="footer-info pull-right"><strong>Trial</strong> ends {_getDiffDate(plan.trial.endDate) == 0 ? 'today' : `in ${_getDiffDate(plan.trial.endDate)} day(s)`} </div>}
-            {plan.endDate && !plan.trial.isTrial && <div className="footer-info pull-right"><strong>Plan</strong> ends {_getDiffDate(plan.endDate) == 0 ? 'today' : `in ${_getDiffDate(plan.endDate)} day(s)`} </div>}
+            {plan.trial?.isTrial && <div className="footer-info pull-right"><strong>Trial</strong> ends {_getDiffDate(plan.trial.endDate) == 0 ? 'today' : `in ${_getDiffDate(plan.trial.endDate)} day(s)`} </div>}
+            {plan.endDate && !plan.trial?.isTrial && <div className="footer-info pull-right"><strong>Plan</strong> ends {_getDiffDate(plan.endDate) == 0 ? 'today' : `in ${_getDiffDate(plan.endDate)} day(s)`} </div>}
           </>
           :
           <>

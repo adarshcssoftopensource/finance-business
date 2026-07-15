@@ -99,7 +99,7 @@ const Index = (props) => {
         <CenterSpinner />
       </div> : <div className="content-wrapper__main__fixed" >
           <div className="row mb-4">
-            <div class="py-header--title mt-0 col-8"><h2 class="py-heading--title">Subscription</h2></div>
+            <div className="py-header--title mt-0 col-8"><h2 className="py-heading--title">Subscription</h2></div>
           </div>
           {!loader && billingHistory?.length == 0 && (!activePlan || (activePlan && activePlan.planLevel == 1)) ?
             <StarterPlan /> : <React.Fragment>

@@ -440,8 +440,8 @@ const mapStateToProps = ({
 }) => ({
   businessInfo: businessReducer.selectedBusiness,
   invoiceCount: getAllRecurringCount.success
-    ? getAllRecurringCount.data.invoiceCount
-    : {},
+    ? getAllRecurringCount.data?.invoiceCount || { draft: 0, active: 0, total: 0 }
+    : { draft: 0, active: 0, total: 0 },
   allRecurring: getAllRecurring
 })
 

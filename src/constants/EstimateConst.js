@@ -62,16 +62,27 @@ const customerRender = (cell, row, rowIndex, formatExtraData) => {
 };
 
 const amountRender = (cell, row, rowIndex, formatExtraData) => {
-    let buisinessInfo = JSON.parse(JSON.parse(localStorage.getItem('reduxPersist:root')).businessReducer).selectedBusiness;
+    let businessInfo = {}
+    try {
+      const root = JSON.parse(localStorage.getItem('reduxPersist:root') || '{}')
+      const businessReducer = typeof root.businessReducer === 'string'
+        ? JSON.parse(root.businessReducer)
+        : root.businessReducer
+      businessInfo = businessReducer?.selectedBusiness || {}
+    } catch (e) {
+      /* ignore corrupt persist */
+    }
+    const homeCurrency = row?.businessId?.currency || businessInfo?.currency
+    const rowCurrency = row?.currency || homeCurrency
     return (
     <Fragment>
       <a className="py-table__cell-content d-inline" onClick={() => history.push(`/app/estimates/view/${row._id}`)}>
-      {row ? `${getAmountToDisplay(row.currency, row.totalAmount ? row.totalAmount : 0)}`:''}
+      {row ? `${getAmountToDisplay(rowCurrency, row.totalAmount ? row.totalAmount : 0)}`:''}
          {
-          row && row.businessId.currency.code !== row.currency.code  ?
+          row && homeCurrency?.code && rowCurrency?.code && homeCurrency.code !== rowCurrency.code  ?
             <Fragment>
               <span className="py-text--hint">
-                {getAmountToDisplay(buisinessInfo.currency, row.totalAmountInHomeCurrency)}
+                {getAmountToDisplay(businessInfo.currency || homeCurrency, row.totalAmountInHomeCurrency)}
               </span>
             </Fragment> :
             null
@@ -191,8 +202,8 @@ export const columns = [
 
 export const defaultSorted = [
   {
-    dataField: "",
-    order: ""
+    dataField: "estimateDate",
+    order: "desc"
   }
 ];
 

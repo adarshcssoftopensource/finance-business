@@ -80,7 +80,7 @@ class EstimateInvoice extends PureComponent {
     } catch (error) {
       if (error.data) {
         this.props.showSnackbar(error.message, true);
-        history.push("/404")
+        // Static demo: no redirect to /404
       }
     }
   };

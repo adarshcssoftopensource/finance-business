@@ -174,7 +174,8 @@ export const allColumns = [{
 ];
 
 export const defaultSorted = [{
-  dataField: '',
+  dataField: 'dueDate',
+  order: 'desc',
 }];
 
 

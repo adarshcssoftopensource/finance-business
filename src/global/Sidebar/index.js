@@ -28,6 +28,7 @@ import {
     terms
 } from '../../utils/GlobalFunctions';
 import { _getUser } from '../../utils/authFunctions';
+import { STATIC_USER } from '../../utils/static-auth';
 import { fetchPaymentSettings } from '../../actions/paymentSettings';
 import { openGlobalSnackbar } from '../../actions/snackBarAction';
 import MobileOtpVerify from '../MobileVerify';
@@ -69,15 +70,22 @@ class Sidebar extends PureComponent {
         const blockOpen = JSON.parse(localStorage.getItem('sidebarToggleHistory'));
         const token = localStorage.getItem('token')
         const refresh = localStorage.getItem('refreshToken')
-        const user = _getUser(token);
+        const user = _getUser(token) || {}
+        const tokenPermissions = user?.acl?.permissions
+        const permissions =
+            Array.isArray(tokenPermissions) && tokenPermissions.length > 0
+                ? tokenPermissions
+                : STATIC_USER.acl.permissions
+
         this.setState({
-            userData: user
+            userData: {
+                ...STATIC_USER,
+                ...user,
+                acl: { permissions },
+                primaryEmail: user.primaryEmail || STATIC_USER.primaryEmail,
+            },
+            permissions,
         })
-        if (!!user && !!user.acl) {
-            this.setState({
-                permissions: user.acl.permissions
-            })
-        }
         if (!!blockOpen) {
             this.setState({
                 blockOpen
@@ -175,20 +183,29 @@ class Sidebar extends PureComponent {
     }
 
     businessItems() {
-        const { business } = this.props;
-        const filterBusiness = business.filter(val =>
-            val.organizationName
+        const { business, selectedBusiness } = this.props;
+        const list = (Array.isArray(business) && business.length
+          ? business
+          : selectedBusiness
+            ? [selectedBusiness]
+            : []
+        ).filter(Boolean)
+        const filterBusiness = list.filter(val =>
+            (val.organizationName || val.name || '')
                 .toLowerCase()
-                .includes(this.state.filterCountry.toLowerCase())
+                .includes((this.state.filterCountry || '').toLowerCase())
         )
         let primary = localStorage.getItem('businessId');
-        return business.length && filterBusiness.map((item, i) => {
+        if (!filterBusiness.length) {
+            return null
+        }
+        return filterBusiness.map((item, i) => {
             return (
                 <li key={'4.' + i} onClick={e => this.changeBusiness(e, item)} className={`menu-item ${item.role !== 'Owner' ? "owner" : ""} ${!!primary ? item._id === primary ? "is-current" : "" : ""}`} >
                     <a href="javascript:void(0)" className={`item-link`}>
                         {/* Business-Name */}
                         <span className={`business-title`}>
-                            {item.organizationName}
+                            {item.organizationName || item.name}
                         </span>
                         {item.isSubscribed && <span className="paid-badge px-1" ><img src={badgeImg} alt="badge" /></span>}
                         {/* User-Role */}
@@ -208,9 +225,7 @@ class Sidebar extends PureComponent {
 
     createNewBusiness = () => {
         this.sideToggle();
-        if (this.props.selectedBusiness && this.props.selectedBusiness._id) {
-            history.push(`/app/accounts/business/add`)
-        }
+        history.push(`/app/accounts/business/add`)
     };
 
     _toggle = (from) => {
@@ -332,10 +347,18 @@ class Sidebar extends PureComponent {
 
         let userId = localStorage.getItem("user.id");
         let businessId = localStorage.getItem("businessId");
-        let primary = business.length > 0 && business.filter(item => {
-            return item._id === businessId
-        });
-        const businessName = primary.length > 0 ? primary[0].organizationName : "Finance";
+        const businessList = Array.isArray(business) ? business : []
+        let primary = businessList.length > 0
+          ? businessList.filter(item => item._id === businessId)
+          : []
+        const businessName =
+          (primary.length > 0 && (primary[0].organizationName || primary[0].name)) ||
+          selectedBusiness?.organizationName ||
+          selectedBusiness?.name ||
+          "Finance";
+        const signedInEmail =
+          localStorage.getItem('user.email') ||
+          '';
         let boxClass = ["nav-dropdown-items nav-dropdown"];
         if (this.state.activeSelected) {
             boxClass.push('open');
@@ -611,19 +634,6 @@ class Sidebar extends PureComponent {
                                                     <span className="Nav__text">Give</span>
                                                 </NavLink>
                                             </li>
-                                            {
-                                                _get(selectedBusiness, "country.id", "") === "231" ?
-                                                    <li className="nav-item">
-                                                        <a className="nav-link" target={`_blank`} href="https://youlend.us/apply/payyit/en-us/welcome">
-                                                            <Icon
-                                                                className="Icon"
-                                                                xlinkHref={`${symbolsIcon}#ic-capital`}
-                                                            />
-                                                            <span className="Nav__text">Working Capital</span>
-                                                        </a>
-                                                    </li>
-                                                    : null
-                                            }
                                             <li className="nav-item">
                                                 <a onClick={this._toggle.bind(this, 'purchase')} className={purchaseOpen ? "nav-link selected" : "nav-link"} activeclassname='is-active' href='javascript: void(0)'>
                                                     {/* <svg viewBox="0 0 26 26" className="Icon__M" id="nav--purchases" xmlns="http://www.w3.org/2000/svg"><path d="M8.395 15.007h11.793c.413 0 .777-.29.896-.712l2.045-7.288H7.646l.749 8zm-1.18-10H23.13c1.033 0 1.871.896 1.871 2 0 .195-.027.389-.079.575l-2.045 7.287c-.356 1.27-1.449 2.138-2.688 2.138H7.548c-.48 0-.883-.389-.93-.9l-.936-10a1.093 1.093 0 0 1-.003-.032L4.227 4H1.88C1.394 4 1 3.552 1 3s.394-1 .88-1h2.64c.047 0 .092.004.137.012a.934.934 0 0 1 .74.399l1.819 2.596zM10 24a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm9 2a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg> */}
@@ -875,11 +885,6 @@ class Sidebar extends PureComponent {
                                                                 <span className="title">Reviews</span>
                                                             </NavLink>
                                                         </li>
-                                                        {/* <li className="nav-item">
-                                                                <NavLink className="nav-link" activeclassname='is-active' to="/app/coming-soon/working-capitals" >
-                                                                    <span className="title">Working Capital</span>
-                                                                </NavLink>
-                                                            </li> */}
 
                                                     </ul>
                                                 </div>
@@ -1022,7 +1027,7 @@ class Sidebar extends PureComponent {
                 <Modal isOpen={this.state.modal} toggle={this.sideToggle} className="modal-side js-biz-modal-panel">
                     <ModalHeader toggle={this.sideToggle}>
                         <div className="py-biz-switcher--logo">
-                            <img src={Main_Logo} />
+                            <img src={Main_Logo} alt="Finance" style={{ height: 48, width: 'auto' }} />
                         </div>
                         <div className="pm-biz-switcher--title font-bold">
                             Your Finance account
@@ -1030,7 +1035,7 @@ class Sidebar extends PureComponent {
                     </ModalHeader>
                     <ModalBody>
                         <div className="menu-content">
-                            {business.length > 5 && (
+                            {(businessList.length > 5) && (
                                 <Input
                                     onChange={this.handleSearchInput}
                                     placeholder="Search by business name"
@@ -1051,7 +1056,7 @@ class Sidebar extends PureComponent {
                             </div>
                         </div>
                         <div className="pt-modal-foo">
-                            <span className="py-text py-text--small">You're signed in as <span className="py-text--strong">{localStorage.getItem('user.email')}</span></span>
+                            <span className="py-text py-text--small">You're signed in as <span className="py-text--strong">{signedInEmail || 'finance@gmail.com'}</span></span>
                             <ul className="py-biz-switch__menu">
                                 <li className="py-biz-switch__menu-item" key={'3.1'} onClick={this.sideToggle}>
                                     <NavLink className="py-text--link" to={`/app/accounts`}>

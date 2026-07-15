@@ -94,19 +94,25 @@ export const totalRender = (cell, row, rowIndex, formatExtraData) => {
 
 export const amountRender = (cell, row, rowIndex, formatExtraData) => {
   if (!!row) {
-    let buisinessInfo = JSON.parse(JSON.parse(localStorage.getItem('reduxPersist:root')).businessReducer).selectedBusiness
+    let businessInfo = {}
+    try {
+      const root = JSON.parse(localStorage.getItem('reduxPersist:root') || '{}')
+      const businessReducer = typeof root.businessReducer === 'string'
+        ? JSON.parse(root.businessReducer)
+        : root.businessReducer
+      businessInfo = businessReducer?.selectedBusiness || {}
+    } catch (e) {
+      /* ignore */
+    }
+    const businessCurrency = businessInfo?.currency || row?.currency || { code: 'USD', symbol: '$' }
+    const rowCurrency = row?.currency || businessCurrency
     return (
-      // <InvoiceRowHoverPopUp row={row}>
       <div onClick={() => history.push(`/app/invoices/view/${row._id}`)} className={row.totalAmountInHomeCurrency > 0 ? "text-right invoice-amount-cell amount-cell" : "text-right invoice-amount-cell"} onMouseEnter={e => showTooltip(e, row._id, true)} onMouseLeave={e => showTooltip(e, row._id, false)}>
         <span className="ov-text" >
-          { row ? getAmountToDisplay(row.currency, row.dueAmount) : '' }
+          { getAmountToDisplay(rowCurrency, row.dueAmount ?? row.totalAmount ?? 0) }
         </span>
-        {/* {_showExchangeRate(row.currency, buisinessInfo.currency) } 
-              //   ? `${getAmountToDisplay(buisinessInfo.currency, row.totalAmountInHomeCurrency)} ${buisinessInfo.currency.code}`
-          // : ""}*/}
-          <small className="py-text--hint">{_showExchangeRate(buisinessInfo.currency, row.currency) ? `${getAmountToDisplay(buisinessInfo.currency, row.dueAmountInHomeCurrency ? row.dueAmountInHomeCurrency : row.dueAmount * row.exchangeRate)} ${buisinessInfo.currency.code}` : ''}</small>
+          <small className="py-text--hint">{_showExchangeRate(businessCurrency, rowCurrency) ? `${getAmountToDisplay(businessCurrency, row.dueAmountInHomeCurrency ? row.dueAmountInHomeCurrency : (row.dueAmount || 0) * (row.exchangeRate || 1))} ${businessCurrency.code || ''}` : ''}</small>
       </div>
-      // </InvoiceRowHoverPopUp>
     );
   }
 };

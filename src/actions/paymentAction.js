@@ -93,11 +93,8 @@ export function getPaymentById(id) {
             type: actionTypes.GET_PAYMENT_BY_ID,
             data: paymentResponse.data
           })
-        } else if (paymentResponse.statusCode === 400) {
-          history.push(`${process.env.REACT_APP_WEB_URL}/app/400`)
-        } else {
-          history.push(`${process.env.REACT_APP_WEB_URL}/app/error/500`)
         }
+        // Static demo: no redirect to error pages on non-200
       })
       .catch(errorResposne => {})
   }

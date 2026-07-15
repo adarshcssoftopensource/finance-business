@@ -487,45 +487,51 @@ export const logout = async (search = null, to = null) => {
   localStorage.clear();
   localStorage.setItem('basicAuthToken', basicAuthToken)
 
-  if (search) {
-    if (to) {
-      history.push(`/${to}${search}`)
-    } else {
-      history.push(`/signin${search}`)
-    }
-  } else if (!!to) {
-    history.push(`/${to}`)
-  } else {
-    history.push('/signin')
-  }
-  window.location.href = "/signin";
+  // Static demo: clear session only — no forced redirect to /signin
   await persistingStore.purge()
 }
 export const setupRefreshTimer = () => {
-  if (localStorage.getItem('token')) {
-    const expiryToken = localStorage.getItem('expiryToken')
-    const duration = moment(new Date(expiryToken * 1000)).diff(new Date(), 'seconds')
-    refrestTimer = setInterval(async () => {
-      callRefresh()
-    }, (duration - 100) * 1000)
-  } else {
-    logout()
+  if (!localStorage.getItem('token')) {
+    return
   }
+  if (refrestTimer) {
+    clearInterval(refrestTimer)
+    refrestTimer = null
+  }
+  const expiryToken = localStorage.getItem('expiryToken')
+  let durationSeconds
+  if (!expiryToken || expiryToken === 'undefined') {
+    // Static demo / missing expiry: refresh daily, do not logout
+    durationSeconds = 86400
+  } else if (/^\d+(\.\d+)?$/.test(String(expiryToken))) {
+    durationSeconds = moment.unix(Number(expiryToken)).diff(moment(), 'seconds')
+  } else {
+    durationSeconds = moment(expiryToken).diff(moment(), 'seconds')
+  }
+  if (!Number.isFinite(durationSeconds) || durationSeconds <= 120) {
+    durationSeconds = 86400
+  }
+  refrestTimer = setInterval(async () => {
+    callRefresh()
+  }, Math.max(durationSeconds - 100, 60) * 1000)
 }
 
 export const callRefresh = async _ => {
-  const deviceInfo = await getDeviceInfo();
-  const refreshData = await (LoginService.refreshToken({
-    accessToken: localStorage.getItem("token"),
-    refreshToken: localStorage.getItem("refreshToken"),
-    deviceInfo
-  }));
-  if (refreshData.statusCode === 200 || refreshData.statusCode === 201) {
-    _setToken(refreshData.data)
-  } else {
-    logout()
+  try {
+    const deviceInfo = await getDeviceInfo();
+    const refreshData = await (LoginService.refreshToken({
+      accessToken: localStorage.getItem("token"),
+      refreshToken: localStorage.getItem("refreshToken"),
+      deviceInfo
+    }));
+    if (refreshData.statusCode === 200 || refreshData.statusCode === 201) {
+      _setToken(refreshData.data || refreshData)
+    }
+    // Static demo: never logout on refresh failure
+  } catch (e) {
+    console.warn('Token refresh skipped', e)
   }
-  return refreshData
+  return null
 }
 
 export const logger = {

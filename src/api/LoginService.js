@@ -1,38 +1,82 @@
-const mockResponse = (data = {}) => Promise.resolve({ statusCode: 200, data, status: 200 });
+import {
+  STATIC_AUTH_TOKEN,
+  STATIC_BUSINESS,
+  STATIC_BUSINESS_ID,
+  STATIC_BUSINESS_NAME,
+  STATIC_USER,
+  STATIC_USER_NAME,
+  isValidStaticLogin,
+} from '../utils/static-auth'
 
-const validJWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjogeyJ1c2VyIjogeyJfaWQiOiAic3RhdGljLXVzZXItMTIzIiwgInByaW1hcnlFbWFpbCI6ICJ1c2VyQGZpbmFuY2UuY29tIn19fQ.ZHVtbXk";
+const mockResponse = (data = {}, extra = {}) =>
+  Promise.resolve({ statusCode: 200, data, status: 200, ...extra })
 
-function authenticate(data) {
-  return mockResponse({ accessToken: validJWT, refreshToken: validJWT, user: { name: 'Static User', email: data.email } });
+const mockError = (message, statusCode = 401) =>
+  Promise.resolve({
+    statusCode,
+    status: statusCode,
+    message,
+    data: { message },
+  })
+
+function authPayload(email) {
+  return {
+    accessToken: STATIC_AUTH_TOKEN,
+    refreshToken: STATIC_AUTH_TOKEN,
+    accessTokenExpiresAt: new Date(Date.now() + 86400000 * 365).toISOString(),
+    user: {
+      name: STATIC_USER_NAME,
+      email: email || STATIC_USER.email,
+      primaryEmail: STATIC_USER.email,
+    },
+  }
 }
 
-function googleAuth(data) {
-  return mockResponse({ accessToken: validJWT, refreshToken: validJWT, user: { name: 'Static User' } });
+function authenticate(data = {}) {
+  if (!isValidStaticLogin(data)) {
+    return mockError('Invalid email or password.')
+  }
+  // Password OK without OTP; if OTP tab is used, isValidStaticLogin already checked it
+  return mockResponse(authPayload(data.email))
 }
 
-export const forgotPassword = (data) => mockResponse();
+function googleAuth() {
+  return mockResponse(authPayload(STATIC_USER.email))
+}
 
-const generateResetLink = (data) => mockResponse();
+export const forgotPassword = () => mockResponse({ success: true })
 
-const resetPassword = (data) => mockResponse();
+const generateResetLink = () => mockResponse({ success: true })
 
-const verifyResetLink = (token) => mockResponse();
+const resetPassword = () => mockResponse({ success: true })
 
-const assumeUser = (token) => mockResponse({ accessToken: validJWT });
+const verifyResetLink = () => mockResponse({ success: true })
 
-const refreshToken = (data) => mockResponse({ accessToken: validJWT });
+const assumeUser = () => mockResponse({ accessToken: STATIC_AUTH_TOKEN, refreshToken: STATIC_AUTH_TOKEN })
 
-const callMe = (_) => mockResponse({ 
-  user: { name: 'Static User', themeMode: 'light', email: 'user@finance.com' }, 
-  businesses: [{ _id: 'biz1', name: 'Static Business' }],
-  selectedBusiness: { _id: 'biz1', name: 'Static Business' } 
-});
+const refreshToken = () =>
+  mockResponse({
+    accessToken: STATIC_AUTH_TOKEN,
+    refreshToken: STATIC_AUTH_TOKEN,
+    accessTokenExpiresAt: new Date(Date.now() + 86400000 * 365).toISOString(),
+  })
 
-const inviteUser = (data) => mockResponse();
+const callMe = () =>
+  mockResponse({
+    user: STATIC_USER,
+    businesses: [{ ...STATIC_BUSINESS }],
+    selectedBusiness: { ...STATIC_BUSINESS, _id: STATIC_BUSINESS_ID },
+    onBoardingRules: {
+      isDisputeEnabled: true,
+      isPaymentsEnabled: true,
+    },
+  })
 
-const updateUser = (data, id) => mockResponse();
+const inviteUser = () => mockResponse({ success: true })
 
-const deleteDelegateUser = (id) => mockResponse();
+const updateUser = () => mockResponse({ user: STATIC_USER })
+
+const deleteDelegateUser = () => mockResponse({ success: true })
 
 const LoginService = {
   authenticate,
@@ -45,7 +89,10 @@ const LoginService = {
   callMe,
   inviteUser,
   deleteDelegateUser,
-  updateUser
-};
+  updateUser,
+}
 
-export default LoginService;
+export default LoginService
+
+// re-export for tests / UI hints
+export { STATIC_BUSINESS_NAME, STATIC_BUSINESS_ID }

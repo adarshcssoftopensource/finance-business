@@ -44,10 +44,21 @@ class UserManagement extends Component {
     }
     _fetchUsers = async () => {
         this.setState({ loading: true })
-        const users = await profileServices.fetchDeligateUsers()
-        if (!!users && users.statusCode === 200) {
-            this.setState({ users: users.data.delegateUsers, loading: false, isInit: users.data.delegateUsers.length > 1 ? false : true })
+        try {
+            const users = await profileServices.fetchDeligateUsers()
+            const delegateUsers = users?.data?.delegateUsers || []
+            if (!!users && users.statusCode === 200) {
+                this.setState({
+                    users: delegateUsers,
+                    loading: false,
+                    isInit: delegateUsers.length > 1 ? false : true,
+                })
+                return
+            }
+        } catch (e) {
+            /* demo: keep empty list */
         }
+        this.setState({ users: [], loading: false, isInit: true })
     }
 
     _onClickEdit = (data) => {

@@ -11,6 +11,11 @@ const MainRoute = ({ 'component': Component, params, ...rest }) => {
 
   // Route Restriction based on Subscription Plan
   const planRouteRestricted = () => {
+    // Static demo mode: never blank subscribed-only modules
+    if (process.env.REACT_APP_MY_ENVIRONMENT === 'development') {
+      return true
+    }
+
     const { selectedBusiness } = rest.state.businessReducer
     const activeSubscription = rest.state.subscriptionReducer?.activeSubscription;
     const planTitle = activeSubscription?.current?.planId?.title;
@@ -22,6 +27,10 @@ const MainRoute = ({ 'component': Component, params, ...rest }) => {
 
     // Check Businesses if they are created before subscription plans implementation
     if (selectedBusiness && (!selectedBusiness.subscription || !selectedBusiness.subscription.isSubscribed)) {
+      // Subscribed flag may live on business root in demo/static mode
+      if (selectedBusiness.isSubscribed) {
+        return true
+      }
       const getRestrictedRoutes = RestrictedRoutes['Starter'].restrictedRoutes
       const pathParts = rest?.location?.pathname.split('/');
       const baseRoute = `/${pathParts[1]}/${pathParts[2]}`;

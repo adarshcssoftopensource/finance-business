@@ -39,7 +39,7 @@ const ShareLink = (props) => {
     handleBillingAddress,
     handleShippingAddress,
     handleCustomLimitChange } = props
-  const shareLink = peymeData ? peymeData.peyme.publicView.shareableLinkUrl : "";
+  const shareLink = peymeData?.peyme?.publicView?.shareableLinkUrl || "";
   const provider = peymeData?.peyme?.provider;
   const copyText = () => {
     const cb = navigator.clipboard;
@@ -223,7 +223,7 @@ const ShareLink = (props) => {
                       {showCustomLimit ?
                         <div className="py-table__cell ps-0 peyme-limit-input" style={{ width: "calc(100% - 220px)" }}>
                           <InputGroup className={errorClass}>
-                            <InputGroupText className="cursor-pointer rounded-left">{peymeData.peyme.business.currency.symbol}</InputGroupText>
+                            <InputGroupText className="cursor-pointer rounded-left">{peymeData?.peyme?.business?.currency?.symbol || '$'}</InputGroupText>
                             <Input
                               type="number"
                               name="maxQuantity"

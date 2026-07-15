@@ -56,35 +56,47 @@ class AddBusiness extends PureComponent {
     const authToken = localStorage.getItem("token");
     if (!authToken) {
       history.push("/signin");
-      window.location.reload(true);
       return;
     }
-    this.fetchFormData();
     this.props.getBusinessMcc();
+    this.fetchFormData();
   }
 
-  componentWillUpdate(prevProps) {
-    if (this.props !== prevProps) {
-      this.fetchFormData();
-    }
-    if (JSON.stringify(this.props.getAllMCC.data) !== JSON.stringify(prevProps.getAllMCC.data) && this.props.getAllMCC.data) {
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.getAllMCC?.data !== prevProps.getAllMCC?.data &&
+      Array.isArray(this.props.getAllMCC?.data)
+    ) {
       this.setState({ businessCategories: this.props.getAllMCC.data });
     }
   }
 
   fetchFormData = async () => {
-    const countriesAndCurrency = await BusinessService.fetchBusinessCountries();
-    const currencies = await this.currenciesList(countriesAndCurrency.data.countries);
-    this.setState({ businessCategories : this.props.getAllMCC.data })
-    this.setState({ countries: countriesAndCurrency.data.countries });
-    this.setState({ currencies: currencies });
+    try {
+      const countriesAndCurrency = await BusinessService.fetchBusinessCountries();
+      const countries =
+        countriesAndCurrency?.data?.countries ||
+        countriesAndCurrency?.countries ||
+        [];
+      const currencies = await this.currenciesList(countries);
+      const mccList = Array.isArray(this.props.getAllMCC?.data)
+        ? this.props.getAllMCC.data
+        : [];
+      this.setState({
+        businessCategories: mccList,
+        countries,
+        currencies,
+      });
+    } catch (e) {
+      this.setState({ countries: [], currencies: [] });
+    }
   };
 
   currenciesList = (countries) => {
     let currencies = [];
-    countries.forEach(element => {
-      const currObj = element.currencies[0];
-      currencies.push(currObj)
+    (countries || []).forEach(element => {
+      const currObj = element?.currencies?.[0];
+      if (currObj) currencies.push(currObj)
     });
     return currencies
   };
@@ -121,8 +133,10 @@ class AddBusiness extends PureComponent {
           this.setState({ [`${name}Err`]: true })
         }
       } else if (name === "country") {
-        updateBusiness["currency"] = this.mapCurrencyWithCountry(value.id);
-        updateBusiness[name] = this.prepareCountryObj(value.id);
+        const selected = value || {};
+        const countryId = selected.id ?? selected.value ?? selected;
+        updateBusiness["currency"] = this.mapCurrencyWithCountry(countryId);
+        updateBusiness[name] = this.prepareCountryObj(countryId);
         this.setState({ [`${name}Err`]: false })
         this.setState({ [`${'currencies'}Err`]: false })
       } else if (name === "currency") {
@@ -163,18 +177,30 @@ class AddBusiness extends PureComponent {
 
   prepareCountryObj = id => {
     const { countries } = this.state;
-    const countryObject = find(countries, { id: parseInt(id) });
-    let countryObj = {
+    const countryObject =
+      find(countries, { id: parseInt(id, 10) }) ||
+      find(countries, c => String(c.id) === String(id)) ||
+      (typeof id === 'object' ? id : null);
+    if (!countryObject) {
+      return { name: '', id: id || '' };
+    }
+    return {
       name: countryObject.name,
       id: countryObject.id
     };
-    return countryObj;
   };
 
   mapCurrencyWithCountry = id => {
     const { countries } = this.state;
-    const currencyObject = find(countries, { id: parseInt(id) });
-    return currencyObject.currencies[0];
+    const countryObject =
+      find(countries, { id: parseInt(id, 10) }) ||
+      find(countries, c => String(c.id) === String(id));
+    return countryObject?.currencies?.[0] || {
+      code: 'USD',
+      name: 'US Dollar',
+      symbol: '$',
+      displayName: 'USD - $',
+    };
   };
 
   handleSubmit = async event => {
@@ -241,17 +267,23 @@ class AddBusiness extends PureComponent {
       try {
         this.setState({ loading: true });
         const response = await BusinessService.addCompany(payload);
-        if (response.statusCode === 201) {
+        const createdBusiness =
+          response?.data?.business ||
+          response?.business ||
+          response?.data;
+        if ((response?.statusCode === 201 || response?.statusCode === 200) && createdBusiness?._id) {
           this.props.resetProviderData();
-          await this.props.actions.setSelectedBussiness(response.data.business._id, false);
+          await this.props.actions.setSelectedBussiness(createdBusiness._id, localStorage.getItem('token'), false);
           this.props.getActiveSubscriptionPlan();
-          this.props.openGlobalSnackbar(response.message, false);
-          this.setState({ loading: false });
+          this.props.openGlobalSnackbar(response.message || 'Business created successfully', false);
           history.push(`/app/accounts/business`)
+        } else {
+          this.props.openGlobalSnackbar(response?.message || 'Could not create business', true);
         }
       } catch (error) {
+        this.props.openGlobalSnackbar(error?.message || 'Could not create business', true);
+      } finally {
         this.setState({ loading: false });
-        this.props.openGlobalSnackbar(error.message, true);
       }
     }
   };

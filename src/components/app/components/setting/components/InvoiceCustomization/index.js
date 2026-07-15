@@ -1095,14 +1095,14 @@ class InvoiceCustomization extends Component {
                                     type="radio"
                                     name="column1"
                                     checked={
-                                      itemHeading.column1.name === itemType ||
-                                      (itemHeading.column1.name !== 'Items' &&
-                                        itemHeading.column1.name !==
-                                          'Services' &&
-                                        itemHeading.column1.name !== 'Products')
+                                      itemType === 'Other'
+                                        ? !['Items', 'Services', 'Products'].includes(
+                                            itemHeading.column1.name,
+                                          )
+                                        : itemHeading.column1.name === itemType
                                     }
                                     value={itemType}
-                                    onClick={this.handleItemHeading}
+                                    onChange={this.handleItemHeading}
                                   />
                                   <span className="py-form__element__faux"></span>
                                   <span className="py-form__element__label">
@@ -1161,12 +1161,14 @@ class InvoiceCustomization extends Component {
                                 type="radio"
                                 name="column2"
                                 checked={
-                                  itemHeading.column2.name === unitType ||
-                                  (itemHeading.column2.name !== 'Quantity' &&
-                                    itemHeading.column2.name !== 'Hours')
+                                  unitType === 'Other'
+                                    ? !['Quantity', 'Hours'].includes(
+                                        itemHeading.column2.name,
+                                      )
+                                    : itemHeading.column2.name === unitType
                                 }
                                 value={unitType}
-                                onClick={this.handleItemHeading}
+                                onChange={this.handleItemHeading}
                               />
                               <span className="py-form__element__faux"></span>
                               <span className="py-form__element__label">
@@ -1228,11 +1230,13 @@ class InvoiceCustomization extends Component {
                                 name="column3"
                                 value={priceType}
                                 checked={
-                                  itemHeading.column3.name === priceType ||
-                                  (itemHeading.column3.name !== 'Price' &&
-                                    itemHeading.column3.name !== 'Rate')
+                                  priceType === 'Other'
+                                    ? !['Price', 'Rate'].includes(
+                                        itemHeading.column3.name,
+                                      )
+                                    : itemHeading.column3.name === priceType
                                 }
-                                onClick={this.handleItemHeading}
+                                onChange={this.handleItemHeading}
                               />
                               <span className="py-form__element__faux"></span>
                               <span className="py-form__element__label">
@@ -1294,10 +1298,11 @@ class InvoiceCustomization extends Component {
                                 name="column4"
                                 value={amountType}
                                 checked={
-                                  itemHeading.column4.name === amountType ||
-                                  itemHeading.column4.name !== 'Amount'
+                                  amountType === 'Other'
+                                    ? itemHeading.column4.name !== 'Amount'
+                                    : itemHeading.column4.name === amountType
                                 }
-                                onClick={this.handleItemHeading}
+                                onChange={this.handleItemHeading}
                               />
 
                               <span className="py-form__element__faux"></span>

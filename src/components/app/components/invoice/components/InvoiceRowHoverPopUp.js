@@ -19,7 +19,7 @@ const InvoiceRowHoverPopUp = props => {
                         </li>
                         <li>
                             <h6>Last Viewed</h6>
-                            <span>{props.row.report.lastViewedOn ? _displayDate(props.row.report.lastViewedOn) : "Never"}</span>
+                            <span>{props.row?.report?.lastViewedOn ? _displayDate(props.row.report.lastViewedOn) : "Never"}</span>
                         </li>
                         <li>
                             <h6>Total</h6>

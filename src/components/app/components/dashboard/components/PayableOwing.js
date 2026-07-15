@@ -28,24 +28,34 @@ class PayableOwing extends Component {
 
   async fetchPayables() {
     this.setState({ loading: true });
-    const { statusCode, data: { data } } = await fetchPayableInvoices(this.props.limit);
-    if (statusCode !== 200) {
-      this.setState({ loading: false });
-      return;
+    try {
+      const response = await fetchPayableInvoices(this.props.limit);
+      if (response?.statusCode !== 200) {
+        this.setState({ loading: false, payables: [] });
+        return;
+      }
+      const raw = response?.data;
+      const payables = Array.isArray(raw?.data) ? raw.data : Array.isArray(raw) ? raw : [];
+      this.setState({ loading: false, payables });
+    } catch (e) {
+      this.setState({ loading: false, payables: [] });
     }
-
-    this.setState({ loading: false, payables: data });
   }
 
   async fetchOwings() {
     this.setState({ loading: true });
-    const { statusCode, data: { data } } = await fetchOwingBills(this.props.limit);
-    if (statusCode !== 200) {
-      this.setState({ loading: false });
-      return;
+    try {
+      const response = await fetchOwingBills(this.props.limit);
+      if (response?.statusCode !== 200) {
+        this.setState({ loading: false, owings: [] });
+        return;
+      }
+      const raw = response?.data;
+      const owings = Array.isArray(raw?.data) ? raw.data : Array.isArray(raw) ? raw : [];
+      this.setState({ loading: false, owings });
+    } catch (e) {
+      this.setState({ loading: false, owings: [] });
     }
-
-    this.setState({ loading: false, owings: data });
   }
 
   renderPayable() {
@@ -93,7 +103,9 @@ class PayableOwing extends Component {
   }
 
   render() {
-    if (!this.state.payables.length && !this.state.owings.length) {
+    const payables = this.state.payables || [];
+    const owings = this.state.owings || [];
+    if (!payables.length && !owings.length) {
       return null;
     }
     return (

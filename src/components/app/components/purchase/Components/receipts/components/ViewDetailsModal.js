@@ -15,7 +15,7 @@ export default class ViewDetailsModal extends Component {
   }
 
   async fetchTaxes() {
-    const response = (await taxServices.fetchTaxes()).data.taxes;
+    const response = (await taxServices.fetchTaxes())?.data?.taxes || [];
     response.forEach(row => {
       row.id = row._id;
       delete row._id;

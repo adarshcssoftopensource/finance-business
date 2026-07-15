@@ -249,7 +249,7 @@ class InvoiceDropdown extends Component {
             <DropdownToggle color="circle" id="action">
               <i className="fas fa-caret-down" id="dropIcon"></i>
             </DropdownToggle>
-            <DropdownMenu right>
+            <DropdownMenu end>
               {!handleAclPermissions(['Viewer']) && <div>
                 <DropdownItem id="dropItem0" key={0} onClick={this.onViewClick}>View</DropdownItem>
                 {isEditable && <DropdownItem id="dropItem1" key={1} onClick={this.onEditClick}>Edit</DropdownItem>}
@@ -260,14 +260,14 @@ class InvoiceDropdown extends Component {
                     : ""
                 }
                 {
-                  (row.action.toLowerCase() === 'send a reminder') ? "" :
+                  ((row.action || '').toLowerCase() === 'send a reminder') ? "" :
                     ["partial", "viewed"].includes(row.status) && <DropdownItem id="dropItem" key={4} onClick={this.openCloseReminder}>Send a reminder</DropdownItem>}
                 {
-                  (row.action.toLowerCase() === 'record a payment') ?
+                  ((row.action || '').toLowerCase() === 'record a payment') ?
                     "" :
                     (!(["draft", "partial", "viewed","paid"].includes(row.status)) || row.skipped) && <DropdownItem id="dropItem4" key={4} onClick={this.onRecordClick}>Record a payment</DropdownItem>}
                 {
-                  (row.action.toLowerCase() === 'send') ? "" :
+                  ((row.action || '').toLowerCase() === 'send') ? "" :
                     row.status !== "draft" && <DropdownItem id="dropItem6" key={6} onClick={this.handleMail}>{row.sentDate ? "Resend" : "Send"}</DropdownItem>}
                 <DropdownItem divider />
                 <DropdownItem id="dropItem7" key={7} onClick={this.exportPDF.bind(this, false)}>Export as PDF</DropdownItem>

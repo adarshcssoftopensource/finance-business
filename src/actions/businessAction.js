@@ -4,12 +4,12 @@ import * as actionTypes from '../constants/ActionTypes';
 import profileServices from '../api/profileService';
 import { fetchPaymentSettings } from './paymentSettings';
 import { _setToken } from '../utils/authFunctions';
-import { openGlobalSnackbar } from './snackBarAction';
+import { openGlobalSnackbar } from './snackBarAction'
 import { refreshToken } from './authAction';
-import { logout } from '../utils/GlobalFunctions';
 import { fetchAllBannerList } from './utilityAction';
 import { fetchMe } from './loginAction';
 import { getSession } from "./deviceSessionAction";
+import { STATIC_BUSINESS } from '../utils/static-auth';
 
 export const businessError = (errorMessage) => {
     return { type: actionTypes.BUSINESS_FAILED, errorMessage }
@@ -23,11 +23,19 @@ export const setBusinessList = (business) => {
 }
 let counter = 0;
 export const setSelectedBussiness = (id, accessToken, redirect = true, redirectUrl) => {
+    // Static demo: never force-logout via loop counter
     if (counter > 2) {
-        // For infinite loop in business list.
-        openGlobalSnackbar('Something went wrong, please login again.', true);
-        logout();
-        return false;
+        counter = 0;
+        if (id) {
+            localStorage.setItem('businessId', id)
+        }
+        return async (dispatch) => {
+            dispatch({
+                type: actionTypes.SELECTED_BUSINESS,
+                selectedBusiness: { ...STATIC_BUSINESS, _id: id || STATIC_BUSINESS._id },
+            })
+            return { type: actionTypes.SELECTED_BUSINESS }
+        }
     }
         if (id) {
             localStorage.setItem('businessId', id)
@@ -35,15 +43,25 @@ export const setSelectedBussiness = (id, accessToken, redirect = true, redirectU
         return async (dispatch, getState) => {
             let refreshTok = accessToken;
             if (!refreshTok) {
-                const res = await refreshToken();
-                _setToken(res)
-                refreshTok = res.accessToken
+                try {
+                    const res = await refreshToken();
+                    if (res?.accessToken) {
+                        _setToken(res)
+                        refreshTok = res.accessToken
+                    }
+                } catch (e) {
+                    refreshTok = localStorage.getItem('token')
+                }
             }
             try {
                 dispatch({ type: actionTypes.START_USER_DATA_LOADING })
                 const isCheckVerifiedEmail = true;
                 const me = await fetchMe(isCheckVerifiedEmail);
-                const businessList = me.data.businesses
+                    const businessList = Array.isArray(me.data.businesses)
+                      ? me.data.businesses
+                      : Array.isArray(me.data.businesses?.ownerAccess)
+                        ? me.data.businesses.ownerAccess
+                        : []
                 if (!!businessList && businessList.length > 0) {
                     let selected = null;
                     if (!!me && !!me.data && !!me.data.selectedBusiness && !!id) {
@@ -114,7 +132,6 @@ export const setSelectedBussiness = (id, accessToken, redirect = true, redirectU
                 }
             }
         }
-
 }
 export function fetchBusiness() {
     return async (dispatch, getState) => {

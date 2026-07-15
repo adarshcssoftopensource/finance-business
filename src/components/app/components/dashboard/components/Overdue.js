@@ -30,24 +30,32 @@ class Overdue extends Component {
 
   async fetchBills() {
     this.setState({ loading: true });
-    const { statusCode, data } = await fetchOverdueBills(this.props.limit);
-    if (statusCode !== 200) {
-      this.setState({ loading: false });
-      return;
+    try {
+      const { statusCode, data } = await fetchOverdueBills(this.props.limit);
+      if (statusCode !== 200) {
+        this.setState({ loading: false, bills: [] });
+        return;
+      }
+      const bills = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
+      this.setState({ loading: false, bills });
+    } catch (e) {
+      this.setState({ loading: false, bills: [] });
     }
-
-    this.setState({ loading: false, bills: data });
   }
 
   async fetchInvoices() {
     this.setState({ loading: true });
-    const { statusCode, data } = await fetchOverdueInvoices(this.props.limit);
-    if (statusCode !== 200) {
-      this.setState({ loading: false });
-      return;
+    try {
+      const { statusCode, data } = await fetchOverdueInvoices(this.props.limit);
+      if (statusCode !== 200) {
+        this.setState({ loading: false, invoices: [] });
+        return;
+      }
+      const invoices = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
+      this.setState({ loading: false, invoices });
+    } catch (e) {
+      this.setState({ loading: false, invoices: [] });
     }
-
-    this.setState({ loading: false, invoices: data });
   }
 
   renderBills() {

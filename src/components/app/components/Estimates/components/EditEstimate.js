@@ -35,12 +35,8 @@ class EditEstimate extends PureComponent {
                 this.props.openGlobalSnackbar(response.message, true)
             }
         }catch(err){
-            if(err.statusCode === 404){
-                history.push('/app/error/404');
-            }else{
-                history.push('/app/estimates');
-                this.props.openGlobalSnackbar(err.message, true)
-            }
+            // Static demo: no redirect to /app/error/404
+            this.props.openGlobalSnackbar(err.message, true)
         }
     }
 

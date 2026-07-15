@@ -66,10 +66,12 @@ const Reports = props => {
                             <div className="py-text py-text--large">
                               <span className="invoice-insights-content__column-value">
                               
-                              {crowdFundingData ? getAmountToDisplay(crowdFundingData.funding.business.currency, report.totalAmountReceived): ""}
-                              </span>
-                              <span className="invoice-insights-content__column-unit">
-                              <span className="py-text--small">{crowdFundingData? crowdFundingData.funding.business.currency.code : ""}</span>
+                              {crowdFundingData?.funding?.business?.currency
+                                ? getAmountToDisplay(crowdFundingData.funding.business.currency, report?.totalAmountReceived || 0)
+                                : ''}
+                        </span>
+                        <span className="invoice-insights-content__column-unit">
+                              <span className="py-text--small">{crowdFundingData?.funding?.business?.currency?.code || ''}</span>
                               </span>
                             </div>
                         </div>

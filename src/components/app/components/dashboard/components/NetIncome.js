@@ -36,7 +36,12 @@ class NetIncome extends Component {
     try {
       const { statusCode, data } = await fetchNetIncome(this.props.limit);
       if (statusCode !== 200) return;
-      this.setState({ data });
+      const next = {
+        headings: Array.isArray(data?.headings) ? data.headings : [],
+        values: Array.isArray(data?.values) ? data.values : [],
+        tip: data?.tip || '',
+      };
+      this.setState({ data: next });
     } catch (error) {
       console.error('Error fetching net income:', error);
     } finally {

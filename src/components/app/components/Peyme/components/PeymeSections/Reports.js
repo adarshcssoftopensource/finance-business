@@ -67,10 +67,12 @@ const Reports = props => {
                       <div className="py-text py-text--large">
                         <span className="invoice-insights-content__column-value">
 
-                          {peymeData ? getAmountToDisplay(peymeData.peyme.business.currency, report.totalAmountReceived) : ""}
+                          {peymeData?.peyme?.business?.currency
+                            ? getAmountToDisplay(peymeData.peyme.business.currency, report?.totalAmountReceived || 0)
+                            : ''}
                         </span>
                         <span className="invoice-insights-content__column-unit">
-                          <span className="py-text--small">{peymeData ? peymeData.peyme.business.currency.code : ""}</span>
+                          <span className="py-text--small">{peymeData?.peyme?.business?.currency?.code || ''}</span>
                         </span>
                       </div>
                     </div>

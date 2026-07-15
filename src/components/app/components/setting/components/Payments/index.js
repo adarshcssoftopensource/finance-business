@@ -212,7 +212,7 @@ class Payments extends Component {
         this.props.history.push('/app/payments')
       }
     }
-    let bankDisabled = data && !data.charges.bank_charge_message;
+    let bankDisabled = data && !data.charges?.bank_charge_message;
     return (
       <div className="py-page__content py-page__settings__payments">
         <div className="py-page__inner" style={{ maxWidth: "1000px" }}>
@@ -588,7 +588,7 @@ class Payments extends Component {
           </div>
           <div className="benefits-description py-box py-box--large py-box--gray d-none">
             <ul className="py-list--icon">
-              {data && data.charges && data.charges.messages.map((msg) => (<li>
+              {data?.charges?.messages?.map((msg, i) => (<li key={i}>
                 <svg viewBox="0 0 20 20" className="Icon me-2" xmlns="http://www.w3.org/2000/svg"><path d="M7 14.586L17.293 4.293a1 1 0 0 1 1.414 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L7 14.586z"></path></svg>
                 <strong>{msg.heading}:</strong> {msg.body}
               </li>))}

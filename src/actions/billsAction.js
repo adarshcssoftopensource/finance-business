@@ -46,17 +46,12 @@ export function getBillById(id) {
       const response = await billsServices.fetchBillById(id);
       if (response.statusCode === 200) {
         dispatch(setBillData(response.data.bill));
-      } else if (response.statusCode === 404) {
-        history.push('/app/404');
       } else {
         dispatch(openGlobalSnackbar(response.message, true));
         dispatch(setBillError(response.message));
       }
     } catch (e) {
-      if (e.statusCode === 404) {
-        history.push('/app/404');
-        return;
-      }
+      // Static demo: no redirect to /app/404
       dispatch(openGlobalSnackbar(e.message, true));
       dispatch(setBillError(e.message));
     }

@@ -64,7 +64,7 @@ const QRCodeSection = props => {
                 <QRCode
                   id="share-peyme"
                   value={
-                    peymeData ? peymeData.peyme.publicView.shareableLinkUrl : ''
+                    peymeData?.peyme?.publicView?.shareableLinkUrl || ''
                   }
                   size={164}
                   level={'H'}

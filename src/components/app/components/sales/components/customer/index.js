@@ -68,8 +68,8 @@ class Customer extends Component {
 
   componentDidMount() {
     const { selectedBusiness } = this.props;
-    const { acl } = _getUser(localStorage.getItem('token'))
-    this.setState({ permissions: acl.permissions[3].scope })
+    const { acl } = _getUser(localStorage.getItem('token')) || {}
+    this.setState({ permissions: acl?.permissions?.[3]?.scope || ['read', 'write'] })
     document.title = selectedBusiness && selectedBusiness.organizationName ? `Finance - ${selectedBusiness.organizationName} - Customers` : `Finance - Customers`;
     const pageData = localStorage.getItem('paginationData')
     let queryData = `pageNo=${this.state.offset}&pageSize=${this.state.limit}`

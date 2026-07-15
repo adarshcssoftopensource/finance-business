@@ -43,7 +43,7 @@ const ShareLink = (props) => {
     provider
   } = props;
 
-  const shareLink = crowdFundingData ? crowdFundingData.funding.publicView.shareableLinkUrl : '';
+  const shareLink = crowdFundingData?.funding?.publicView?.shareableLinkUrl || '';
   const copyText = () => {
     const cb = navigator.clipboard;
     const paragraph = document.getElementById('shareLink');
@@ -179,7 +179,7 @@ const ShareLink = (props) => {
                            style={{ width: 'calc(100% - 220px)' }}>
                         <InputGroup className={errorClass}>
                           <InputGroupText
-                            className="cursor-pointer rounded-left">{crowdFundingData.funding.business.currency.symbol}</InputGroupText>
+                            className="cursor-pointer rounded-left">{crowdFundingData?.funding?.business?.currency?.symbol || '$'}</InputGroupText>
                           <Input
                             type="number"
                             name="maxQuantity"

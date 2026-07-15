@@ -112,14 +112,14 @@ export function getColumns(recordPayment) {
       sort: false
     },
     {
-      dataField: "",
+      dataField: "status",
       classes: 'py-table__cell invoice-bill-status',
       text: "Payment status",
       formatter: statusRender,
       sort: false
     },
     {
-      dataField: "",
+      dataField: "actions",
       classes: 'py-table__cell invoice-bill-actions',
       text: "Actions",
       formatter: actionRender,

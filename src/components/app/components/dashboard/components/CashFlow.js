@@ -61,7 +61,7 @@ class CashFlow extends Component {
     const pointWidth = limit === 24 ? 10 : 20;
     this.setState({ loading: true });
     const { statusCode, data } = await fetchCashFlow(limit);
-    if (statusCode !== 200) {
+    if (statusCode !== 200 || !Array.isArray(data?.values)) {
       this.setState({ loading: false });
       return;
     }

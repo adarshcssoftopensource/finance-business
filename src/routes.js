@@ -137,7 +137,7 @@ const Main = (props) => {
   const isPayAsBankEnabled = props.isPayAsBankEnabled
   return <Switch>
      {basicAuthModel ? <BasicAuthModal isOpen={basicAuthModel} /> : null}
-    <Redirect from="/" exact to="/signin" />
+    <Redirect from="/" exact to="/app/dashboard" />
     <Redirect from="/app" exact to="/app/dashboard" />
     <Route exact path="/signin" component={Login} />
     <Route exact path="/signin/:redirect" component={Login} />

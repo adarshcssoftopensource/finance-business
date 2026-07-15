@@ -65,8 +65,7 @@ class ViewBrowser extends PureComponent {
       }
     } catch (error) {
       if (error.data) {
-        // this.props.showSnackbar(error.message, true);
-        history.push("/app/404");
+        // Static demo: no redirect to /app/404
       }
     }
   };

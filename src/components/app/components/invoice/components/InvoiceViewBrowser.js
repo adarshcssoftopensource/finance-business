@@ -72,7 +72,8 @@ class InvoiceViewBrowser extends Component {
         document.title = `Finance - ${userSettings && !!userSettings.organizationName ? `${userSettings.organizationName} - ` : ""}Invoice ${invoiceData && invoiceData.invoiceNumber}`;
         this.setState({ invoiceData, userSettings: salesSetting, payments, userInfo, loading: false });
       } else {
-        history.push("/app/404");
+        // Static demo: no redirect to /app/404
+        this.setState({ loading: false });
       }
       let elem = document.getElementById('divIdToPrint');
 
@@ -80,10 +81,8 @@ class InvoiceViewBrowser extends Component {
       this.setState({ loading: false });
       if (error.data && error.status == 404) {
         this.props.openGlobalSnackbar(error.data.message, true);
-        history.push("/app/404");
       } else {
         this.props.openGlobalSnackbar(error.message, true);
-        history.push("/app/500");
       }
     }
   };

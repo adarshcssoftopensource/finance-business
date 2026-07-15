@@ -232,10 +232,18 @@ export const setProductList = list => {
 };
 
 export const setCurrencyList = list => {
-  let countries = list;
+  let countries = Array.isArray(list)
+    ? list
+    : Array.isArray(list?.countries)
+      ? list.countries
+      : Array.isArray(list?.data)
+        ? list.data
+        : Array.isArray(list?.data?.countries)
+          ? list.data.countries
+          : [];
   let currencies = countries.map(country => {
-    return country.currencies[0];
-  });
+    return country.currencies?.[0] || country;
+  }).filter(Boolean);
   currencies = orderBy(uniqBy(currencies, "code"), "code", "asc");
   return currencies;
 };

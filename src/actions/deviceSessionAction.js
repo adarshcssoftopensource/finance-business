@@ -12,18 +12,19 @@ export function getSession(queryString) {
     return getMySession(queryString)
       .then(statementResponse => {
         if (statementResponse.statusCode === 200) {
-          // If the session is expired, logout user session
-          const { allUserSession } = statementResponse.data;
-          const userId = localStorage.getItem("user.id"); // Get the user ID from localStorage
-          if (userId) {
-            const isSessionValid = allUserSession.some(session => session.userId === userId);
-            if (!isSessionValid) {
-              localStorage.clear();
-              console.log("User session invalid. Logging out...");
-              return; // Exit early to avoid setting invalid session data
-            }
+          const sessions = statementResponse.data?.allUserSession
+          const userId = localStorage.getItem("user.id")
+          // Demo/static: empty session list must not wipe the login (mock APIs often return [])
+          if (
+            userId &&
+            Array.isArray(sessions) &&
+            sessions.length > 0 &&
+            !sessions.some(session => session.userId === userId || session.userId === String(userId))
+          ) {
+            console.log("User session invalid. Logging out...");
+            localStorage.clear();
+            return;
           }
-          // If the session is valid, set the session data
           dispatch({
             type: SET_MY_DEVICE_SESSION,
             payload: statementResponse.data

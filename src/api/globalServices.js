@@ -3,16 +3,28 @@ import request from './request'
 
 export const fetchCountries = async()=> {
     const countries = localStorage.getItem('countries')
-    if(!!countries){
-        return JSON.parse(countries)
-    }else{
-        const res = await requestWithToken({
-            url: '/api/v1/utility/public/countries/',
-            method: 'GET'
-        })
-        localStorage.setItem('countries', JSON.stringify(res))
-        return res
+    if (!!countries) {
+        try {
+            const parsed = JSON.parse(countries)
+            if (parsed && Array.isArray(parsed.countries) && parsed.countries.length > 0) {
+                return parsed
+            }
+        } catch (e) {
+            /* ignore bad cache */
+        }
+        localStorage.removeItem('countries')
     }
+    const res = await requestWithToken({
+        url: '/api/v1/utility/public/countries/',
+        method: 'GET'
+    })
+    const normalized = Array.isArray(res?.countries)
+        ? res
+        : Array.isArray(res?.data?.countries)
+            ? { ...res, countries: res.data.countries }
+            : { countries: Array.isArray(res) ? res : [] }
+    localStorage.setItem('countries', JSON.stringify(normalized))
+    return normalized
 }
 
 
@@ -26,16 +38,32 @@ export const  fetchStatesByCountryId = id => {
 
 export const fetchCurrencies = async () => {
     const currencies = localStorage.getItem('currencies')
-    if(!!currencies){
-        return JSON.parse(currencies)
-    }else{
-        const res = await requestWithToken({
-            url: '/api/v1/utility/public/currencies/',
-            method: 'GET'
-        })
-        localStorage.setItem('currencies', JSON.stringify(res))
-        return res
+    if (!!currencies) {
+        try {
+            const parsed = JSON.parse(currencies)
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                return parsed
+            }
+        } catch (e) {
+            /* ignore bad cache */
+        }
+        localStorage.removeItem('currencies')
     }
+    const res = await requestWithToken({
+        url: '/api/v1/utility/public/currencies/',
+        method: 'GET'
+    })
+    const list = Array.isArray(res)
+        ? res
+        : Array.isArray(res?.data)
+            ? res.data
+            : Array.isArray(res?.countries)
+                ? res.countries
+                : Array.isArray(res?.data?.countries)
+                    ? res.data.countries
+                    : []
+    localStorage.setItem('currencies', JSON.stringify(list))
+    return list
 }
 
 export const currentExchangeRate = async (base, current) => {

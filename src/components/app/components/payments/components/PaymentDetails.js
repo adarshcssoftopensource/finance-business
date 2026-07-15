@@ -38,7 +38,7 @@ export const PaymentDetails = ({ row, classes, account,businessInfo, ...props })
     }, [])
 
     const renderAmountDetails = () => {
-        if (row.refund.isRefunded && row.status == "SUCCESS") {
+        if (row?.refund?.isRefunded && row.status == "SUCCESS") {
             return (
                 <div>
                     <div className="d-flex justify-content-between pt-3 mb-4">
